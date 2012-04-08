@@ -28,7 +28,7 @@
 - (void) drawMapRect:(MapRect) mapRect {
     
     for (int x = mapRect.origin.x; x<mapRect.origin.x+mapRect.size.x; x++) {
-        for (int y = mapRect.origin.y; x<mapRect.origin.y+mapRect.size.y; y++) {
+        for (int y = mapRect.origin.y; y<mapRect.origin.y+mapRect.size.y; y++) {
             for (GameObject* object in [self.map objectsAtCoords:CoordsMake(x, y)]) {
                 
                 [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[object frameName] toCoords:CoordsMake(x, y)];
