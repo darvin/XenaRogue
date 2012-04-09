@@ -59,5 +59,4 @@ MapRect MapRectMake(int x, int y, int width, int height);
 - (BOOL) isPassableAtCoords:(Coords) coords;
 - (BOOL) isVisibleAtCoords:(Coords) coords;
 - (BOOL) isShootableAtCoords:(Coords) coords;
-- (NSString *) frameNameForLayer:(GameMapLayer)layer AtCoords:(Coords) coords;
 @end

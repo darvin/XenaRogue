@@ -11,6 +11,9 @@
 @class GameObject;
 @class Map;
 @protocol ObjectWithCoords <NSObject>
-@property (readwrite) Coords coords;
-@property (weak) Map* map;
+@property (readonly) Coords coords;
+@property (readonly, weak) Map* map;
+- (void) setCoords:(Coords)coords andMap:(Map*) map;
+- (void) setCoords:(Coords)coords;
+- (void) removeCoordsAndMap;
 @end

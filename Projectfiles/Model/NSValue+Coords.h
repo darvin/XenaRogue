@@ -20,7 +20,7 @@ static const Coords CoordsNull = {
 
 
 Coords CoordsMake(int x, int y);
-
+BOOL CoordsIsNull(Coords coords);
 @interface NSValue (Coords)
 +(NSValue*) valueWithCoords:(Coords)coords;
 @end

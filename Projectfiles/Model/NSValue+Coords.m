@@ -14,6 +14,11 @@ Coords CoordsMake(int x, int y) {
     };
     return result;
 }
+
+BOOL CoordsIsNull(Coords coords) {
+    return coords.x==CoordsNull.x&&coords.y==CoordsNull.y;
+}
+
 @implementation NSValue (Coords)
 
 +(NSValue*) valueWithCoords:(Coords)coords

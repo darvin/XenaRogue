@@ -90,14 +90,9 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     return [objectsByCoords objectForKey:[NSValue valueWithCoords:coords]];
 }
 
-- (BOOL) moveObject:(GameObject*)object toCoords:(Coords) coords {
-    [[self mutableObjectsAtCoords:object.coords] removeObject:object];
-    [self putObject:object toCoords:coords];
-    return YES;
-}
 
-- (void) putObject:(GameObject*)object toCoords:(Coords) coords{
-    object.coords = coords;
+
+- (void) _putObject:(GameObject*)object toCoords:(Coords) coords{
     NSMutableArray * objects = [self mutableObjectsAtCoords:coords];
     if (!objects) {
         objects = [NSMutableArray arrayWithObject:object];
@@ -108,10 +103,27 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     [objectsById setObject:object forKey:[NSValue valueWithGameObjectId:object.objectId]];
 }
 
+
+
+- (BOOL) moveObject:(GameObject*)object toCoords:(Coords) coords {
+    [[self mutableObjectsAtCoords:object.coords] removeObject:object];
+    [object setCoords:coords];
+    [self _putObject:object toCoords:coords];
+    return YES;
+}
+
+- (void) putObject:(GameObject*)object toCoords:(Coords) coords{
+    if (object.map==self) {
+        @throw [NSException exceptionWithName:@"MapError" reason:@"Trying to reput object to same map" userInfo:nil];
+    }
+    [object setCoords:coords andMap:self];
+    [self _putObject:object toCoords:coords];
+}
+
 - (void) removeObject:(GameObject*) object {
     [objectsById removeObjectForKey:[NSValue valueWithGameObjectId:object.objectId]];
     [[self mutableObjectsAtCoords:object.coords] removeObject:object];
-    object.coords = CoordsNull;
+    [object removeCoordsAndMap];
 }
 
 - (GameObject *) objectById:(GameObjectId) mapObjectId {
@@ -135,19 +147,5 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 }
 
 
-- (NSString *) frameNameForLayer:(GameMapLayer)layer AtCoords:(Coords) coords {
-    NSMutableArray * objects = [self mutableObjectsAtCoords:coords];
-    for (GameObject* object in objects) {
-        if (layer==object.mapLayer) {
-            return object.frameName;
-        }
-    }
-    if (layer==GameMapLayerFloor) {
-        return @"grey_floor";
-    } else {
-        return nil;
-    }
-    
-}
 
 @end
