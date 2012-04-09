@@ -16,7 +16,7 @@
 -(id) initWithLocalPlayer:(LocalPlayer*) localPlayer {
     if (self=[super init]) {
         _localPlayer=localPlayer;
-        self.map = [[Map alloc] initAndGenerateWithLocalPlayer:localPlayer andSize:MapSizeMake(100, 100)];
+        self.map = [[Map alloc] initAndGenerateWithLocalPlayer:localPlayer andSize:MapSizeMake(80, 60)];
         self.mapLayer = [[MapLayer alloc] init];
         [self drawMapRect:self.map.rect];
     }
@@ -29,11 +29,13 @@
     
     for (int x = mapRect.origin.x; x<mapRect.origin.x+mapRect.size.x; x++) {
         for (int y = mapRect.origin.y; y<mapRect.origin.y+mapRect.size.y; y++) {
-            for (GameObject* object in [self.map objectsAtCoords:CoordsMake(x, y)]) {
+            NSArray* objects = [self.map objectsAtCoords:CoordsMake(x, y)];
+            for (GameObject* object in objects) {
                 
                 [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[object frameName] toCoords:CoordsMake(x, y)];
-                
-                
+            }
+            if (![objects count]) { //fixme detect wall layer
+                [self.mapLayer addMapNodeWithFrameName:@"grey_floor" toCoords:CoordsMake(x, y)];
             }
         }
     }

@@ -12,7 +12,7 @@
 #import "Map.h"
 #import "NSValue+Coords.h"
 #import "MapObjectSprite.h"
-#define spriteSize 8
+#define spriteSize 4
 
 @implementation MapLayer
 
@@ -40,6 +40,7 @@
          @"spritesheet_default.plist"];  
         spriteSheet = [CCSpriteBatchNode
                                           batchNodeWithFile:@"spritesheet_default.png"];
+        [spriteSheet.texture setAliasTexParameters];
         [self addChild:spriteSheet];
         
         mapNodesById = [[NSMutableDictionary alloc] init];
@@ -65,6 +66,15 @@
         //do nothing. object already is map sprite
     }
     
+}
+
+
+
+- (void) addMapNodeWithFrameName:(NSString*) frameName toCoords:(Coords) coords {
+    MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
+    sprite.position = ccp(coords.x*spriteSize, coords.y*spriteSize);
+        
+    [spriteSheet addChild:sprite];    
 }
 
 @end

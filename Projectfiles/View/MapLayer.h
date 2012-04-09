@@ -19,4 +19,5 @@
 - (void) removeMapNodeWithId:(GameObjectId) nodeId;
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords;
 - (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords;
+- (void) addMapNodeWithFrameName:(NSString*) frameName toCoords:(Coords) coords;
 @end

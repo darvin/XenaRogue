@@ -7,20 +7,8 @@
 //
 
 #import "GameObject.h"
-@class Creature;
-@class Item;
 @class CreatureType;
-@protocol CreatureDelegate <NSObject>
-
-@optional
--(void) creature:(Creature*) creature wieldItem:(Item*) item;
--(void) creature:(Creature*) creature unwieldItem:(Item*) item;
--(void) creature:(Creature*) attackerCreature hitCreature:(Creature*) targetCreature onHitPoints:(NSUInteger) hitPoints;
--(void) creature:(Creature*) healerCreature healedCreature:(Creature*) targetCreature onHitPoints:(NSUInteger) hitPoints;
-
-@end
 @interface Creature : GameObject
-@property (weak) id<CreatureDelegate> creatureDelegate;
 @property (weak) CreatureType* type;
 @property (strong) NSArray * wieldedItems;
 

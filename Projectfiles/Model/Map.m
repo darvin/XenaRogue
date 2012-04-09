@@ -66,24 +66,16 @@ MapRect MapRectMake(int x, int y, int width, int height) {
         .x = RANDOM(self.size.x/2,self.size.x),
         .y = RANDOM(self.size.y/2,self.size.y),
     };
-    Coords coords1, coords2;
-    coords1.y = from.y;
-    coords2.y = til.y;
     for (int i=from.x; i<til.x; i++) {
-        coords1.x = i;
-        coords2.x = i;
-        [self putWallAtCoords:coords1];
-        [self putWallAtCoords:coords2];
+        for (int j=from.y; j<til.y; j++) {
+            [self putWallAtCoords:CoordsMake(i, from.y)];
+            [self putWallAtCoords:CoordsMake(i, til.y)];
+            [self putWallAtCoords:CoordsMake(from.x, j)];
+            [self putWallAtCoords:CoordsMake(til.x, j)];
+        }
     }
     
-    coords1.x = from.x;
-    coords2.x = til.x;
-    for (int i=from.y; i<til.y; i++) {
-        coords1.y = i;
-        coords2.y = i;
-        [self putWallAtCoords:coords1];
-        [self putWallAtCoords:coords2];
-    }
+    
     
 }
 
