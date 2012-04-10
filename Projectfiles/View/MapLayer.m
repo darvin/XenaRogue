@@ -12,7 +12,10 @@
 #import "Map.h"
 #import "NSValue+Coords.h"
 #import "MapObjectSprite.h"
-#define spriteSize 4
+#import "LandscapeAssetChooser.h"
+
+
+#define spriteSize 8
 
 @implementation MapLayer
 
@@ -32,9 +35,10 @@
 }
 
 
--(id) init {
+-(id) initWithSize:(MapSize) mapSize {
     if (self=[super init]) {
-        
+        size = mapSize;
+        [LandscapeAssetChooser sharedChooser];
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
          @"spritesheet_default.plist"];  
@@ -47,6 +51,11 @@
     }
     return self;
 }
+
+-(CGPoint) coordsForMapCoords:(Coords) coords {
+    return ccp(coords.x*spriteSize, size.y*spriteSize - coords.y*spriteSize);
+}
+
 - (void) removeMapNodeWithId:(GameObjectId) nodeId {
     
 }
@@ -58,7 +67,7 @@
 - (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords {
     if (![mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]]) {
         MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
-        sprite.position = ccp(coords.x*spriteSize, coords.y*spriteSize);
+        sprite.position = [self coordsForMapCoords:coords];
         
         [spriteSheet addChild:sprite];
         [mapNodesById setObject:sprite forKey:[NSValue valueWithGameObjectId:nodeId]];
@@ -69,12 +78,16 @@
 }
 
 
-
-- (void) addMapNodeWithFrameName:(NSString*) frameName toCoords:(Coords) coords {
+- (void) addMapTile:(LandscapeMapTile) mapTile withNeighbours:(LandscapeMapTile[8]) neighbours toCoords:(Coords) coords {
+    NSString *frameName = [[LandscapeAssetChooser sharedChooser] frameNameForMapTile:mapTile withNeighbours:neighbours];
     MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
-    sprite.position = ccp(coords.x*spriteSize, coords.y*spriteSize);
-        
-    [spriteSheet addChild:sprite];    
+    sprite.position = [self coordsForMapCoords:coords];
+    NSLog(@"%@,  %d,%d    %d",frameName, coords.x, coords.y, mapTile);
+    [spriteSheet addChild:sprite]; 
+}
+
+- (CGRect) boundingBox {
+    return CGRectMake(0, 0, size.x*spriteSize, size.y*spriteSize);
 }
 
 @end

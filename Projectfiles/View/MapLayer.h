@@ -14,10 +14,12 @@
 @interface MapLayer : CCLayer {
     NSMutableDictionary* mapNodesById;
     CCSpriteBatchNode *spriteSheet;
+    MapSize size;
 }
 
+- (id) initWithSize:(MapSize) mapSize;
 - (void) removeMapNodeWithId:(GameObjectId) nodeId;
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords;
 - (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords;
-- (void) addMapNodeWithFrameName:(NSString*) frameName toCoords:(Coords) coords;
+- (void) addMapTile:(LandscapeMapTile) mapTile withNeighbours:(LandscapeMapTile[8]) neighbours toCoords:(Coords) coords;
 @end

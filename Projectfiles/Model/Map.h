@@ -11,6 +11,12 @@
 #import "NSValue+Coords.h"
 #import "NSValue+GameObjectId.h"
 #import "ConvertableToDictionary.h"
+#import "LandscapeMapTile.h"
+
+
+#define kMapMAX_X 100
+#define kMapMAX_Y 100
+
 
 @protocol ObjectWithCoords;
 @protocol ConvertableToDictionary;
@@ -18,7 +24,7 @@
 @class GameObject;
 @class LocalPlayer;
 typedef  enum  {
-    GameMapLayerFloor = 0,
+    GameMapLayerLandscape =0,
     GameMapLayerOnFloor,
     GameMapLayerStandingCreatures,
     GameMapLayerFlyingCreatures,
@@ -35,22 +41,16 @@ typedef struct {
 MapRect MapRectMake(int x, int y, int width, int height);
 
 
-@class Map;
-@protocol MapDelegate <NSObject>
--(void) map:(Map*) map object:(GameObject*) object addedToCoords:(Coords)coords;
--(void) map:(Map*) map object:(GameObject*) object movedFromCoords:(Coords)fromCoords toCoords:(Coords) toCoords;
--(void) map:(Map*) map objectRemoved:(GameObject*)object;
-@end
-
 @interface Map : NSObject <ConvertableToDictionary> {
     NSMutableDictionary * objectsById;
     NSMutableDictionary * objectsByCoords;
+    LandscapeMapTile landscape[kMapMAX_X][kMapMAX_Y];
 }
 @property (readonly) Coords size;
-@property (weak) id<MapDelegate> delegate;
 @property (readonly) MapRect rect;
 - (id) initWithSize:(MapSize) size;
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size;
+- (id) initAndWithLocalPlayer:(LocalPlayer*) localPlayer andURL:(NSURL*)fileURL;
 - (BOOL) moveObject:(GameObject*)object toCoords:(Coords) coords;
 - (void) putObject:(GameObject*)object toCoords:(Coords) coords;
 - (void) removeObject:(GameObject*) object;
@@ -59,4 +59,6 @@ MapRect MapRectMake(int x, int y, int width, int height);
 - (BOOL) isPassableAtCoords:(Coords) coords;
 - (BOOL) isVisibleAtCoords:(Coords) coords;
 - (BOOL) isShootableAtCoords:(Coords) coords;
+- (LandscapeMapTile) landscapeMapTileAtCoords:(Coords)coords;
+- (LandscapeMapTile) landscapeMapTileOnDirection:(MapDirection)direction fromCoords:(Coords)coords;
 @end

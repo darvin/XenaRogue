@@ -9,7 +9,8 @@
 #import "Map.h"
 #import "LocalPlayer.h"
 #import "NSValue+Coords.h"
-#import "Wall.h"
+#import "MapDirection.h"
+
 #define RANDOM(from, to) ((arc4random() % (to)-(from))+(from))
 
 
@@ -36,6 +37,9 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 @implementation Map
 @synthesize size=_size;
 - (id) initWithSize:(MapSize) size {
+    if (size.x>kMapMAX_X||size.y>kMapMAX_Y) {
+        @throw [NSException exceptionWithName:@"MapError" reason:@"Map too big" userInfo:nil];
+    }
     if (self=[super init]) {
         objectsById = [[NSMutableDictionary alloc] init];
         objectsByCoords = [[NSMutableDictionary alloc] init];
@@ -51,43 +55,116 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 - (MapRect) rect {
     return MapRectMake(0, 0, self.size.x, self.size.y);
 }
-- (void) putWallAtCoords:(Coords)coords{
-//    NSLog(@"%d, %d", coords.x, coords.y);
-    Wall * wall = [[Wall alloc] init];
-    [self putObject:wall toCoords:coords];
+
+- (void) generateTestMap {
+    int newlandscape[5][5] = {
+        {LandscapeMapTileEmpty, LandscapeMapTileEmpty, LandscapeMapTileCeiling, LandscapeMapTileEmpty, LandscapeMapTileEmpty},
+        {LandscapeMapTileEmpty, LandscapeMapTileCeiling, LandscapeMapTileCeiling, LandscapeMapTileFloor, LandscapeMapTileCeiling},
+        {LandscapeMapTileEmpty, LandscapeMapTileFloor, LandscapeMapTileFloor, LandscapeMapTileWall, LandscapeMapTileEmpty},
+        {LandscapeMapTileWall, LandscapeMapTileLava, LandscapeMapTileFloor, LandscapeMapTileWall, LandscapeMapTileFloor},
+        {LandscapeMapTileWall, LandscapeMapTileWall, LandscapeMapTileWall, LandscapeMapTilePit, LandscapeMapTileFloor},
+    };
+    for (int x=0; x<self.size.x; x++) {
+        for (int y=0; y<self.size.y; y++) {
+            landscape[x][y] = newlandscape[x][y];
+        }
+    }
 }
 
+- (void) generateMap {
+//    generateMap(30, 30, 39);
+}
 - (void) generateDummyMap {
-    Coords from = {
-        .x = RANDOM(0, self.size.x/2),
-        .y = RANDOM(0, self.size.y/2),
-    };
-    Coords til = {
-        .x = RANDOM(self.size.x/2,self.size.x),
-        .y = RANDOM(self.size.y/2,self.size.y),
-    };
-    for (int i=from.x; i<til.x; i++) {
-        for (int j=from.y; j<til.y; j++) {
-            [self putWallAtCoords:CoordsMake(i, from.y)];
-            [self putWallAtCoords:CoordsMake(i, til.y)];
-            [self putWallAtCoords:CoordsMake(from.x, j)];
-            [self putWallAtCoords:CoordsMake(til.x, j)];
+    for (int x=0; x<self.size.x; x++) {
+        for (int y=0; y<self.size.y; y++) {
+            landscape[x][y]=LandscapeMapTileCeiling;
         }
     }
     
+    
+//    Coords from = {
+//        .x = RANDOM(0, self.size.x/2),
+//        .y = RANDOM(0, self.size.y/2),
+//    };
+//    Coords til = {
+//        .x = RANDOM(self.size.x/2,self.size.x),
+//        .y = RANDOM(self.size.y/2,self.size.y),
+//    };
+//    for (int i=from.x; i<til.x; i++) {
+//        for (int j=from.y; j<til.y; j++) {
+//            [self putWallAtCoords:CoordsMake(i, from.y)];
+//            [self putWallAtCoords:CoordsMake(i, til.y)];
+//            [self putWallAtCoords:CoordsMake(from.x, j)];
+//            [self putWallAtCoords:CoordsMake(til.x, j)];
+//        }
+//    }
+//    
     
     
 }
 
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size {
     if (self=[self initWithSize:size]) {
-        [self generateDummyMap];
+        [self generateMap];
+    }
+    return self;
+}
+
+
+- (id) initAndWithLocalPlayer:(LocalPlayer*) localPlayer andURL:(NSURL*)fileURL {
+    // read everything from text
+    NSString* fileContents = 
+    [NSString stringWithContentsOfURL:fileURL  
+                              encoding:NSUTF8StringEncoding error:nil];
+    
+    // first, separate by new line
+    NSArray* allLinedStrings = 
+    [fileContents componentsSeparatedByCharactersInSet:
+     [NSCharacterSet newlineCharacterSet]];
+    
+    // then break down even further 
+    NSString* firstLine = [allLinedStrings objectAtIndex:0];
+    
+    
+    Coords size = CoordsMake([firstLine length], [allLinedStrings count]);
+    
+    if (self=[self initWithSize:size]) {
+        for (uint j=0; j<[allLinedStrings count]; j++) {
+            NSString *line = [allLinedStrings objectAtIndex:j];
+            for (uint i=0; i<[line length]; i++) {
+                unichar currentChar = [line characterAtIndex:i];
+                LandscapeMapTile tile = [LandscapeMapTileName mapTileForASCIIChar:[NSString stringWithCharacters:&currentChar length:1]];
+                landscape[i][j] = tile;
+            }
+        }
     }
     return self;
 }
 
 - (NSMutableArray *) mutableObjectsAtCoords:(Coords) coords {
     return [objectsByCoords objectForKey:[NSValue valueWithCoords:coords]];
+}
+
+
+- (LandscapeMapTile) landscapeMapTileAtCoords:(Coords)coords {
+    if (coords.x<0||coords.y<0||coords.x>self.size.x||coords.y>self.size.y) {
+        return LandscapeMapTileEmpty;
+    }
+    
+    //Fixme ceiling hack
+    if (coords.y<self.size.y) {
+        if (landscape[coords.x][coords.y+1]==LandscapeMapTileWall&&landscape[coords.x][coords.y]==LandscapeMapTileWall) {
+            return LandscapeMapTileCeiling;
+        }
+    }
+    
+    return landscape[coords.x][coords.y];
+}
+
+- (LandscapeMapTile) landscapeMapTileOnDirection:(MapDirection)direction fromCoords:(Coords)coords {
+    Coords delta = CoordsDeltaForDirection(direction);
+    Coords result = CoordsSum(coords, delta);
+    return [self landscapeMapTileAtCoords:result];
 }
 
 

@@ -42,7 +42,7 @@
         leftJoy.joystick.numberOfDirections = 8;
 //        leftJoy.joystick.thumbRadius = 0.0f;
 
-		[self addChild:leftJoy];
+//		[self addChild:leftJoy];
         
     }
     return self;

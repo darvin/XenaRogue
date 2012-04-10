@@ -16,8 +16,8 @@
 -(id) initWithLocalPlayer:(LocalPlayer*) localPlayer {
     if (self=[super init]) {
         _localPlayer=localPlayer;
-        self.map = [[Map alloc] initAndGenerateWithLocalPlayer:localPlayer andSize:MapSizeMake(80, 60)];
-        self.mapLayer = [[MapLayer alloc] init];
+        self.map = [[Map alloc] initAndWithLocalPlayer:localPlayer andURL:[[NSBundle mainBundle] URLForResource:@"map" withExtension:@"txt"]];
+        self.mapLayer = [[MapLayer alloc] initWithSize:self.map.size];
         [self drawMapRect:self.map.rect];
     }
     return self;
@@ -29,13 +29,20 @@
     
     for (int x = mapRect.origin.x; x<mapRect.origin.x+mapRect.size.x; x++) {
         for (int y = mapRect.origin.y; y<mapRect.origin.y+mapRect.size.y; y++) {
-            NSArray* objects = [self.map objectsAtCoords:CoordsMake(x, y)];
+            Coords coords = CoordsMake(x, y);
+            LandscapeMapTile mapTile = [self.map landscapeMapTileAtCoords:coords];
+            LandscapeMapTile neighbours [8];
+            for (int direction=0; direction<MapDirection_MAX; direction++) {
+                neighbours[direction] = [self.map landscapeMapTileOnDirection:direction fromCoords:coords];
+            }
+            [self.mapLayer addMapTile:mapTile withNeighbours:neighbours toCoords:coords];
+            
+            
+            
+            NSArray* objects = [self.map objectsAtCoords:coords];
             for (GameObject* object in objects) {
                 
-                [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[object frameName] toCoords:CoordsMake(x, y)];
-            }
-            if (![objects count]) { //fixme detect wall layer
-                [self.mapLayer addMapNodeWithFrameName:@"grey_floor" toCoords:CoordsMake(x, y)];
+                [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[object frameName] toCoords:coords];
             }
         }
     }
