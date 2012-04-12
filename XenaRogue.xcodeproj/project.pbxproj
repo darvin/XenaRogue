@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5734B05D15368F7D00D98D46 /* sheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5734B05B15368F7D00D98D46 /* sheet.plist */; };
+		5734B05E15368F7D00D98D46 /* sheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5734B05B15368F7D00D98D46 /* sheet.plist */; };
+		5734B05F15368F7D00D98D46 /* sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5734B05C15368F7D00D98D46 /* sheet.png */; };
+		5734B06015368F7D00D98D46 /* sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5734B05C15368F7D00D98D46 /* sheet.png */; };
 		5763A3EB1533E4BF00A7D38D /* LandscapeAssetChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EA1533E4BF00A7D38D /* LandscapeAssetChooser.m */; };
 		5763A3F01533E5F300A7D38D /* LandscapeMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */; };
 		5763A3F31533EE5400A7D38D /* MapDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3F21533EE5400A7D38D /* MapDirection.m */; };
@@ -48,10 +52,6 @@
 		57E94DD41532327900A86E32 /* MapObjectSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DB41532327900A86E32 /* MapObjectSprite.m */; };
 		57E94DD71532331700A86E32 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DD61532331700A86E32 /* GameLayer.m */; };
 		57E94DD81532331700A86E32 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DD61532331700A86E32 /* GameLayer.m */; };
-		57E94DDB1532343B00A86E32 /* spritesheet_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57E94DD91532343B00A86E32 /* spritesheet_default.plist */; };
-		57E94DDC1532343B00A86E32 /* spritesheet_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57E94DD91532343B00A86E32 /* spritesheet_default.plist */; };
-		57E94DDD1532343B00A86E32 /* spritesheet_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E94DDA1532343B00A86E32 /* spritesheet_default.png */; };
-		57E94DDE1532343B00A86E32 /* spritesheet_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E94DDA1532343B00A86E32 /* spritesheet_default.png */; };
 		DC485B1113AA0E5600F2BC70 /* libchipmunk-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B0D13AA0E5600F2BC70 /* libchipmunk-mac.a */; };
 		DC485B1713AA0EBB00F2BC70 /* libbox2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B1613AA0EBB00F2BC70 /* libbox2d-mac.a */; };
 		DC485B4613AA18A600F2BC70 /* libcocosdenshion-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B4513AA18A600F2BC70 /* libcocosdenshion-mac.a */; };
@@ -93,6 +93,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5734B05B15368F7D00D98D46 /* sheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sheet.plist; sourceTree = "<group>"; };
+		5734B05C15368F7D00D98D46 /* sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sheet.png; sourceTree = "<group>"; };
 		5763A3E91533E4BF00A7D38D /* LandscapeAssetChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeAssetChooser.h; sourceTree = "<group>"; };
 		5763A3EA1533E4BF00A7D38D /* LandscapeAssetChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeAssetChooser.m; sourceTree = "<group>"; };
 		5763A3EE1533E5F300A7D38D /* LandscapeMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeMapTile.h; sourceTree = "<group>"; };
@@ -136,8 +138,6 @@
 		57E94DB41532327900A86E32 /* MapObjectSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapObjectSprite.m; sourceTree = "<group>"; };
 		57E94DD51532331700A86E32 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		57E94DD61532331700A86E32 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
-		57E94DD91532343B00A86E32 /* spritesheet_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = spritesheet_default.plist; sourceTree = "<group>"; };
-		57E94DDA1532343B00A86E32 /* spritesheet_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spritesheet_default.png; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC485B0D13AA0E5600F2BC70 /* libchipmunk-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libchipmunk-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC485B1613AA0EBB00F2BC70 /* libbox2d-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libbox2d-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,8 +386,8 @@
 			children = (
 				57BC0BE6153419760035A280 /* mapnotpit.txt */,
 				577D44DA1534159A00B8119E /* map.txt */,
-				57E94DD91532343B00A86E32 /* spritesheet_default.plist */,
-				57E94DDA1532343B00A86E32 /* spritesheet_default.png */,
+				5734B05B15368F7D00D98D46 /* sheet.plist */,
+				5734B05C15368F7D00D98D46 /* sheet.png */,
 				57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
 			);
@@ -496,11 +496,11 @@
 				DCC1A10813A94ED5005BD75D /* Icon@2x.png in Resources */,
 				DCC1A3AF13A94F1A005BD75D /* config.lua in Resources */,
 				DC599A43142289D70067495F /* iTunesArtwork in Resources */,
-				57E94DDB1532343B00A86E32 /* spritesheet_default.plist in Resources */,
-				57E94DDD1532343B00A86E32 /* spritesheet_default.png in Resources */,
 				57D5F57D1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */,
 				577D44DB1534159A00B8119E /* map.txt in Resources */,
 				57BC0BE7153419760035A280 /* mapnotpit.txt in Resources */,
+				5734B05D15368F7D00D98D46 /* sheet.plist in Resources */,
+				5734B05F15368F7D00D98D46 /* sheet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,11 +513,11 @@
 				DCC1A26E13A94EE6005BD75D /* fps_images.png in Resources */,
 				DCC1A27013A94EE6005BD75D /* icon.icns in Resources */,
 				DCC1A3B013A94F1A005BD75D /* config.lua in Resources */,
-				57E94DDC1532343B00A86E32 /* spritesheet_default.plist in Resources */,
-				57E94DDE1532343B00A86E32 /* spritesheet_default.png in Resources */,
 				57D5F57E1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */,
 				577D44DC1534159A00B8119E /* map.txt in Resources */,
 				57BC0BE8153419760035A280 /* mapnotpit.txt in Resources */,
+				5734B05E15368F7D00D98D46 /* sheet.plist in Resources */,
+				5734B06015368F7D00D98D46 /* sheet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

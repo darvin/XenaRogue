@@ -23,19 +23,22 @@
             return i;
         }
     }
-    return LandscapeMapTile_MAX;
+    @throw [NSException exceptionWithName:@"MapTileError" reason:@"invalid name" userInfo:nil];
+    return LandscapeMapTile_UNEXIST;
 }
 
 
 + (LandscapeMapTile) mapTileForASCIIChar:(NSString*) name {
-    NSArray* names = [NSArray arrayWithObjects:@"0", @" ", @"%", @".", @"#", @"-", nil];
+    NSArray* names = [NSArray arrayWithObjects:kLandscapeMapTileASCIIChars];
     for (uint i=0; i<[names count];i++) {
         NSString* aname = [names objectAtIndex:i];
         if ([aname isEqualToString:name]){
             return i;
         }
     }
-    return LandscapeMapTile_MAX;
+    
+    @throw [NSException exceptionWithName:@"MapTileError" reason: [NSString stringWithFormat: @"invalid char %@", name] userInfo:[NSDictionary dictionaryWithObject:name forKey:@"char"]];
+    return LandscapeMapTile_UNEXIST;
 }
 
 @end

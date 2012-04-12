@@ -41,9 +41,9 @@
         [LandscapeAssetChooser sharedChooser];
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
-         @"spritesheet_default.plist"];  
+         @"sheet.plist"];  
         spriteSheet = [CCSpriteBatchNode
-                                          batchNodeWithFile:@"spritesheet_default.png"];
+                                          batchNodeWithFile:@"sheet.png"];
         [spriteSheet.texture setAliasTexParameters];
         [self addChild:spriteSheet];
         

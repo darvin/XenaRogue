@@ -20,6 +20,34 @@
 	</dict>
 	<key>type</key>
 	<dict>
+		<key>water</key>
+		<dict>
+			<key>defaultTileIndex</key>
+			<integer>114</integer>
+			<key>rules</key>
+			<array>
+				<dict>
+					<key>map</key>
+					<dict>
+						<key>n</key>
+						<string>!water</string>
+					</dict>
+					<key>tileIndex</key>
+					<integer>115</integer>
+				</dict>
+			</array>
+			<key>typeStr</key>
+			<string>water</string>
+		</dict>
+		<key>column</key>
+		<dict>
+			<key>defaultTileIndex</key>
+			<integer>2</integer>
+			<key>rules</key>
+			<array/>
+			<key>typeStr</key>
+			<string>column</string>
+		</dict>
 		<key>ceiling</key>
 		<dict>
 			<key>defaultTileIndex</key>
@@ -67,6 +95,15 @@
 					</dict>
 					<key>tileIndex</key>
 					<integer>6</integer>
+				</dict>
+				<dict>
+					<key>map</key>
+					<dict>
+						<key>s</key>
+						<string>column</string>
+					</dict>
+					<key>tileIndex</key>
+					<integer>64</integer>
 				</dict>
 				<dict>
 					<key>map</key>
@@ -980,6 +1017,19 @@
 					</dict>
 					<key>tileIndex</key>
 					<integer>33</integer>
+				</dict>
+				<dict>
+					<key>map</key>
+					<dict>
+						<key>n</key>
+						<string>column</string>
+						<key>nw</key>
+						<string>wall</string>
+						<key>ne</key>
+						<string>wall</string>
+					</dict>
+					<key>tileIndex</key>
+					<integer>112</integer>
 				</dict>
 				<dict>
 					<key>map</key>

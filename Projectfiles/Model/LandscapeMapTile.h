@@ -9,15 +9,19 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
+    LandscapeMapTile_UNEXIST=-1,
     LandscapeMapTileEmpty=0,
     LandscapeMapTilePit,
     LandscapeMapTileCeiling,
     LandscapeMapTileFloor,
     LandscapeMapTileWall,
     LandscapeMapTileLava,
+    LandscapeMapTileWater,
+    LandscapeMapTileColumn,
     LandscapeMapTile_MAX,
 } LandscapeMapTile;
-#define kLandscapeMapTileNames @"empty", @"pit", @"ceiling", @"floor", @"wall", @"lava", nil
+#define kLandscapeMapTileNames @"empty", @"pit", @"ceiling", @"floor", @"wall", @"lava", @"water", @"column", nil
+#define kLandscapeMapTileASCIIChars @"0", @" ", @"%", @".", @"#", @"-", @"w", @"|", nil
 @interface LandscapeMapTileName : NSObject
 + (NSString*) nameForMapTile:(LandscapeMapTile) mapTile;
 + (LandscapeMapTile) mapTileForName:(NSString*) name;
