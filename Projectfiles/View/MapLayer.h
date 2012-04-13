@@ -20,6 +20,7 @@
 - (id) initWithSize:(MapSize) mapSize;
 - (void) removeMapNodeWithId:(GameObjectId) nodeId;
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords;
+- (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords withAnimation:(NSString*) animationName andFrameNameFinal:(NSString*) frameNameFinal;
 - (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords;
 - (void) addMapTile:(LandscapeMapTile) mapTile withNeighbours:(LandscapeMapTile[8]) neighbours toCoords:(Coords) coords;
 @end

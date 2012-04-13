@@ -16,6 +16,9 @@
 		5763A3F31533EE5400A7D38D /* MapDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3F21533EE5400A7D38D /* MapDirection.m */; };
 		577D44DB1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		577D44DC1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
+		57A074BD15378A8000AA3E17 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074BC15378A8000AA3E17 /* GameModel.m */; };
+		57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074D21537F9EB00AA3E17 /* DirectiveMove.m */; };
+		57A074D715380BE900AA3E17 /* animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57A074D615380BE900AA3E17 /* animations.plist */; };
 		57BC0BE7153419760035A280 /* mapnotpit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BC0BE6153419760035A280 /* mapnotpit.txt */; };
 		57BC0BE8153419760035A280 /* mapnotpit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BC0BE6153419760035A280 /* mapnotpit.txt */; };
 		57D5F57D1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */; };
@@ -102,6 +105,12 @@
 		5763A3F11533EE5400A7D38D /* MapDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDirection.h; sourceTree = "<group>"; };
 		5763A3F21533EE5400A7D38D /* MapDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDirection.m; sourceTree = "<group>"; };
 		577D44DA1534159A00B8119E /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		57A074BB15378A8000AA3E17 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		57A074BC15378A8000AA3E17 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		57A074D11537F9EB00AA3E17 /* DirectiveMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectiveMove.h; sourceTree = "<group>"; };
+		57A074D21537F9EB00AA3E17 /* DirectiveMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectiveMove.m; sourceTree = "<group>"; };
+		57A074D51538062C00AA3E17 /* GameModelNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameModelNotifications.h; sourceTree = "<group>"; };
+		57A074D615380BE900AA3E17 /* animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = animations.plist; sourceTree = "<group>"; };
 		57BC0BE6153419760035A280 /* mapnotpit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapnotpit.txt; sourceTree = "<group>"; };
 		57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dungeon_tileset_scheme.plist; sourceTree = "<group>"; };
 		57E94D911532327900A86E32 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -265,6 +274,11 @@
 				5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */,
 				5763A3F11533EE5400A7D38D /* MapDirection.h */,
 				5763A3F21533EE5400A7D38D /* MapDirection.m */,
+				57A074BB15378A8000AA3E17 /* GameModel.h */,
+				57A074BC15378A8000AA3E17 /* GameModel.m */,
+				57A074D11537F9EB00AA3E17 /* DirectiveMove.h */,
+				57A074D21537F9EB00AA3E17 /* DirectiveMove.m */,
+				57A074D51538062C00AA3E17 /* GameModelNotifications.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +404,7 @@
 				5734B05C15368F7D00D98D46 /* sheet.png */,
 				57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
+				57A074D615380BE900AA3E17 /* animations.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -501,6 +516,7 @@
 				57BC0BE7153419760035A280 /* mapnotpit.txt in Resources */,
 				5734B05D15368F7D00D98D46 /* sheet.plist in Resources */,
 				5734B05F15368F7D00D98D46 /* sheet.png in Resources */,
+				57A074D715380BE900AA3E17 /* animations.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +566,8 @@
 				5763A3EB1533E4BF00A7D38D /* LandscapeAssetChooser.m in Sources */,
 				5763A3F01533E5F300A7D38D /* LandscapeMapTile.m in Sources */,
 				5763A3F31533EE5400A7D38D /* MapDirection.m in Sources */,
+				57A074BD15378A8000AA3E17 /* GameModel.m in Sources */,
+				57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

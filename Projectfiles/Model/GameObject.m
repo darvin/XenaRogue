@@ -7,6 +7,7 @@
 //
 
 #import "GameObject.h"
+#import "GameModelNotifications.h"
 static GameObjectId lastGameObjectId = 0;
 
 @interface GameObject ()
@@ -30,7 +31,10 @@ static GameObjectId lastGameObjectId = 0;
     return GameMapLayerDEFAULT;
 }
 - (BOOL) moveToCoords:(Coords) coords{
-    return [self.map moveObject:self toCoords:coords];
+    BOOL result = [self.map moveObject:self toCoords:coords];
+    [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameObjectMoved object:self];
+    return result;
+    
 }
 
 - (void) setCoords:(Coords)coords andMap:(Map*) map {

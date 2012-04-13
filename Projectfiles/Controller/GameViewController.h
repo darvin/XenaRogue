@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Map.h"
-#import "MapLayer.h"
+#import "MapDirection.h"
+@class Map;
+@class LocalPlayer;
+@class GameModel;
+@class MapLayer;
 @interface GameViewController : NSObject
-@property (strong) Map* map;
+@property (weak) Map* map;
 @property (strong) MapLayer* mapLayer;
-@property (strong) LocalPlayer* localPlayer;
--(id) initWithLocalPlayer:(LocalPlayer*) localPlayer;
+@property (weak) LocalPlayer* localPlayer;
+@property (strong) GameModel* gameModel;
+-(id) initWithGameModel:(GameModel*) gameModel;
 - (CCScene *) scene;
+-(void) localPlayerJoystickPressedWithDirection:(MapDirection) direction;
 @end

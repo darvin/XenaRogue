@@ -19,4 +19,5 @@
 @property (readonly) GameObjectId objectId;
 @property (readonly) GameMapLayer mapLayer; 
 @property (readonly) NSString* frameName;
+- (BOOL) moveToCoords:(Coords) coord;
 @end

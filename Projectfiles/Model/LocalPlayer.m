@@ -16,6 +16,6 @@
     return self;
 }
 -(NSString*) frameName {
-    return @"archer";
+    return @"localPlayer";
 }
 @end

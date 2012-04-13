@@ -7,9 +7,10 @@
 //
 
 #import "GameObject.h"
+#import "MapDirection.h"
 @class CreatureType;
 @interface Creature : GameObject
 @property (weak) CreatureType* type;
 @property (strong) NSArray * wieldedItems;
-
+@property MapDirection direction;
 @end

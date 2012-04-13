@@ -13,4 +13,9 @@
 {
     return [NSValue value: &gameObjectId withObjCType: @encode(GameObjectId)];
 }
+-(GameObjectId) gameObjectIdValue {
+    GameObjectId result;
+    [self getValue:&result];
+    return result;
+}
 @end

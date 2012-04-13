@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "ConvertableToDictionary.h"
+
+@class GameModel;
+
 @protocol ConvertableToDictionary;
 
 @interface Directive : NSObject <ConvertableToDictionary> {
@@ -18,7 +21,7 @@
 
 - (id) initWithArgs:(NSArray*) args;
 - (id) initWithArgs:(NSArray*) args andRandomStack:(NSArray*) randomStack;
-- (void) run;
+- (void) runOnGameModel:(GameModel*) gameModel;
 
 
 @end

@@ -59,10 +59,40 @@ Coords CoordsDeltaForDirection(MapDirection direction) {
     return CoordsMake(x, y);
 }
 
+
+MapDirection MapDirectionFromDeltaCoords(Coords coords1, Coords coords2) {
+    if (coords2.x<coords1.x&&coords2.y<coords1.y)
+        return MapDirectionNW;
+    else if (coords1.x==coords2.x&&coords2.y<coords1.y)
+        return MapDirectionN;
+    else if (coords2.x>coords1.x&&coords2.y<coords1.y)
+        return MapDirectionNE;
+    else if (coords2.x<coords1.x&&coords2.y>coords1.y)
+        return MapDirectionSW;
+    else if (coords1.x==coords2.x&&coords2.y>coords1.y)
+        return MapDirectionS;
+    else if (coords2.x>coords1.x&&coords2.y>coords1.y)
+        return MapDirectionSE;
+    else if (coords2.x>coords1.x&&coords2.y==coords1.y)
+        return MapDirectionE;
+    else if (coords2.x<coords1.x&&coords2.y==coords1.y)
+        return MapDirectionW;
+    
+    
+    return MapDirection_MAX;
+}
+
 @implementation NSValue (Coords)
 
 +(NSValue*) valueWithCoords:(Coords)coords
 {
     return [NSValue value: &coords withObjCType: @encode(Coords)];
 }
+
+-(Coords) coordsValue {
+    Coords result;
+    [self getValue:&result];
+    return result;
+}
+
 @end

@@ -9,8 +9,21 @@
 #import "Creature.h"
 
 @implementation Creature
+@synthesize direction=_direction;
+-(id) init {
+    if (self=[super init]) {
+        _direction = MapDirectionS;
+    }
+    return self;
+}
+
 - (GameMapLayer) mapLayer {
     return GameMapLayerStandingCreatures;
+}
+
+- (BOOL) moveToCoords:(Coords) coords{ 
+    self.direction = MapDirectionFromDeltaCoords(self.coords, coords);
+    return [super moveToCoords:coords];
 }
 
 @end

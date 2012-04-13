@@ -15,7 +15,7 @@
 #import "LandscapeAssetChooser.h"
 
 
-#define spriteSize 8
+#define spriteSize 16
 
 @implementation MapLayer
 
@@ -44,6 +44,10 @@
          @"sheet.plist"];  
         spriteSheet = [CCSpriteBatchNode
                                           batchNodeWithFile:@"sheet.png"];
+        
+        
+        [[CCAnimationCache sharedAnimationCache] addAnimationsWithFile:@"animations.plist"];
+        
         [spriteSheet.texture setAliasTexParameters];
         [self addChild:spriteSheet];
         
@@ -61,15 +65,44 @@
 }
 
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords {
-
+    MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
+    [sprite runAction: [CCMoveTo actionWithDuration:1 position:[self coordsForMapCoords:coords]]];
 }
 
+- (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords withAnimation:(NSString*) animationName andFrameNameFinal:(NSString*) frameNameFinal {
+    MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
+
+    NSLog(@"%@", animationName);
+    CCAnimation *animation = [[CCAnimationCache sharedAnimationCache] animationByName:animationName];
+    CCAction *animateAction = nil;
+    if ( animation != nil ) {
+        animateAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
+        [sprite runAction:animateAction];
+    }
+    
+    
+    CCAction *moveAction = [CCSequence actions:                          
+                       [CCMoveTo actionWithDuration:1 position:[self coordsForMapCoords:coords]],
+                       [CCCallBlock actionWithBlock:^{
+        [sprite stopAction:animateAction];
+        [self setFrameName:frameNameFinal toMapNodeWithId:nodeId];
+        
+    }],
+                       nil];
+    [sprite runAction:moveAction];
+
+}
+- (void) setFrameName:(NSString*) frameName toMapNodeWithId:(GameObjectId) nodeId {
+    MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
+    [sprite setTextureRect:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: frameName ].rect ];
+
+}
 - (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords {
     if (![mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]]) {
-        MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
+        MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:[frameName stringByAppendingString:@".png"]];
         sprite.position = [self coordsForMapCoords:coords];
         
-        [spriteSheet addChild:sprite];
+        [spriteSheet addChild:sprite z:1000];
         [mapNodesById setObject:sprite forKey:[NSValue valueWithGameObjectId:nodeId]];
     } else {
         //do nothing. object already is map sprite

@@ -13,20 +13,21 @@
 #import "SneakyJoystickSkinnedBase.h"
 #import "ColoredCircleSprite.h"
 #import "CCLayerPanZoom.h"
+#import "GameModel.h"
 @implementation GameLayer
 
-
+@synthesize joystick=_joystick;
 
 
 -(id) init {
     if (self=[super init]) {
 
-        GameViewController *vc = [[GameViewController alloc] initWithLocalPlayer:nil];
+        vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
         
         CCLayerPanZoom *panZoomLayer = [[CCLayerPanZoom alloc] init];
         
-        panZoomLayer.position = vc.mapLayer.boundingBoxCenter;
-        panZoomLayer.panBoundsRect = vc.mapLayer.boundingBox;
+//        panZoomLayer.position = vc.mapLayer.boundingBoxCenter;
+//        panZoomLayer.panBoundsRect = vc.mapLayer.boundingBox;
         [panZoomLayer addChild:vc.mapLayer];
         panZoomLayer.maxScale = 10;
         panZoomLayer.minScale = 2;
@@ -40,13 +41,26 @@
 		leftJoy.joystick = [[SneakyJoystick alloc] initWithRect:CGRectMake(0,0,128,128)];
         leftJoy.joystick.isDPad = YES;
         leftJoy.joystick.numberOfDirections = 8;
-//        leftJoy.joystick.thumbRadius = 0.0f;
-
-//		[self addChild:leftJoy];
+        leftJoy.joystick.thumbRadius = 0.0f;
+        self.joystick = leftJoy.joystick;
+		[self addChild:leftJoy];
+        
+        //move to proper place
+        [self schedule:@selector(tick:)];
         
     }
     return self;
 }
+-(void)tick:(float)dt {
+    deltaSinceTick += dt;
+    if (deltaSinceTick>=timeInTick) {
+        deltaSinceTick = 0;
+        if (self.joystick.degrees) {
+            [vc localPlayerJoystickPressedWithDirection:MapDirectionFromDegrees(self.joystick.degrees)];
 
+        }
+
+    }
+}
 
 @end

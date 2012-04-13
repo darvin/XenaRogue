@@ -23,6 +23,9 @@ Coords CoordsMake(int x, int y);
 BOOL CoordsIsNull(Coords coords);
 Coords CoordsSum(Coords c1, Coords c2);
 Coords CoordsDeltaForDirection(MapDirection direction);
+MapDirection MapDirectionFromDeltaCoords(Coords coords1, Coords coords2);
+
 @interface NSValue (Coords)
 +(NSValue*) valueWithCoords:(Coords)coords;
+-(Coords) coordsValue;
 @end

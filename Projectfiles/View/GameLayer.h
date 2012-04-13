@@ -8,6 +8,12 @@
 
 #import "CCLayer.h"
 #import "cocos2d.h"
-@interface GameLayer : CCLayer
-
+#define timeInTick 0.4
+@class SneakyJoystick;
+@class GameViewController;
+@interface GameLayer : CCLayer {
+    float deltaSinceTick;
+    GameViewController * vc;
+}
+@property (weak) SneakyJoystick* joystick;
 @end
