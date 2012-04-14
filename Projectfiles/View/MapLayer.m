@@ -18,6 +18,7 @@
 #define spriteSize 16
 
 @implementation MapLayer
+@synthesize delegate=_delegate;
 
 +(CCScene *) scene
 {
@@ -52,6 +53,8 @@
         [self addChild:spriteSheet];
         
         mapNodesById = [[NSMutableDictionary alloc] init];
+        self.isTouchEnabled = YES;
+
     }
     return self;
 }
@@ -121,6 +124,17 @@
 
 - (CGRect) boundingBox {
     return CGRectMake(0, 0, size.x*spriteSize, size.y*spriteSize);
+}
+
+
+- (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+    UITouch* touch = [touches anyObject];
+
+    CGPoint location = [self convertTouchToNodeSpace:touch];
+    NSLog(@"%@", NSStringFromCGPoint(location));
+    Coords touchedCoords = CoordsMake(location.x/spriteSize, location.y/spriteSize);
+    NSLog(@"%d %d", touchedCoords.x, touchedCoords.y);
+    [self.delegate mapLayer:self touchedAtCoords:touchedCoords];
 }
 
 @end

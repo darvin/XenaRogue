@@ -11,11 +11,21 @@
 #import "NSValue+GameObjectId.h"
 
 #import "cocos2d.h"
+
+@class MapLayer;
+
+@protocol MapLayerDelegate <NSObject>
+
+-(void) mapLayer:(MapLayer*) mapLayer touchedAtCoords:(Coords) coords;
+
+@end
+
 @interface MapLayer : CCLayer {
     NSMutableDictionary* mapNodesById;
     CCSpriteBatchNode *spriteSheet;
     MapSize size;
 }
+@property (weak) id<MapLayerDelegate> delegate;
 
 - (id) initWithSize:(MapSize) mapSize;
 - (void) removeMapNodeWithId:(GameObjectId) nodeId;

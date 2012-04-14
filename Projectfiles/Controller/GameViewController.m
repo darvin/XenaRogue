@@ -25,6 +25,7 @@
         self.map = gameModel.currentMap;
         self.gameModel = gameModel;
         self.mapLayer = [[MapLayer alloc] initWithSize:self.map.size];
+        self.mapLayer.delegate = self;
         [self drawMapRect:self.map.rect];
         
         [self subscribeToGameModelNotifications];
@@ -110,6 +111,11 @@
     GameObject* gameObject = notification.object;
     GameObjectId objectId = gameObject.objectId;
     [self.mapLayer moveMapNodeWithId:objectId toCoords:gameObject.coords withAnimation:[self frameNameForGameObject:gameObject action:@"walk"] andFrameNameFinal:[[self frameNameForGameObject:gameObject action:@"stand"] stringByAppendingString:@".png"]];
+}
+
+- (void) mapLayer:(MapLayer *)mapLayer touchedAtCoords:(Coords)coords {
+    DirectiveMove * dir = [[DirectiveMove alloc] initWithArgs:[NSArray arrayWithObjects:[NSValue valueWithGameObjectId: self.localPlayer.objectId], [NSValue valueWithCoords:coords], nil]];
+    [dir runOnGameModel:self.gameModel];
 }
 
 @end

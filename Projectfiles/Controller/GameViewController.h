@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "MapDirection.h"
+#import "MapLayer.h"
 @class Map;
 @class LocalPlayer;
 @class GameModel;
 @class MapLayer;
-@interface GameViewController : NSObject
+@interface GameViewController : NSObject <MapLayerDelegate>
 @property (weak) Map* map;
 @property (strong) MapLayer* mapLayer;
 @property (weak) LocalPlayer* localPlayer;
