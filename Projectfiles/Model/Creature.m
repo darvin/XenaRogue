@@ -43,7 +43,17 @@
 
 -(void) tick {
     if (!CoordsIsNull(rallyPoint)) {
-        [[self map] findPathFromCoords:self.coords toCoords:rallyPoint];
+        if (abs(self.coords.x-rallyPoint.x)<=1&&abs(self.coords.y-rallyPoint.y)<=1) {
+            [self moveToCoords:rallyPoint];
+            rallyPoint = CoordsNull;
+        } else {
+            NSArray * path = [[self map] findPathFromCoords:self.coords toCoords:rallyPoint];
+            NSValue *firstStep = [path lastObject];
+            NSLog(@"step: %d,%d",[firstStep coordsValue].x,[firstStep coordsValue].y);
+            [self moveToCoords:[firstStep coordsValue]];
+
+        }
+        
     }
 }
 @end
