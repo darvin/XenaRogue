@@ -14,8 +14,12 @@
     if (self=[super init]){
         self.localPlayer = [[LocalPlayer alloc] initWithXp:0];
         self.currentMap = [[Map alloc] initAndWithLocalPlayer:self.localPlayer andURL:[[NSBundle mainBundle] URLForResource:@"map" withExtension:@"txt"]];
-        [self.currentMap putObject:self.localPlayer toCoords:CoordsMake(7, 7)];
+        [self.currentMap putObject:self.localPlayer toCoords:CoordsMake(1, 1)];
     }
     return self;
+}
+
+-(void) tick {
+    [self.currentMap tick];
 }
 @end

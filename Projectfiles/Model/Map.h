@@ -12,7 +12,7 @@
 #import "NSValue+GameObjectId.h"
 #import "ConvertableToDictionary.h"
 #import "LandscapeMapTile.h"
-
+#import "Tickable.h"
 
 #define kMapMAX_X 100
 #define kMapMAX_Y 100
@@ -41,10 +41,25 @@ typedef struct {
 MapRect MapRectMake(int x, int y, int width, int height);
 
 
-@interface Map : NSObject <ConvertableToDictionary> {
+@interface Map : NSObject <ConvertableToDictionary, Tickable> {
     NSMutableDictionary * objectsById;
     NSMutableDictionary * objectsByCoords;
     LandscapeMapTile landscape[kMapMAX_X][kMapMAX_Y];
+    
+    struct 
+    {
+        BOOL walkable;
+        
+        BOOL onopen;
+        BOOL onclosed;
+        
+        int g;
+        int h;
+        int f;
+        
+        Coords parent;
+    } mapNodes[kMapMAX_X][kMapMAX_Y];
+    
 }
 @property (readonly) Coords size;
 @property (readonly) MapRect rect;
@@ -61,4 +76,6 @@ MapRect MapRectMake(int x, int y, int width, int height);
 - (BOOL) isShootableAtCoords:(Coords) coords;
 - (LandscapeMapTile) landscapeMapTileAtCoords:(Coords)coords;
 - (LandscapeMapTile) landscapeMapTileOnDirection:(MapDirection)direction fromCoords:(Coords)coords;
+
+- (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end;
 @end

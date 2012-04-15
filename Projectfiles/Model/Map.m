@@ -14,6 +14,19 @@
 #define RANDOM(from, to) ((arc4random() % (to)-(from))+(from))
 
 
+static struct list_s
+{
+int x;
+int y;
+int f;
+} path[10000];
+
+//sorting stuff
+int compare (const struct list_s * a, const struct list_s * b)
+{
+    return ( a->f - b->f );
+}
+
 MapSize MapSizeMake(int x, int y) {
     MapSize result = {
         .x = x,
@@ -63,6 +76,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size {
     if (self=[self initWithSize:size]) {
         [self generateMap];
+        [self _mapNodesInit];
     }
     return self;
 }
@@ -94,9 +108,31 @@ MapRect MapRectMake(int x, int y, int width, int height) {
                 landscape[i][j] = tile;
             }
         }
+        [self _mapNodesInit];
     }
     return self;
 }
+
+
+
+- (void) _mapNodesInit
+{    
+	for(int x=0;x<self.size.x;x++)
+	{
+		for(int y=0;y<self.size.y;y++)
+		{
+			mapNodes[x][y].walkable = [self isPassableAtCoords:CoordsMake(x, y)];
+            
+			mapNodes[x][y].onopen = FALSE;
+			mapNodes[x][y].onclosed = FALSE;
+			mapNodes[x][y].g = 0;
+			mapNodes[x][y].h = 0;
+			mapNodes[x][y].f = 0;
+			mapNodes[x][y].parent = CoordsNull;
+		}
+	}
+}
+
 
 - (NSMutableArray *) mutableObjectsAtCoords:(Coords) coords {
     return [objectsByCoords objectForKey:[NSValue valueWithCoords:coords]];
@@ -188,5 +224,118 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 }
 
 
+
+- (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end
+{
+//    Coords end = CoordsMake(5, 6);
+	int x=0,y=0; // for running through the nodes
+	int dx,dy; // for the 8 squares adjacent to each node
+	Coords current = start;
+	int lowestf=self.size.x*self.size.y; // start with the lowest being the highest
+    
+	// add starting node to open list
+	mapNodes[start.x][start.y].onopen = TRUE;
+//    mapNodes[start.x][start.y].g = 0;
+//    mapNodes[start.x][start.y].h = (abs(end.x-start.x) +abs(end.y-start.y) )* 10;
+//    mapNodes[start.x][start.y].f = mapNodes[start.x][start.y].g + mapNodes[start.x][start.y].h;
+    mapNodes[start.x][start.y].h =10000;
+
+	while (!mapNodes[current.x][current.y].onclosed) //stop when the current node is on the closed list
+	{
+		//look for lowest F cost node on open list - this becomes the current node
+		for(dx=-1;dx<=1;dx++)
+		{
+			for(dy=-1;dy<=1;dy++)
+			{
+                Coords d = CoordsMake(current.x+dx, current.y+dy);
+				mapNodes[d.x][d.y].f = mapNodes[d.x][d.y].g + mapNodes[d.x][d.y].h;
+				if(mapNodes[d.x][d.y].onopen)
+                    if(mapNodes[d.x][d.y].f<lowestf) { 
+                        current = d; 
+                        lowestf = mapNodes[d.x][d.y].f;
+                    }
+			}
+		}
+        NSLog(@"New cycle, current %d,%d", current.x, current.y);
+        if (current.x==end.x && current.y==end.y) {
+            break;
+        }
+		// we found it, so now put that node on the closed list
+		mapNodes[current.x][current.y].onopen = FALSE;
+		mapNodes[current.x][current.y].onclosed = TRUE;
+        
+		// for each of the 8 adjacent node
+		for(dx=-1;dx<=1;dx++)
+		{
+			for(dy=-1;dy<=1;dy++)
+			{
+                Coords d = CoordsMake(current.x+dx, current.y+dy);
+				if(mapNodes[d.x][d.y].walkable || !mapNodes[d.x][d.y].onclosed)
+				{
+					//if its not on open list
+					if(!mapNodes[d.x][d.y].onopen) 
+					{
+						//add it to open list 
+						mapNodes[d.x][d.y].onopen = TRUE; mapNodes[d.x][d.y].onclosed = FALSE;
+						//make the current node its parent
+						mapNodes[d.x][d.y].parent =current;
+						//work out G
+						if(dx!=0 && dy!=0) mapNodes[d.x][d.y].g = 14; // diagonals cost 14
+						else mapNodes[d.x][d.y].g = 10; // straights cost 10
+						//work out H
+						//MANHATTAN METHOD
+						mapNodes[d.x][d.y].h = (abs(d.x-end.x) +abs (d.y-end.y)) * 10;
+                        NSLog(@"no %d,%d  g:%d h:%d f:%d ff:%d", 
+                              d.x, d.y, mapNodes[d.x][d.y].g, mapNodes[d.x][d.y].h, mapNodes[d.x][d.y].f, mapNodes[d.x][d.y].g + mapNodes[d.x][d.y].h
+                              );
+					}
+					//otherwise it is on the open list
+					else
+					{
+						if(dx==0 || dy==0) // if its not a diagonal
+							if(mapNodes[d.x][d.y].g!=10) //and it was previously
+							{ 
+								mapNodes[d.x][d.y].g = 10; // straight score 10
+								//change its parent because its a shorter distance
+								mapNodes[d.x][d.y].parent = current;
+								//recalc H
+								mapNodes[d.x][d.y].h = abs(end.x-d.x + end.y-d.y) * 10;
+								//recalc F
+								mapNodes[d.x][d.y].f = mapNodes[d.x][d.y].g + mapNodes[d.x][d.y].h;
+                                
+                                NSLog(@"open %d,%d  g:%d h:%d f:%d", 
+                                      d.x, d.y, mapNodes[d.x][d.y].g, mapNodes[d.x][d.y].h, mapNodes[d.x][d.y].f
+                                      );
+							}
+                        
+					}//end else
+				}// end if walkable and not on closed list
+			}
+		}//end for each 8 adjacent node
+        
+//        current = d
+	}//end while
+    
+	//put the parent nodes into a list ordered from highest to lowest f value
+	//first count how many there are
+	int count=0;
+	current = end;
+    while(!(current.x==start.x&&current.y==start.y))
+    {
+        NSLog(@"--result %d %d", current.x, current.y);
+        current = mapNodes[current.x][current.y].parent;
+        NSLog(@"");
+    }
+    
+//	return &path; //we're done, return a pointer to the final path;
+}//end function
+
+
+-(void) tick {
+    [objectsById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        id<Tickable> object = obj;
+        [object tick];
+    }];
+}
 
 @end

@@ -12,10 +12,12 @@
 #import "ConvertableToDictionary.h"
 #import "NSValue+GameObjectId.h"
 #import "Map.h"
+#import "Tickable.h"
 @protocol ObjectWithCoords;
 @protocol ConvertableToDictionary;
 
-@interface GameObject : NSObject <ObjectWithCoords, ConvertableToDictionary>
+
+@interface GameObject : NSObject <ObjectWithCoords, ConvertableToDictionary, Tickable>
 @property (readonly) GameObjectId objectId;
 @property (readonly) GameMapLayer mapLayer; 
 @property (readonly) NSString* frameName;

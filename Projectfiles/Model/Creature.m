@@ -13,6 +13,7 @@
 -(id) init {
     if (self=[super init]) {
         _direction = MapDirectionS;
+        rallyPoint = CoordsNull;
     }
     return self;
 }
@@ -31,10 +32,18 @@
 }
 
 - (void) directiveMove:(Coords) coords {
-    rallyPoint = coords;
+  rallyPoint = coords;
+//    [self moveToCoords:coords];
+    NSLog(@"%d %d", coords.x, coords.y);
 }
 
 - (BOOL) isPassable {
     return NO;
+}
+
+-(void) tick {
+    if (!CoordsIsNull(rallyPoint)) {
+        [[self map] findPathFromCoords:self.coords toCoords:rallyPoint];
+    }
 }
 @end

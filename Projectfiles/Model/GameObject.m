@@ -61,4 +61,9 @@ static GameObjectId lastGameObjectId = 0;
 - (BOOL) isPassable {
     return YES;
 }
+
+-(void) tick {
+    
+}
+
 @end

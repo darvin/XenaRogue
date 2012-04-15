@@ -8,10 +8,11 @@
 
 #import "CCLayer.h"
 #import "cocos2d.h"
+#import "CCLayerPanZoom.h"
 #define timeInTick 0.4
 @class SneakyJoystick;
 @class GameViewController;
-@interface GameLayer : CCLayer {
+@interface GameLayer : CCLayer <CCLayerPanZoomClickDelegate> {
     float deltaSinceTick;
     GameViewController * vc;
 }

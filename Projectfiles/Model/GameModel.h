@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "LocalPlayer.h"
 #import "Map.h"
-@interface GameModel : NSObject
+#import "Tickable.h"
+@interface GameModel : NSObject <Tickable>
 @property (strong) Map* currentMap;
 @property (strong) LocalPlayer* localPlayer;
 

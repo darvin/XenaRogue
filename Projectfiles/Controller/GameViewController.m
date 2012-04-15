@@ -114,8 +114,9 @@
 }
 
 - (void) mapLayer:(MapLayer *)mapLayer touchedAtCoords:(Coords)coords {
-    DirectiveMove * dir = [[DirectiveMove alloc] initWithArgs:[NSArray arrayWithObjects:[NSValue valueWithGameObjectId: self.localPlayer.objectId], [NSValue valueWithCoords:coords], nil]];
-    [dir runOnGameModel:self.gameModel];
+//    DirectiveMove * dir = [[DirectiveMove alloc] initWithArgs:[NSArray arrayWithObjects:[NSValue valueWithGameObjectId: self.localPlayer.objectId], [NSValue valueWithCoords:coords], nil]];
+//    [dir runOnGameModel:self.gameModel];
+    [self.localPlayer directiveMove:coords];
 }
 
 @end

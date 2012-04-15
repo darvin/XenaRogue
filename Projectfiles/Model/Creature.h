@@ -15,4 +15,5 @@
 @property (weak) CreatureType* type;
 @property (strong) NSArray * wieldedItems;
 @property MapDirection direction;
+- (void) directiveMove:(Coords) coords;
 @end

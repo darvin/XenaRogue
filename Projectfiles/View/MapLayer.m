@@ -64,7 +64,7 @@
 
 
 - (Coords) convertNodePointToMapCoords:(CGPoint) point {
-    return  CoordsMake(point.x/spriteSize, size.y- point.y/spriteSize);
+    return  CoordsMake((point.x-spriteSize/2)/spriteSize+1, size.y- (point.y-spriteSize/2)/spriteSize);
 }
 
 - (void) removeMapNodeWithId:(GameObjectId) nodeId {
@@ -135,7 +135,12 @@
 - (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
     UITouch* touch = [touches anyObject];
 
-    CGPoint location = [self convertTouchToNodeSpace:touch];
+    [self clickedAtPoint: [self convertTouchToNodeSpace:touch]];
+    
+}
+
+
+- (void) clickedAtPoint:(CGPoint) location {
     [self.delegate mapLayer:self touchedAtCoords:[self convertNodePointToMapCoords:location]];
 }
 

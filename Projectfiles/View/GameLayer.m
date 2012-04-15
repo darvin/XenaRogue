@@ -25,10 +25,15 @@
         vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
         
         CCLayerPanZoom *panZoomLayer = [[CCLayerPanZoom alloc] init];
-        
+//        panZoomLayer.maxTouchDistanceToClick = 10;
 //        panZoomLayer.position = vc.mapLayer.boundingBoxCenter;
 //        panZoomLayer.panBoundsRect = vc.mapLayer.boundingBox;
         [panZoomLayer addChild:vc.mapLayer];
+        vc.mapLayer.isTouchEnabled = NO;
+//        self.isTouchEnabled = YES;
+        panZoomLayer.delegate = self;
+        
+        
         panZoomLayer.maxScale = 10;
         panZoomLayer.minScale = 2;
         panZoomLayer.mode = kCCLayerPanZoomModeSheet;
@@ -55,12 +60,19 @@
     deltaSinceTick += dt;
     if (deltaSinceTick>=timeInTick) {
         deltaSinceTick = 0;
+        [vc.gameModel tick];
+        
         if (self.joystick.degrees) {
             [vc localPlayerJoystickPressedWithDirection:MapDirectionFromDegrees(self.joystick.degrees)];
 
         }
 
     }
+    
+}
+
+-(void) layerPanZoom:(CCLayerPanZoom *)sender clickedAtPoint:(CGPoint)aPoint tapCount:(NSUInteger)tapCount {
+    [vc.mapLayer clickedAtPoint:aPoint];
 }
 
 @end

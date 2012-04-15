@@ -98,6 +98,7 @@
 /* Begin PBXFileReference section */
 		5734B05B15368F7D00D98D46 /* sheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sheet.plist; sourceTree = "<group>"; };
 		5734B05C15368F7D00D98D46 /* sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sheet.png; sourceTree = "<group>"; };
+		57600F4D153A646100FAECF9 /* Tickable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tickable.h; sourceTree = "<group>"; };
 		5763A3E91533E4BF00A7D38D /* LandscapeAssetChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeAssetChooser.h; sourceTree = "<group>"; };
 		5763A3EA1533E4BF00A7D38D /* LandscapeAssetChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeAssetChooser.m; sourceTree = "<group>"; };
 		5763A3EE1533E5F300A7D38D /* LandscapeMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeMapTile.h; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 				57A074D11537F9EB00AA3E17 /* DirectiveMove.h */,
 				57A074D21537F9EB00AA3E17 /* DirectiveMove.m */,
 				57A074D51538062C00AA3E17 /* GameModelNotifications.h */,
+				57600F4D153A646100FAECF9 /* Tickable.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
