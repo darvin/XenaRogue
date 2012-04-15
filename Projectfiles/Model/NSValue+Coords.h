@@ -18,7 +18,6 @@ static const Coords CoordsNull = {
 };
 
 
-
 Coords CoordsMake(int x, int y);
 BOOL CoordsIsNull(Coords coords);
 Coords CoordsSum(Coords c1, Coords c2);

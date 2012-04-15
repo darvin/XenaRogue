@@ -25,3 +25,10 @@ MapDirection MapDirectionFromDegrees (float degrees);
 @interface MapDirectionName : NSObject
 + (NSString*) nameMapDirection:(MapDirection) mapDirection;
 @end
+
+
+
+@interface NSValue (MapDirection)
++(NSValue*) valueWithMapDirection:(MapDirection)mapDirection;
+-(MapDirection) mapDirectionValue;
+@end

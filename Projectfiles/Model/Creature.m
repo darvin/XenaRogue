@@ -56,4 +56,10 @@
         
     }
 }
+
+-(NSDictionary*) toDictionary {
+    NSMutableDictionary * result = [NSMutableDictionary dictionaryWithDictionary:[super toDictionary]];
+    [result setValue:[NSValue valueWithMapDirection:_direction] forKey:@"direction"];
+    return [NSDictionary dictionaryWithDictionary:result];
+}
 @end

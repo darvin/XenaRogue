@@ -314,4 +314,34 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     }];
 }
 
+
+- (NSDictionary*) toDictionary {
+    NSMutableDictionary* result = [NSMutableDictionary dictionary];
+    [result setValue:[NSValue valueWithCoords:self.size] forKey:@"size"];
+    
+    LandscapeMapTile _landscape[self.size.x][self.size.y];
+    for (int x=0; x<self.size.x; x++) {
+        for (int y=0; y<self.size.y; y++) {
+            _landscape[x][y] = landscape[x][y];
+        }
+    }
+    [result setValue:[NSData dataWithBytes:_landscape length:sizeof(LandscapeMapTile)*self.size.x*self.size.y] forKey:@"landscape"];
+    
+    NSMutableArray * objects = [NSMutableArray arrayWithCapacity:[objectsById count]];
+    [objectsById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        GameObject * object= obj;
+        [objects addObject:[object toDictionary]];
+    }];
+    [result setValue:[NSArray arrayWithArray: objects] forKey:@"objects"];
+    
+    
+    NSLog(@"%@", result);
+    
+    return [NSDictionary dictionaryWithDictionary:result];
+
+}
+- (id) initWithDictionary:(NSDictionary*) dictionary {
+    
+}
+
 @end

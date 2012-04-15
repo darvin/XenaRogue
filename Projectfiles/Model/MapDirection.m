@@ -49,3 +49,22 @@ MapDirection MapDirectionFromDegrees (float degrees) {
     return [[NSArray arrayWithObjects:kMapDirectionNames] objectAtIndex:mapDirection];
 }
 @end
+
+
+
+@implementation NSValue (MapDirection)
+
++(NSValue*) valueWithMapDirection:(MapDirection)mapDirection
+{
+    return [NSValue value: &mapDirection withObjCType: @encode(MapDirection)];
+}
+
+-(MapDirection) mapDirectionValue {
+    MapDirection result;
+    [self getValue:&result];
+    return result;
+}
+
+@end
+
+

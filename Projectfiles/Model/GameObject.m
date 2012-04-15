@@ -66,4 +66,11 @@ static GameObjectId lastGameObjectId = 0;
     
 }
 
+-(NSDictionary*) toDictionary {
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSValue valueWithGameObjectId:_objectId], @"objectId",
+            [NSValue valueWithCoords:_coords], @"coords",
+            NSStringFromClass([self class]), @"class", nil];
+}
+
 @end
