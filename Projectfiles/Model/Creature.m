@@ -23,7 +23,18 @@
 
 - (BOOL) moveToCoords:(Coords) coords{ 
     self.direction = MapDirectionFromDeltaCoords(self.coords, coords);
-    return [super moveToCoords:coords];
+    if ([self.map isPassableAtCoords:coords]) {
+        return [super moveToCoords:coords];
+    } else {
+        return NO;
+    }
 }
 
+- (void) directiveMove:(Coords) coords {
+    rallyPoint = coords;
+}
+
+- (BOOL) isPassable {
+    return NO;
+}
 @end

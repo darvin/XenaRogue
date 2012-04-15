@@ -56,51 +56,8 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     return MapRectMake(0, 0, self.size.x, self.size.y);
 }
 
-- (void) generateTestMap {
-    int newlandscape[5][5] = {
-        {LandscapeMapTileEmpty, LandscapeMapTileEmpty, LandscapeMapTileCeiling, LandscapeMapTileEmpty, LandscapeMapTileEmpty},
-        {LandscapeMapTileEmpty, LandscapeMapTileCeiling, LandscapeMapTileCeiling, LandscapeMapTileFloor, LandscapeMapTileCeiling},
-        {LandscapeMapTileEmpty, LandscapeMapTileFloor, LandscapeMapTileFloor, LandscapeMapTileWall, LandscapeMapTileEmpty},
-        {LandscapeMapTileWall, LandscapeMapTileLava, LandscapeMapTileFloor, LandscapeMapTileWall, LandscapeMapTileFloor},
-        {LandscapeMapTileWall, LandscapeMapTileWall, LandscapeMapTileWall, LandscapeMapTilePit, LandscapeMapTileFloor},
-    };
-    for (int x=0; x<self.size.x; x++) {
-        for (int y=0; y<self.size.y; y++) {
-            landscape[x][y] = newlandscape[x][y];
-        }
-    }
-}
-
 - (void) generateMap {
 //    generateMap(30, 30, 39);
-}
-- (void) generateDummyMap {
-    for (int x=0; x<self.size.x; x++) {
-        for (int y=0; y<self.size.y; y++) {
-            landscape[x][y]=LandscapeMapTileCeiling;
-        }
-    }
-    
-    
-//    Coords from = {
-//        .x = RANDOM(0, self.size.x/2),
-//        .y = RANDOM(0, self.size.y/2),
-//    };
-//    Coords til = {
-//        .x = RANDOM(self.size.x/2,self.size.x),
-//        .y = RANDOM(self.size.y/2,self.size.y),
-//    };
-//    for (int i=from.x; i<til.x; i++) {
-//        for (int j=from.y; j<til.y; j++) {
-//            [self putWallAtCoords:CoordsMake(i, from.y)];
-//            [self putWallAtCoords:CoordsMake(i, til.y)];
-//            [self putWallAtCoords:CoordsMake(from.x, j)];
-//            [self putWallAtCoords:CoordsMake(til.x, j)];
-//        }
-//    }
-//    
-    
-    
 }
 
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size {
@@ -212,6 +169,13 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 }
 
 - (BOOL) isPassableAtCoords:(Coords) coords {
+    if (!LandscapeMapTileIsPassable([self landscapeMapTileAtCoords:coords])) {
+        return NO;
+    }
+    for (GameObject *object in [self objectsAtCoords:coords]) {
+        if (![object isPassable])
+            return NO;
+    }
     return YES;
 }
 

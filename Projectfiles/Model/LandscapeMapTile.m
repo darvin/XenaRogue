@@ -7,7 +7,9 @@
 //
 
 #import "LandscapeMapTile.h"
-
+BOOL LandscapeMapTileIsPassable(LandscapeMapTile mapTile) {
+    return mapTile==LandscapeMapTileFloor;
+}
 
 @implementation LandscapeMapTileName
 

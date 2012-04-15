@@ -20,6 +20,8 @@ typedef enum {
     LandscapeMapTileColumn,
     LandscapeMapTile_MAX,
 } LandscapeMapTile;
+BOOL LandscapeMapTileIsPassable(LandscapeMapTile mapTile);
+
 #define kLandscapeMapTileNames @"empty", @"pit", @"ceiling", @"floor", @"wall", @"lava", @"water", @"column", nil
 #define kLandscapeMapTileASCIIChars @"0", @" ", @"%", @".", @"#", @"-", @"w", @"|", nil
 @interface LandscapeMapTileName : NSObject

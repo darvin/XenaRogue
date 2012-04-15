@@ -20,4 +20,5 @@
 @property (readonly) GameMapLayer mapLayer; 
 @property (readonly) NSString* frameName;
 - (BOOL) moveToCoords:(Coords) coord;
+- (BOOL) isPassable;
 @end

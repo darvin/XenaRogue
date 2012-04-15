@@ -57,4 +57,8 @@ static GameObjectId lastGameObjectId = 0;
         _coords = CoordsNull;
     }
 }
+
+- (BOOL) isPassable {
+    return YES;
+}
 @end
