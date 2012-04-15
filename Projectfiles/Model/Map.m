@@ -14,19 +14,6 @@
 #define RANDOM(from, to) ((arc4random() % (to)-(from))+(from))
 
 
-static struct list_s
-{
-int x;
-int y;
-int f;
-} path[10000];
-
-//sorting stuff
-int compare (const struct list_s * a, const struct list_s * b)
-{
-    return ( a->f - b->f );
-}
-
 MapSize MapSizeMake(int x, int y) {
     MapSize result = {
         .x = x,
@@ -76,7 +63,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size {
     if (self=[self initWithSize:size]) {
         [self generateMap];
-        [self _mapNodesInit];
+        [self _passableCacheUpdate];
     }
     return self;
 }
@@ -108,12 +95,24 @@ MapRect MapRectMake(int x, int y, int width, int height) {
                 landscape[i][j] = tile;
             }
         }
-        [self _mapNodesInit];
+        [self _passableCacheUpdate];
     }
     return self;
 }
 
+- (void) _passableCacheUpdate {
+    for(int x=0;x<self.size.x;x++)
+	{
+		for(int y=0;y<self.size.y;y++)
+		{
+            mapNodes[x][y].walkable = [self isPassableAtCoords:CoordsMake(x, y)];
+        }
+    }
+}
 
+- (void) _passableCacheUpdateOnCoords:(Coords) coords {
+    mapNodes[coords.x][coords.y].walkable = [self isPassableAtCoords:coords];
+}
 
 - (void) _mapNodesInit
 {    
@@ -121,7 +120,6 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 	{
 		for(int y=0;y<self.size.y;y++)
 		{
-			mapNodes[x][y].walkable = [self isPassableAtCoords:CoordsMake(x, y)];
             
 			mapNodes[x][y].onopen = FALSE;
 			mapNodes[x][y].onclosed = FALSE;
@@ -171,12 +169,15 @@ MapRect MapRectMake(int x, int y, int width, int height) {
         [objects addObject:object];
     }
     [objectsById setObject:object forKey:[NSValue valueWithGameObjectId:object.objectId]];
+    [self _passableCacheUpdateOnCoords:coords];
 }
 
 
 
 - (BOOL) moveObject:(GameObject*)object toCoords:(Coords) coords {
     [[self mutableObjectsAtCoords:object.coords] removeObject:object];
+    [self _passableCacheUpdateOnCoords:object.coords];
+
     [object setCoords:coords];
     [self _putObject:object toCoords:coords];
     return YES;
@@ -230,27 +231,29 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 //    Coords end = CoordsMake(5, 6);
     
     [self _mapNodesInit];
-	int x=0,y=0; // for running through the nodes
-	int dx,dy; // for the 8 squares adjacent to each node
     int currentCost;
 	Coords current = start;
 	
+    for(int x=0;x<self.size.x; x++)
+    {
+        for(int y=0;y<self.size.y; y++)
+        {
+            Coords d = CoordsMake(x,y);
+            mapNodes[d.x][d.y].h = (abs(end.x-d.x) +abs(end.y-d.y) )* 10;
+        }
+    }
+    
     
 	// add starting node to open list
 	mapNodes[start.x][start.y].onopen = TRUE;
-    mapNodes[start.x][start.y].g = 0;
-    mapNodes[start.x][start.y].h = (abs(end.x-start.x) +abs(end.y-start.y) )* 10;
-    mapNodes[start.x][start.y].f = mapNodes[start.x][start.y].g + mapNodes[start.x][start.y].h;
-    mapNodes[start.x][start.y].h =10000;
 
     while (!(current.x==end.x&&current.y==end.y)) {
         int lowestF = 0;
-        for(x=0;x<self.size.x; x++)
+        for(int x=0;x<self.size.x; x++)
 		{
-			for(y=0;y<self.size.y; y++)
+			for(int y=0;y<self.size.y; y++)
 			{
                 Coords d = CoordsMake(x,y);
-                mapNodes[d.x][d.y].h = (abs(end.x-d.x) +abs(end.y-d.y) )* 10;
 				mapNodes[d.x][d.y].f = mapNodes[d.x][d.y].g + mapNodes[d.x][d.y].h;
 				if(mapNodes[d.x][d.y].walkable&&mapNodes[d.x][d.y].onopen&&(lowestF==0||mapNodes[d.x][d.y].f<lowestF)) 
                 { 
@@ -264,9 +267,9 @@ MapRect MapRectMake(int x, int y, int width, int height) {
         mapNodes[current.x][current.y].onopen = FALSE;
         mapNodes[current.x][current.y].onclosed = TRUE;
         
-        for(dx=-1;dx<=1;dx++)
+        for(int dx=-1;dx<=1;dx++)
 		{
-			for(dy=-1;dy<=1;dy++)
+			for(int dy=-1;dy<=1;dy++)
 			{
                 Coords d = CoordsMake(current.x+dx,current.y+dy);
                 if(dx!=0 && dy!=0) currentCost = 14; // diagonals cost 14
@@ -293,96 +296,12 @@ MapRect MapRectMake(int x, int y, int width, int height) {
         
     }
     
-//	while (!mapNodes[current.x][current.y].onclosed) //stop when the current node is on the closed list
-//	{
-//		//look for lowest F cost node on open list - this becomes the current node
-//		for(x=0;x<self.size.x; x++)
-//		{
-//			for(y=0;y<self.size.y; y++)
-//			{
-//                Coords d = CoordsMake(x,y);
-//				mapNodes[d.x][d.y].f = mapNodes[d.x][d.y].g + mapNodes[d.x][d.y].h;
-//				if(mapNodes[d.x][d.y].onopen)
-//                    if(mapNodes[d.x][d.y].f<lowestf) { 
-//                        current = d; 
-//                        lowestf = mapNodes[d.x][d.y].f;
-//                    }
-//			}
-//		}
-//        NSLog(@"New cycle, current %d,%d", current.x, current.y);
-//        
-//		// we found it, so now put that node on the closed list
-//		mapNodes[current.x][current.y].onopen = FALSE;
-//		mapNodes[current.x][current.y].onclosed = TRUE;
-//        
-//		// for each of the 8 adjacent node
-//		for(dx=-1;dx<=1;dx++)
-//		{
-//			for(dy=-1;dy<=1;dy++)
-//			{
-//                if (dx==0&&dy==0) {
-//                    continue;
-//                }
-//                
-//                Coords d = CoordsMake(current.x+dx, current.y+dy);
-//				if(mapNodes[d.x][d.y].walkable || !mapNodes[d.x][d.y].onclosed)
-//				{
-//					//if its not on open list
-//					if(!mapNodes[d.x][d.y].onopen) 
-//					{
-//						//add it to open list 
-//						mapNodes[d.x][d.y].onopen = TRUE; mapNodes[d.x][d.y].onclosed = FALSE;
-//						//make the current node its parent
-//						mapNodes[d.x][d.y].parent =current;
-//						//work out G
-//						if(dx!=0 && dy!=0) mapNodes[d.x][d.y].g = 14; // diagonals cost 14
-//						else mapNodes[d.x][d.y].g = 10; // straights cost 10
-//						//work out H
-//						//MANHATTAN METHOD
-//						mapNodes[d.x][d.y].h = (abs(d.x-end.x) +abs (d.y-end.y)) * 10;
-//                        NSLog(@"no %d,%d  g:%d h:%d f:%d ff:%d", 
-//                              d.x, d.y, mapNodes[d.x][d.y].g, mapNodes[d.x][d.y].h, mapNodes[d.x][d.y].f, mapNodes[d.x][d.y].g + mapNodes[d.x][d.y].h
-//                              );
-//					}
-//					//otherwise it is on the open list
-//					else
-//					{
-//						if(dx==0 || dy==0) // if its not a diagonal
-//							if(mapNodes[d.x][d.y].g!=10) //and it was previously
-//							{ 
-//								mapNodes[d.x][d.y].g = 10; // straight score 10
-//								//change its parent because its a shorter distance
-//								mapNodes[d.x][d.y].parent = current;
-//								//recalc H
-//								mapNodes[d.x][d.y].h = (abs(d.x-end.x) +abs (d.y-end.y)) * 10;
-//								//recalc F
-//								mapNodes[d.x][d.y].f = mapNodes[d.x][d.y].g + mapNodes[d.x][d.y].h;
-//                                
-//                                NSLog(@"open %d,%d  g:%d h:%d f:%d", 
-//                                      d.x, d.y, mapNodes[d.x][d.y].g, mapNodes[d.x][d.y].h, mapNodes[d.x][d.y].f
-//                                      );
-//							}
-//                        
-//					}//end else
-//				}// end if walkable and not on closed list
-//			}
-//		}//end for each 8 adjacent node
-//        if (current.x==end.x && current.y==end.y) {
-//            break;
-//        }
-////        current = d
-//	}//end while
-    
-	//put the parent nodes into a list ordered from highest to lowest f value
-	//first count how many there are
-	
 	current = end;
     NSMutableArray * result = [NSMutableArray array];
     while(!(current.x==start.x&&current.y==start.y))
     {
         [result addObject:[NSValue valueWithCoords:current]];
         current = mapNodes[current.x][current.y].parent;
-        NSLog(@"");
     }
     return [NSArray arrayWithArray:result];
 }
