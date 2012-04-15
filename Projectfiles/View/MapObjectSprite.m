@@ -7,11 +7,17 @@
 //
 
 #import "MapObjectSprite.h"
-
+#import "MapLayer.h"
 @implementation MapObjectSprite
 -(id) initWithSpriteFrameName:(NSString *)spriteFrameName {
     if (self=[super initWithSpriteFrameName:spriteFrameName]) {
     } 
     return self;
+}
+
+-(void) setPosition:(CGPoint)position {
+    CGPoint realPosition = CGPointMake(position.x, position.y-spriteSize+self.contentSize.height);
+    
+    [super setPosition:realPosition];
 }
 @end

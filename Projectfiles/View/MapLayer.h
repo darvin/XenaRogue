@@ -11,6 +11,7 @@
 #import "NSValue+GameObjectId.h"
 
 #import "cocos2d.h"
+#define spriteSize 16
 
 @class MapLayer;
 

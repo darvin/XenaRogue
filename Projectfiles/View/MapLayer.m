@@ -15,7 +15,6 @@
 #import "LandscapeAssetChooser.h"
 
 
-#define spriteSize 16
 
 @implementation MapLayer
 @synthesize delegate=_delegate;
@@ -59,8 +58,13 @@
     return self;
 }
 
--(CGPoint) coordsForMapCoords:(Coords) coords {
+-(CGPoint) convertMapCoordsToNodePoint:(Coords) coords {
     return ccp(coords.x*spriteSize, size.y*spriteSize - coords.y*spriteSize);
+}
+
+
+- (Coords) convertNodePointToMapCoords:(CGPoint) point {
+    return  CoordsMake(point.x/spriteSize, size.y- point.y/spriteSize);
 }
 
 - (void) removeMapNodeWithId:(GameObjectId) nodeId {
@@ -69,7 +73,7 @@
 
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords {
     MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
-    [sprite runAction: [CCMoveTo actionWithDuration:1 position:[self coordsForMapCoords:coords]]];
+    [sprite runAction: [CCMoveTo actionWithDuration:1 position:[self convertMapCoordsToNodePoint:coords]]];
 }
 
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords withAnimation:(NSString*) animationName andFrameNameFinal:(NSString*) frameNameFinal {
@@ -85,7 +89,7 @@
     
     
     CCAction *moveAction = [CCSequence actions:                          
-                       [CCMoveTo actionWithDuration:1 position:[self coordsForMapCoords:coords]],
+                       [CCMoveTo actionWithDuration:1 position:[self convertMapCoordsToNodePoint:coords]],
                        [CCCallBlock actionWithBlock:^{
         [sprite stopAction:animateAction];
         [self setFrameName:frameNameFinal toMapNodeWithId:nodeId];
@@ -103,7 +107,7 @@
 - (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords {
     if (![mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]]) {
         MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:[frameName stringByAppendingString:@".png"]];
-        sprite.position = [self coordsForMapCoords:coords];
+        sprite.position = [self convertMapCoordsToNodePoint:coords];
         
         [spriteSheet addChild:sprite z:1000];
         [mapNodesById setObject:sprite forKey:[NSValue valueWithGameObjectId:nodeId]];
@@ -117,7 +121,7 @@
 - (void) addMapTile:(LandscapeMapTile) mapTile withNeighbours:(LandscapeMapTile[8]) neighbours toCoords:(Coords) coords {
     NSString *frameName = [[LandscapeAssetChooser sharedChooser] frameNameForMapTile:mapTile withNeighbours:neighbours];
     MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
-    sprite.position = [self coordsForMapCoords:coords];
+    sprite.position = [self convertMapCoordsToNodePoint:coords];
     NSLog(@"%@,  %d,%d    %d",frameName, coords.x, coords.y, mapTile);
     [spriteSheet addChild:sprite]; 
 }
@@ -127,14 +131,12 @@
 }
 
 
+
 - (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
     UITouch* touch = [touches anyObject];
 
     CGPoint location = [self convertTouchToNodeSpace:touch];
-    NSLog(@"%@", NSStringFromCGPoint(location));
-    Coords touchedCoords = CoordsMake(location.x/spriteSize, location.y/spriteSize);
-    NSLog(@"%d %d", touchedCoords.x, touchedCoords.y);
-    [self.delegate mapLayer:self touchedAtCoords:touchedCoords];
+    [self.delegate mapLayer:self touchedAtCoords:[self convertNodePointToMapCoords:location]];
 }
 
 @end
