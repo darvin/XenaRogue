@@ -15,11 +15,14 @@
     struct Room* roomB;
 } ;
 
-#define MIN_ROOM_SIZE_X 9
-#define MIN_ROOM_SIZE_Y 9
+#define MIN_ROOM_SIZE_X 3
+#define MIN_ROOM_SIZE_Y 3
 #define FROM_DIVISION 0.3
 #define TO_DIVISION 0.7
 #define RANDOMIZE_BORDER_EDGE 8
+
+
+
 
 @implementation Map (Generation)
 - (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber {
@@ -27,7 +30,7 @@
     return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
 }
 
--(void) generateMap {
+-(Coords) generateMap {
     struct Room *firstRoom;
     firstRoom = malloc(sizeof(struct Room));
     firstRoom->size = self.size;
@@ -35,6 +38,56 @@
     [self divideRoom:firstRoom];
     
     [self drawRoom:firstRoom];
+    [self passableCacheFillWalkable];
+    [self drawWays:firstRoom];
+    
+    Coords localPlayerCoords = [self randomCoordsInRoom:*firstRoom filledWith:LandscapeMapTileFloor];
+    
+    
+    return localPlayerCoords;
+}
+
+
+-(void) drawWays:(struct Room*) roomP {
+    if (!((roomP->roomA==NULL)||(roomP->roomB==NULL))) {
+        [self drawWays:roomP->roomA];
+        [self drawWays:roomP->roomB];
+        Coords from = [self randomCoordsInRoom:*roomP->roomA filledWith:LandscapeMapTileFloor];
+        Coords to = [self randomCoordsInRoom:*roomP->roomB filledWith:LandscapeMapTileFloor];
+//        landscape[from.x][from.y] = LandscapeMapTileLava;
+//        landscape[to.x][to.y] = LandscapeMapTileWater;
+        
+        NSArray* way = [self findPathFromCoords:from toCoords:to allowDiagonal:NO];
+        for (NSValue* coordsV in way) {
+            Coords c = [coordsV coordsValue];
+            landscape[c.x][c.y] = LandscapeMapTileFloor;
+        }
+    } 
+
+}
+
+
+- (void) passableCacheFillWalkable {
+    for(int x=0;x<self.size.x;x++)
+	{
+		for(int y=0;y<self.size.y;y++)
+		{
+            mapNodes[x][y].walkable = YES;
+        }
+    }
+}
+
+- (Coords) randomCoordsInRoom:(struct Room)room filledWith:(LandscapeMapTile) mapTile {
+    for (int i=0; i<100; i++) {
+        for (int x=RANDOM(room.origin.x, room.origin.x+room.size.x); x<room.origin.x+room.size.x; x++) {
+            for (int y=RANDOM(room.origin.y, room.origin.y+room.size.y); y<room.origin.y+room.size.y; y++) {
+                if (landscape[x][y]==mapTile) {
+                    return CoordsMake(x, y);
+                }
+            }
+        }
+    }
+    @throw [NSException exceptionWithName:@"MapGenerationError" reason:@"cannon find proper random coords" userInfo:nil];
 }
 
 -(void) randomizeRoom:(struct Room*) roomP {
@@ -63,11 +116,11 @@
             for (int y=roomP->origin.y; y<=roomP->origin.y+roomP->size.y; y++) {
                 landscape[x][y] = LandscapeMapTileFloor;
                 
-                landscape[roomP->origin.x][y] = LandscapeMapTileWall;
-                landscape[roomP->origin.x+roomP->size.x][y] = LandscapeMapTileWall;
+//                landscape[roomP->origin.x][y] = LandscapeMapTileWall;
+//                landscape[roomP->origin.x+roomP->size.x][y] = LandscapeMapTileWall;
             }
-            landscape[x][roomP->origin.y] = LandscapeMapTileWall;
-            landscape[x][roomP->origin.y+roomP->size.y] = LandscapeMapTileWall;
+//            landscape[x][roomP->origin.y] = LandscapeMapTileWall;
+//            landscape[x][roomP->origin.y+roomP->size.y] = LandscapeMapTileWall;
             
         }
     }

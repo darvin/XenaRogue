@@ -9,5 +9,5 @@
 #import "Map.h"
 
 @interface Map (Generation)
--(void) generateMap;
+-(Coords) generateMap;
 @end
