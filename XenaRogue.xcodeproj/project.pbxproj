@@ -14,6 +14,8 @@
 		5763A3EB1533E4BF00A7D38D /* LandscapeAssetChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EA1533E4BF00A7D38D /* LandscapeAssetChooser.m */; };
 		5763A3F01533E5F300A7D38D /* LandscapeMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */; };
 		5763A3F31533EE5400A7D38D /* MapDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3F21533EE5400A7D38D /* MapDirection.m */; };
+		57751281153D01C100CAA296 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
+		57751282153D01C100CAA296 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
 		577D44DB1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		577D44DC1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		57A074BD15378A8000AA3E17 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074BC15378A8000AA3E17 /* GameModel.m */; };
@@ -105,6 +107,8 @@
 		5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeMapTile.m; sourceTree = "<group>"; };
 		5763A3F11533EE5400A7D38D /* MapDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDirection.h; sourceTree = "<group>"; };
 		5763A3F21533EE5400A7D38D /* MapDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDirection.m; sourceTree = "<group>"; };
+		5775127F153D01C100CAA296 /* Map+Generation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Map+Generation.h"; sourceTree = "<group>"; };
+		57751280153D01C100CAA296 /* Map+Generation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Map+Generation.m"; sourceTree = "<group>"; };
 		577D44DA1534159A00B8119E /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		57A074BB15378A8000AA3E17 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		57A074BC15378A8000AA3E17 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
@@ -233,6 +237,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5775127D153D019500CAA296 /* MapGeneration */ = {
+			isa = PBXGroup;
+			children = (
+				5775127F153D01C100CAA296 /* Map+Generation.h */,
+				57751280153D01C100CAA296 /* Map+Generation.m */,
+			);
+			name = MapGeneration;
+			sourceTree = "<group>";
+		};
 		57E94D901532327900A86E32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +258,7 @@
 		57E94D931532327900A86E32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5775127D153D019500CAA296 /* MapGeneration */,
 				57E94D941532327900A86E32 /* ConvertableToDictionary.h */,
 				57E94D951532327900A86E32 /* Creature.h */,
 				57E94D961532327900A86E32 /* Creature.m */,
@@ -570,6 +584,7 @@
 				5763A3F31533EE5400A7D38D /* MapDirection.m in Sources */,
 				57A074BD15378A8000AA3E17 /* GameModel.m in Sources */,
 				57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */,
+				57751281153D01C100CAA296 /* Map+Generation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +611,7 @@
 				57E94DD21532327900A86E32 /* MapLayer.m in Sources */,
 				57E94DD41532327900A86E32 /* MapObjectSprite.m in Sources */,
 				57E94DD81532331700A86E32 /* GameLayer.m in Sources */,
+				57751282153D01C100CAA296 /* Map+Generation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

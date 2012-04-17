@@ -10,6 +10,7 @@
 #import "LocalPlayer.h"
 #import "NSValue+Coords.h"
 #import "MapDirection.h"
+#import "Map+Generation.h"
 
 #define RANDOM(from, to) ((arc4random() % (to)-(from))+(from))
 
@@ -54,10 +55,6 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 - (MapRect) rect {
     return MapRectMake(0, 0, self.size.x, self.size.y);
-}
-
-- (void) generateMap {
-//    generateMap(30, 30, 39);
 }
 
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size {

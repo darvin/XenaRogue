@@ -35,7 +35,7 @@
         
         
         panZoomLayer.maxScale = 10;
-        panZoomLayer.minScale = 2;
+        panZoomLayer.minScale = 0.4;
         panZoomLayer.mode = kCCLayerPanZoomModeSheet;
         [self addChild:panZoomLayer];
         SneakyJoystickSkinnedBase *leftJoy = [[SneakyJoystickSkinnedBase alloc] init];
