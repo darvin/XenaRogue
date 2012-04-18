@@ -14,8 +14,9 @@
 #import "LandscapeMapTile.h"
 #import "Tickable.h"
 
-#define kMapMAX_X 100
-#define kMapMAX_Y 100
+#define kMapMAX_X 110
+#define kMapMAX_Y 110
+#define RANDOM(from, to) ((arc4random() % ((to)-(from)))+(from))
 
 
 @protocol ObjectWithCoords;
@@ -77,5 +78,5 @@ MapRect MapRectMake(int x, int y, int width, int height);
 - (LandscapeMapTile) landscapeMapTileAtCoords:(Coords)coords;
 - (LandscapeMapTile) landscapeMapTileOnDirection:(MapDirection)direction fromCoords:(Coords)coords;
 
-- (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end;
+- (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end allowDiagonal:(BOOL) allowDiagonal;
 @end

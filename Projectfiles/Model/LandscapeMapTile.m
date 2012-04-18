@@ -15,6 +15,10 @@ BOOL LandscapeMapTileIsPassable(LandscapeMapTile mapTile) {
 
 
 + (NSString*) nameForMapTile:(LandscapeMapTile) mapTile {
+    
+    if (mapTile>[[NSArray arrayWithObjects:kLandscapeMapTileNames] count]) {
+        @throw [NSException exceptionWithName:@"" reason:@"" userInfo:@""];
+    }
     return [[NSArray arrayWithObjects:kLandscapeMapTileNames] objectAtIndex:mapTile];
 }
 + (LandscapeMapTile) mapTileForName:(NSString*) name {

@@ -10,8 +10,8 @@
 #import "LocalPlayer.h"
 #import "NSValue+Coords.h"
 #import "MapDirection.h"
+#import "Map+Generation.h"
 
-#define RANDOM(from, to) ((arc4random() % (to)-(from))+(from))
 
 
 MapSize MapSizeMake(int x, int y) {
@@ -56,13 +56,10 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     return MapRectMake(0, 0, self.size.x, self.size.y);
 }
 
-- (void) generateMap {
-//    generateMap(30, 30, 39);
-}
-
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size {
     if (self=[self initWithSize:size]) {
-        [self generateMap];
+        Coords localPlayerCoords = [self generateMap];
+        [self putObject:localPlayer toCoords:localPlayerCoords];
         [self _passableCacheUpdate];
     }
     return self;
@@ -130,6 +127,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 		}
 	}
 }
+
 
 
 - (NSMutableArray *) mutableObjectsAtCoords:(Coords) coords {
@@ -226,10 +224,8 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 
 
-- (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end
-{
-//    Coords end = CoordsMake(5, 6);
-    
+- (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end allowDiagonal:(BOOL) allowDiagonal
+{    
     [self _mapNodesInit];
     int currentCost;
 	Coords current = start;
@@ -271,6 +267,10 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 		{
 			for(int dy=-1;dy<=1;dy++)
 			{
+                if (!allowDiagonal&&((abs(dx)+abs(dy))==2)) {
+                    continue;
+                }
+                
                 Coords d = CoordsMake(current.x+dx,current.y+dy);
                 if(dx!=0 && dy!=0) currentCost = 14; // diagonals cost 14
                 else currentCost = 10; // straights cost 10

@@ -122,7 +122,7 @@
     NSString *frameName = [[LandscapeAssetChooser sharedChooser] frameNameForMapTile:mapTile withNeighbours:neighbours];
     MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
     sprite.position = [self convertMapCoordsToNodePoint:coords];
-    NSLog(@"%@,  %d,%d    %d",frameName, coords.x, coords.y, mapTile);
+//    NSLog(@"%@,  %d,%d    %d",frameName, coords.x, coords.y, mapTile);
     [spriteSheet addChild:sprite]; 
 }
 
