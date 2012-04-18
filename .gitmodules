@@ -1,0 +1,3 @@
+[submodule "Projectfiles/Resources/GameDataSource/DiggrExtracter/diggr"]
+	path = Projectfiles/Resources/GameDataSource/DiggrExtracter/diggr
+	url = git://gitorious.org/diggr/diggr.git
