@@ -59,11 +59,15 @@ static GameObjectId lastGameObjectId = 0;
 }
 
 - (BOOL) isPassable {
-    return YES;
+    return NO;
 }
 
 -(void) tick {
     
+}
+
+-(void)interactWithObject:(GameObject*)object{
+    @throw [NSException exceptionWithName:@"NotImplementedError" reason:@"interact not implemented" userInfo:nil];
 }
 
 -(NSDictionary*) toDictionary {

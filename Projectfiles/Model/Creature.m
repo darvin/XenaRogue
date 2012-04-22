@@ -62,4 +62,8 @@
     [result setValue:[NSValue valueWithMapDirection:_direction] forKey:@"direction"];
     return [NSDictionary dictionaryWithDictionary:result];
 }
+
+-(NSString*) assetName {
+    return @"blueSkeleton";
+}
 @end

@@ -27,6 +27,8 @@
 		57D5F57E1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */; };
 		57E033D3154469D70023F732 /* Stairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D2154469D70023F732 /* Stairs.m */; };
 		57E033D4154469D70023F732 /* Stairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D2154469D70023F732 /* Stairs.m */; };
+		57E033D71544752D0023F732 /* Chest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D61544752D0023F732 /* Chest.m */; };
+		57E033D81544752D0023F732 /* Chest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D61544752D0023F732 /* Chest.m */; };
 		57E94DB51532327900A86E32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D921532327900A86E32 /* GameViewController.m */; };
 		57E94DB61532327900A86E32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D921532327900A86E32 /* GameViewController.m */; };
 		57E94DB71532327900A86E32 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D961532327900A86E32 /* Creature.m */; };
@@ -122,6 +124,8 @@
 		57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dungeon_tileset_scheme.plist; sourceTree = "<group>"; };
 		57E033D1154469D70023F732 /* Stairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stairs.h; sourceTree = "<group>"; };
 		57E033D2154469D70023F732 /* Stairs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stairs.m; sourceTree = "<group>"; };
+		57E033D51544752D0023F732 /* Chest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chest.h; sourceTree = "<group>"; };
+		57E033D61544752D0023F732 /* Chest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chest.m; sourceTree = "<group>"; };
 		57E94D911532327900A86E32 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		57E94D921532327900A86E32 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		57E94D941532327900A86E32 /* ConvertableToDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertableToDictionary.h; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 				57E94DAD1532327900A86E32 /* Player.m */,
 				57E033D1154469D70023F732 /* Stairs.h */,
 				57E033D2154469D70023F732 /* Stairs.m */,
+				57E033D51544752D0023F732 /* Chest.h */,
+				57E033D61544752D0023F732 /* Chest.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -600,6 +606,7 @@
 				57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */,
 				57751281153D01C100CAA296 /* Map+Generation.m in Sources */,
 				57E033D3154469D70023F732 /* Stairs.m in Sources */,
+				57E033D71544752D0023F732 /* Chest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +635,7 @@
 				57E94DD81532331700A86E32 /* GameLayer.m in Sources */,
 				57751282153D01C100CAA296 /* Map+Generation.m in Sources */,
 				57E033D4154469D70023F732 /* Stairs.m in Sources */,
+				57E033D81544752D0023F732 /* Chest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

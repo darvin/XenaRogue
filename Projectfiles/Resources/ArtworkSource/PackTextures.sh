@@ -40,7 +40,8 @@ else
 	${TP} --extrude 1  --smart-update ${SPRITES_ROOT}/*.png  \
           --format cocos2d \
           --data ${SRCROOT}/sheet.plist \
-          --sheet ${SRCROOT}/sheet.png
+          --sheet ${SRCROOT}/sheet.png \
+		  --disable-rotation
 
 	# create sd assets from same sprites
 	# ${TP} --smart-update --scale  0.5 ${SRCROOT}/assets/*.png \

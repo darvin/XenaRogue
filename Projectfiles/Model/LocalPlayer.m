@@ -15,7 +15,7 @@
     }
     return self;
 }
--(NSString*) frameName {
+-(NSString*) assetName {
     return @"localPlayer";
 }
 @end

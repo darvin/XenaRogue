@@ -1,5 +1,5 @@
 //
-//  Stairs.h
+//  Chest.h
 //  XenaRogue
 //
 //  Created by Sergey Klimov on 4/22/12.
@@ -8,7 +8,6 @@
 
 #import "GameObject.h"
 
-@interface Stairs : GameObject
-@property BOOL down;
-
+@interface Chest : GameObject
+@property BOOL open;
 @end

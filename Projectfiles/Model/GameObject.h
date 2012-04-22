@@ -20,7 +20,7 @@
 @interface GameObject : NSObject <ObjectWithCoords, ConvertableToDictionary, Tickable>
 @property (readonly) GameObjectId objectId;
 @property (readonly) GameMapLayer mapLayer; 
-@property (readonly) NSString* frameName;
+@property (readonly) NSString* assetName;
 - (BOOL) moveToCoords:(Coords) coord;
 - (BOOL) isPassable;
 @end

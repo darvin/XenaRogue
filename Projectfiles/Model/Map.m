@@ -11,6 +11,9 @@
 #import "NSValue+Coords.h"
 #import "MapDirection.h"
 #import "Map+Generation.h"
+#import "Chest.h"
+#import "Stairs.h"
+#import "Creature.h"
 
 
 
@@ -48,19 +51,51 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     return self;
 }
 
-- (Coords) randomCoords {
-//    return NULL;
+- (Coords) randomPassableCoords {
+    for (int i=0; i<100; i++) {
+        for (int x=RANDOM(0, self.size.x); x<self.size.x; x++) {
+            for (int y=RANDOM(0, self.size.y);y<self.size.y; y++) {
+                Coords c = CoordsMake(x,y);
+                if ([self isPassableAtCoords:c]) {
+                    return c;
+                }
+            }
+        }
+    }
+    @throw [NSException exceptionWithName:@"MapGenerationError" reason:@"can not find proper random coords" userInfo:nil];
 }
+
 
 - (MapRect) rect {
     return MapRectMake(0, 0, self.size.x, self.size.y);
+}
+
+-(void) _finishGenerationWithPlayerCoords:(Coords)playerCoords {
+    [self _passableCacheUpdate];
+    int randomChestNumber = RANDOM(1, 3);
+    int randomMonsterNumber = RANDOM(2,5);
+    for (int i=0; i<randomChestNumber; i++) {
+        [self putObject:[[Chest alloc] init] toCoords:[self randomPassableCoords]];
+    }
+    for (int i=0; i<randomMonsterNumber; i++) {
+        [self putObject:[[Creature alloc] init] toCoords:[self randomPassableCoords]];
+    }
+    Stairs * downStairs = [[Stairs alloc] init];
+    downStairs.down = YES;
+    Stairs * upStairs = [[Stairs alloc] init];
+    upStairs.down = NO;
+    
+    [self putObject:downStairs toCoords:[self randomPassableCoords]];
+    [self putObject:upStairs toCoords:playerCoords];
+
+    
 }
 
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size {
     if (self=[self initWithSize:size]) {
         Coords localPlayerCoords = [self generateMap];
         [self putObject:localPlayer toCoords:localPlayerCoords];
-        [self _passableCacheUpdate];
+        [self _finishGenerationWithPlayerCoords:localPlayerCoords];
     }
     return self;
 }
@@ -92,7 +127,9 @@ MapRect MapRectMake(int x, int y, int width, int height) {
                 landscape[i][j] = tile;
             }
         }
-        [self _passableCacheUpdate];
+        Coords localPlayerCoords = [self randomPassableCoords];
+        [self putObject:localPlayer toCoords:localPlayerCoords];
+        [self _finishGenerationWithPlayerCoords:localPlayerCoords];
     }
     return self;
 }

@@ -1,20 +1,19 @@
 //
-//  Stairs.m
+//  Chest.m
 //  XenaRogue
 //
 //  Created by Sergey Klimov on 4/22/12.
 //  Copyright (c) 2012 Self-Employed. All rights reserved.
 //
 
-#import "Stairs.h"
+#import "Chest.h"
 
-@implementation Stairs
-@synthesize down;
+@implementation Chest
+@synthesize open;
 -(NSString*) assetName {
-    return self.down?@"stone_stairs_down":@"stone_stairs_up";
+    return self.open?@"chest2_open":@"chest2_closed";
 }
 - (GameMapLayer) mapLayer {
     return GameMapLayerOnFloor;
 }
-
 @end

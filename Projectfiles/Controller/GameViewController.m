@@ -46,9 +46,9 @@
 }
 
 - (void) drawMapRect:(MapRect) mapRect {
-    
-    for (int x = mapRect.origin.x; x<mapRect.origin.x+mapRect.size.x; x++) {
-        for (int y = mapRect.origin.y; y<mapRect.origin.y+mapRect.size.y; y++) {
+    //fixme: maprect+1
+    for (int x = mapRect.origin.x; x<=mapRect.origin.x+mapRect.size.x; x++) {
+        for (int y = mapRect.origin.y; y<=mapRect.origin.y+mapRect.size.y; y++) {
             Coords coords = CoordsMake(x, y);
             LandscapeMapTile mapTile = [self.map landscapeMapTileAtCoords:coords];
             LandscapeMapTile neighbours [8];
@@ -62,7 +62,7 @@
             NSArray* objects = [self.map objectsAtCoords:coords];
             for (GameObject* object in objects) {
                 
-                [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[self frameNameForGameObject:object action:@"stand"] toCoords:coords];
+                [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[self frameNameForGameObject:object action:@"stand"] toCoords:coords andGameMapLayer:object.mapLayer];
             }
         }
     }
@@ -95,14 +95,18 @@
         action = @"stand";
     }
     NSString *direction = @"";
+    NSString* result;
     if ([gameObject isKindOfClass:[Creature class]]) {
         direction = [MapDirectionName nameMapDirection:((Creature*)gameObject).direction] ;
         direction = [direction substringToIndex:1];
         
+        result = [NSString stringWithFormat:@"%@_%@_%@", gameObject.assetName, action, direction];
+
+    } else {
+        result = gameObject.assetName;
     }
      
     
-    NSString* result = [NSString stringWithFormat:@"%@_%@_%@", gameObject.frameName, action, direction];
     return result;
     
 }

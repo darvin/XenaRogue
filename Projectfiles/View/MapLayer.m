@@ -100,16 +100,17 @@
 
 }
 - (void) setFrameName:(NSString*) frameName toMapNodeWithId:(GameObjectId) nodeId {
+    NSLog(@"%@", frameName);
     MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
     [sprite setTextureRect:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: frameName ].rect ];
 
 }
-- (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords {
+- (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords andGameMapLayer:(GameMapLayer) gameMapLayer {
     if (![mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]]) {
         MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:[frameName stringByAppendingString:@".png"]];
         sprite.position = [self convertMapCoordsToNodePoint:coords];
         
-        [spriteSheet addChild:sprite z:1000];
+        [spriteSheet addChild:sprite z:gameMapLayer];
         [mapNodesById setObject:sprite forKey:[NSValue valueWithGameObjectId:nodeId]];
     } else {
         //do nothing. object already is map sprite
@@ -123,7 +124,7 @@
     MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
     sprite.position = [self convertMapCoordsToNodePoint:coords];
 //    NSLog(@"%@,  %d,%d    %d",frameName, coords.x, coords.y, mapTile);
-    [spriteSheet addChild:sprite]; 
+    [spriteSheet addChild:sprite z:GameMapLayerLandscape]; 
 }
 
 - (CGRect) boundingBox {

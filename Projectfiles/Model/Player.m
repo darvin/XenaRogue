@@ -13,7 +13,7 @@
 - (GameMapLayer) mapLayer {
     return GameMapLayerStandingCreatures;
 }
--(NSString*) frameName {
+-(NSString*) assetName {
     return @"fighter";
 }
 @end
