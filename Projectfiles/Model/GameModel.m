@@ -13,7 +13,7 @@
 -(id) initWithNewLocalPlayer {
     if (self=[super init]){
         self.localPlayer = [[LocalPlayer alloc] initWithXp:0];
-        self.currentMap = [[Map alloc] initAndGenerateWithLocalPlayer:self.localPlayer andSize:MapSizeMake(80, 60)];
+        self.currentMap = [[Map alloc] initAndGenerateWithLocalPlayer:self.localPlayer andSize:MapSizeMake(25, 25)];
 //        self.currentMap = [[Map alloc] initAndWithLocalPlayer:self.localPlayer andURL:[[NSBundle mainBundle] URLForResource:@"map" withExtension:@"txt"]];
     }
     return self;
