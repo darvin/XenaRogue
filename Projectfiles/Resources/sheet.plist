@@ -7,7 +7,7 @@
             <key>animated_weapon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,391},{10,10}}</string>
+                <string>{{493,31},{10,10}}</string>
                 <key>offset</key>
                 <string>{-10,10}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>blood_green.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,479},{22,22}}</string>
+                <string>{{115,321},{22,22}}</string>
                 <key>offset</key>
                 <string>{0,-5}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>blood_red.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{111,309},{22,22}}</string>
+                <string>{{89,321},{22,22}}</string>
                 <key>offset</key>
                 <string>{0,-5}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>blood_red1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{63,289},{26,18}}</string>
+                <string>{{489,45},{26,18}}</string>
                 <key>offset</key>
                 <string>{2,-5}</string>
                 <key>rotated</key>
@@ -59,11 +59,11 @@
             <key>blood_red2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,357},{28,24}}</string>
+                <string>{{37,389},{28,24}}</string>
                 <key>offset</key>
                 <string>{1,-3}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{3,7},{28,24}}</string>
                 <key>sourceSize</key>
@@ -72,7 +72,7 @@
             <key>blood_red3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{483,39},{26,24}}</string>
+                <string>{{483,75},{26,24}}</string>
                 <key>offset</key>
                 <string>{0,-3}</string>
                 <key>rotated</key>
@@ -85,11 +85,11 @@
             <key>blood_red4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{479,93},{30,22}}</string>
+                <string>{{37,355},{30,22}}</string>
                 <key>offset</key>
                 <string>{1,-2}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{2,7},{30,22}}</string>
                 <key>sourceSize</key>
@@ -124,7 +124,7 @@
             <key>blueSkeleton_stand_e.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{113,3},{30,34}}</string>
+                <string>{{37,37},{30,34}}</string>
                 <key>offset</key>
                 <string>{-1,-1}</string>
                 <key>rotated</key>
@@ -134,10 +134,36 @@
                 <key>sourceSize</key>
                 <string>{32,36}</string>
             </dict>
+            <key>blueSkeleton_stand_n.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{455,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_stand_s.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{417,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
             <key>blueSkeleton_stand_w.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{75,3},{30,34}}</string>
+                <string>{{379,3},{30,34}}</string>
                 <key>offset</key>
                 <string>{1,-1}</string>
                 <key>rotated</key>
@@ -147,14 +173,170 @@
                 <key>sourceSize</key>
                 <string>{32,36}</string>
             </dict>
+            <key>blueSkeleton_walk_e_0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{379,37},{24,34}}</string>
+                <key>offset</key>
+                <string>{-3,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{2,2},{24,34}}</string>
+                <key>sourceSize</key>
+                <string>{34,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_e_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{151,37},{28,34}}</string>
+                <key>offset</key>
+                <string>{-1,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{28,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_e_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{379,37},{24,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{4,2},{24,34}}</string>
+                <key>sourceSize</key>
+                <string>{32,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_e_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{265,37},{26,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{26,34}}</string>
+                <key>sourceSize</key>
+                <string>{26,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_n_0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{341,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_n_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{303,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_n_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{265,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_n_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{227,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_s_0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{189,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_s_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{151,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{1,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{2,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{32,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_s_2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{113,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
+            <key>blueSkeleton_walk_s_3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{75,3},{30,34}}</string>
+                <key>offset</key>
+                <string>{0,-1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,2},{30,34}}</string>
+                <key>sourceSize</key>
+                <string>{30,36}</string>
+            </dict>
             <key>chest.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{487,3},{32,22}}</string>
+                <string>{{89,355},{32,22}}</string>
                 <key>offset</key>
                 <string>{0,-5}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,10},{32,22}}</string>
                 <key>sourceSize</key>
@@ -163,11 +345,11 @@
             <key>corpse.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{111,289},{24,16}}</string>
+                <string>{{493,3},{24,16}}</string>
                 <key>offset</key>
                 <string>{1,-6}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{5,14},{24,16}}</string>
                 <key>sourceSize</key>
@@ -176,7 +358,7 @@
             <key>cursor.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{137,395},{32,32}}</string>
+                <string>{{397,397},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +371,7 @@
             <key>cursor_green.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{245,393},{32,32}}</string>
+                <string>{{361,389},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +384,7 @@
             <key>dungeon_landscape_tile_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{209,393},{32,32}}</string>
+                <string>{{325,389},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,7 +397,7 @@
             <key>dungeon_landscape_tile_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{317,391},{32,32}}</string>
+                <string>{{289,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +410,7 @@
             <key>dungeon_landscape_tile_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{281,391},{32,32}}</string>
+                <string>{{289,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +423,7 @@
             <key>dungeon_landscape_tile_100.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{173,359},{32,32}}</string>
+                <string>{{253,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +436,7 @@
             <key>dungeon_landscape_tile_101.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -267,7 +449,7 @@
             <key>dungeon_landscape_tile_102.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{137,359},{32,32}}</string>
+                <string>{{217,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -280,7 +462,7 @@
             <key>dungeon_landscape_tile_103.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{245,357},{32,32}}</string>
+                <string>{{217,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -293,7 +475,7 @@
             <key>dungeon_landscape_tile_104.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{209,357},{32,32}}</string>
+                <string>{{181,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -306,7 +488,7 @@
             <key>dungeon_landscape_tile_105.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{173,323},{32,32}}</string>
+                <string>{{181,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -319,7 +501,7 @@
             <key>dungeon_landscape_tile_106.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,335},{32,32}}</string>
+                <string>{{239,355},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +514,7 @@
             <key>dungeon_landscape_tile_107.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{137,323},{32,32}}</string>
+                <string>{{203,355},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +527,7 @@
             <key>dungeon_landscape_tile_108.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,443},{32,32}}</string>
+                <string>{{145,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -358,7 +540,7 @@
             <key>dungeon_landscape_tile_109.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{65,357},{32,32}}</string>
+                <string>{{167,357},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -371,7 +553,7 @@
             <key>dungeon_landscape_tile_11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,407},{32,32}}</string>
+                <string>{{145,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -384,7 +566,7 @@
             <key>dungeon_landscape_tile_110.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{469,371},{32,32}}</string>
+                <string>{{109,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -397,7 +579,7 @@
             <key>dungeon_landscape_tile_111.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{433,363},{32,32}}</string>
+                <string>{{131,357},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -410,7 +592,7 @@
             <key>dungeon_landscape_tile_112.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{397,363},{32,32}}</string>
+                <string>{{109,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -423,7 +605,7 @@
             <key>dungeon_landscape_tile_113.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -436,7 +618,7 @@
             <key>dungeon_landscape_tile_114.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{325,355},{32,32}}</string>
+                <string>{{95,381},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -449,7 +631,7 @@
             <key>dungeon_landscape_tile_115.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{289,355},{32,32}}</string>
+                <string>{{73,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -462,7 +644,7 @@
             <key>dungeon_landscape_tile_116.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -475,7 +657,7 @@
             <key>dungeon_landscape_tile_117.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -488,7 +670,7 @@
             <key>dungeon_landscape_tile_118.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{253,321},{32,32}}</string>
+                <string>{{37,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -501,7 +683,7 @@
             <key>dungeon_landscape_tile_119.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{217,321},{32,32}}</string>
+                <string>{{141,321},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -514,7 +696,7 @@
             <key>dungeon_landscape_tile_12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,287},{32,32}}</string>
+                <string>{{37,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -527,7 +709,7 @@
             <key>dungeon_landscape_tile_120.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,287},{32,32}}</string>
+                <string>{{469,381},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -540,7 +722,7 @@
             <key>dungeon_landscape_tile_121.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,253},{32,32}}</string>
+                <string>{{433,361},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -553,7 +735,7 @@
             <key>dungeon_landscape_tile_122.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,253},{32,32}}</string>
+                <string>{{397,361},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -566,7 +748,7 @@
             <key>dungeon_landscape_tile_123.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,253},{32,32}}</string>
+                <string>{{361,353},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -579,7 +761,7 @@
             <key>dungeon_landscape_tile_124.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{469,335},{32,32}}</string>
+                <string>{{325,353},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -592,7 +774,7 @@
             <key>dungeon_landscape_tile_125.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{433,327},{32,32}}</string>
+                <string>{{289,353},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -605,7 +787,7 @@
             <key>dungeon_landscape_tile_126.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{397,327},{32,32}}</string>
+                <string>{{253,319},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -618,7 +800,7 @@
             <key>dungeon_landscape_tile_127.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,327},{32,32}}</string>
+                <string>{{217,319},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -631,7 +813,7 @@
             <key>dungeon_landscape_tile_128.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -644,7 +826,7 @@
             <key>dungeon_landscape_tile_129.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -657,7 +839,7 @@
             <key>dungeon_landscape_tile_13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{325,319},{32,32}}</string>
+                <string>{{181,319},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -670,7 +852,7 @@
             <key>dungeon_landscape_tile_130.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -683,7 +865,7 @@
             <key>dungeon_landscape_tile_131.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -696,7 +878,7 @@
             <key>dungeon_landscape_tile_132.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -709,7 +891,7 @@
             <key>dungeon_landscape_tile_133.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -722,7 +904,7 @@
             <key>dungeon_landscape_tile_134.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -735,7 +917,7 @@
             <key>dungeon_landscape_tile_135.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -748,7 +930,7 @@
             <key>dungeon_landscape_tile_136.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -761,7 +943,7 @@
             <key>dungeon_landscape_tile_137.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -774,7 +956,7 @@
             <key>dungeon_landscape_tile_138.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -787,7 +969,7 @@
             <key>dungeon_landscape_tile_139.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -800,7 +982,7 @@
             <key>dungeon_landscape_tile_14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{289,319},{32,32}}</string>
+                <string>{{145,285},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -813,7 +995,7 @@
             <key>dungeon_landscape_tile_140.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -826,7 +1008,7 @@
             <key>dungeon_landscape_tile_141.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -839,7 +1021,7 @@
             <key>dungeon_landscape_tile_142.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -852,7 +1034,7 @@
             <key>dungeon_landscape_tile_143.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -865,7 +1047,7 @@
             <key>dungeon_landscape_tile_144.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -878,7 +1060,7 @@
             <key>dungeon_landscape_tile_145.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -891,7 +1073,7 @@
             <key>dungeon_landscape_tile_146.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -904,7 +1086,7 @@
             <key>dungeon_landscape_tile_147.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -917,7 +1099,7 @@
             <key>dungeon_landscape_tile_148.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -930,7 +1112,7 @@
             <key>dungeon_landscape_tile_149.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -943,7 +1125,7 @@
             <key>dungeon_landscape_tile_15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{253,285},{32,32}}</string>
+                <string>{{109,285},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -956,7 +1138,7 @@
             <key>dungeon_landscape_tile_150.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -969,7 +1151,7 @@
             <key>dungeon_landscape_tile_151.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -982,7 +1164,7 @@
             <key>dungeon_landscape_tile_152.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -995,7 +1177,7 @@
             <key>dungeon_landscape_tile_153.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1008,7 +1190,7 @@
             <key>dungeon_landscape_tile_154.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1021,7 +1203,7 @@
             <key>dungeon_landscape_tile_155.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1034,7 +1216,7 @@
             <key>dungeon_landscape_tile_156.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1047,7 +1229,7 @@
             <key>dungeon_landscape_tile_157.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1060,7 +1242,7 @@
             <key>dungeon_landscape_tile_158.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1073,7 +1255,7 @@
             <key>dungeon_landscape_tile_159.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1086,7 +1268,7 @@
             <key>dungeon_landscape_tile_16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{217,285},{32,32}}</string>
+                <string>{{37,287},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1099,7 +1281,7 @@
             <key>dungeon_landscape_tile_160.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1112,7 +1294,7 @@
             <key>dungeon_landscape_tile_161.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1125,7 +1307,7 @@
             <key>dungeon_landscape_tile_162.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1138,7 +1320,7 @@
             <key>dungeon_landscape_tile_163.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1151,7 +1333,7 @@
             <key>dungeon_landscape_tile_164.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1164,7 +1346,7 @@
             <key>dungeon_landscape_tile_165.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1177,7 +1359,7 @@
             <key>dungeon_landscape_tile_166.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1190,7 +1372,7 @@
             <key>dungeon_landscape_tile_167.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1203,7 +1385,7 @@
             <key>dungeon_landscape_tile_168.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1216,7 +1398,7 @@
             <key>dungeon_landscape_tile_169.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1229,7 +1411,7 @@
             <key>dungeon_landscape_tile_17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,251},{32,32}}</string>
+                <string>{{73,285},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1242,7 +1424,7 @@
             <key>dungeon_landscape_tile_170.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1255,7 +1437,7 @@
             <key>dungeon_landscape_tile_171.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1268,7 +1450,7 @@
             <key>dungeon_landscape_tile_172.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1281,7 +1463,7 @@
             <key>dungeon_landscape_tile_173.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1294,7 +1476,7 @@
             <key>dungeon_landscape_tile_174.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1307,7 +1489,7 @@
             <key>dungeon_landscape_tile_175.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1320,7 +1502,7 @@
             <key>dungeon_landscape_tile_176.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1333,7 +1515,7 @@
             <key>dungeon_landscape_tile_177.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1346,7 +1528,7 @@
             <key>dungeon_landscape_tile_178.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1359,7 +1541,7 @@
             <key>dungeon_landscape_tile_179.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1372,7 +1554,7 @@
             <key>dungeon_landscape_tile_18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,251},{32,32}}</string>
+                <string>{{469,345},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1385,7 +1567,7 @@
             <key>dungeon_landscape_tile_180.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1398,7 +1580,7 @@
             <key>dungeon_landscape_tile_181.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1411,7 +1593,7 @@
             <key>dungeon_landscape_tile_182.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1424,7 +1606,7 @@
             <key>dungeon_landscape_tile_183.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1437,7 +1619,7 @@
             <key>dungeon_landscape_tile_184.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1450,7 +1632,7 @@
             <key>dungeon_landscape_tile_185.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1463,7 +1645,7 @@
             <key>dungeon_landscape_tile_186.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1476,7 +1658,7 @@
             <key>dungeon_landscape_tile_187.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1489,7 +1671,7 @@
             <key>dungeon_landscape_tile_188.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1502,7 +1684,7 @@
             <key>dungeon_landscape_tile_189.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1515,7 +1697,7 @@
             <key>dungeon_landscape_tile_19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,217},{32,32}}</string>
+                <string>{{433,325},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1528,7 +1710,7 @@
             <key>dungeon_landscape_tile_190.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1541,7 +1723,7 @@
             <key>dungeon_landscape_tile_191.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1554,7 +1736,7 @@
             <key>dungeon_landscape_tile_192.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1567,7 +1749,7 @@
             <key>dungeon_landscape_tile_193.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1580,7 +1762,7 @@
             <key>dungeon_landscape_tile_194.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1593,7 +1775,7 @@
             <key>dungeon_landscape_tile_195.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1606,7 +1788,7 @@
             <key>dungeon_landscape_tile_196.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1619,7 +1801,7 @@
             <key>dungeon_landscape_tile_197.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1632,7 +1814,7 @@
             <key>dungeon_landscape_tile_198.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1645,7 +1827,7 @@
             <key>dungeon_landscape_tile_199.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1658,7 +1840,7 @@
             <key>dungeon_landscape_tile_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,217},{32,32}}</string>
+                <string>{{397,325},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1671,7 +1853,7 @@
             <key>dungeon_landscape_tile_20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,217},{32,32}}</string>
+                <string>{{361,317},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1684,7 +1866,7 @@
             <key>dungeon_landscape_tile_200.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1697,7 +1879,7 @@
             <key>dungeon_landscape_tile_201.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1710,7 +1892,7 @@
             <key>dungeon_landscape_tile_202.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1723,7 +1905,7 @@
             <key>dungeon_landscape_tile_203.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1736,7 +1918,7 @@
             <key>dungeon_landscape_tile_204.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1749,7 +1931,7 @@
             <key>dungeon_landscape_tile_205.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1762,7 +1944,7 @@
             <key>dungeon_landscape_tile_206.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1775,7 +1957,7 @@
             <key>dungeon_landscape_tile_207.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1788,7 +1970,7 @@
             <key>dungeon_landscape_tile_208.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1801,7 +1983,7 @@
             <key>dungeon_landscape_tile_209.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1814,7 +1996,7 @@
             <key>dungeon_landscape_tile_21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{469,299},{32,32}}</string>
+                <string>{{325,317},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1827,7 +2009,7 @@
             <key>dungeon_landscape_tile_210.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1840,7 +2022,7 @@
             <key>dungeon_landscape_tile_211.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1853,7 +2035,7 @@
             <key>dungeon_landscape_tile_212.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1866,7 +2048,7 @@
             <key>dungeon_landscape_tile_213.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1879,7 +2061,7 @@
             <key>dungeon_landscape_tile_214.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1892,7 +2074,7 @@
             <key>dungeon_landscape_tile_215.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1905,7 +2087,7 @@
             <key>dungeon_landscape_tile_216.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1918,7 +2100,7 @@
             <key>dungeon_landscape_tile_217.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1931,7 +2113,7 @@
             <key>dungeon_landscape_tile_218.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1944,7 +2126,7 @@
             <key>dungeon_landscape_tile_219.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1957,7 +2139,7 @@
             <key>dungeon_landscape_tile_22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{433,291},{32,32}}</string>
+                <string>{{289,317},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1970,7 +2152,7 @@
             <key>dungeon_landscape_tile_220.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1983,7 +2165,7 @@
             <key>dungeon_landscape_tile_221.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1996,7 +2178,7 @@
             <key>dungeon_landscape_tile_222.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2009,7 +2191,7 @@
             <key>dungeon_landscape_tile_223.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2022,7 +2204,7 @@
             <key>dungeon_landscape_tile_224.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2035,7 +2217,7 @@
             <key>dungeon_landscape_tile_225.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2048,7 +2230,7 @@
             <key>dungeon_landscape_tile_226.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2061,7 +2243,7 @@
             <key>dungeon_landscape_tile_227.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2074,7 +2256,7 @@
             <key>dungeon_landscape_tile_228.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2087,7 +2269,7 @@
             <key>dungeon_landscape_tile_229.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2100,7 +2282,7 @@
             <key>dungeon_landscape_tile_23.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{397,291},{32,32}}</string>
+                <string>{{253,283},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2113,7 +2295,7 @@
             <key>dungeon_landscape_tile_230.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2126,7 +2308,7 @@
             <key>dungeon_landscape_tile_231.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2139,7 +2321,7 @@
             <key>dungeon_landscape_tile_232.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2152,7 +2334,7 @@
             <key>dungeon_landscape_tile_233.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2165,7 +2347,7 @@
             <key>dungeon_landscape_tile_234.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2178,7 +2360,7 @@
             <key>dungeon_landscape_tile_235.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2191,7 +2373,7 @@
             <key>dungeon_landscape_tile_236.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2204,7 +2386,7 @@
             <key>dungeon_landscape_tile_237.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,291},{32,32}}</string>
+                <string>{{217,283},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2217,7 +2399,7 @@
             <key>dungeon_landscape_tile_238.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{325,283},{32,32}}</string>
+                <string>{{181,283},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2230,7 +2412,7 @@
             <key>dungeon_landscape_tile_239.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{289,283},{32,32}}</string>
+                <string>{{145,249},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2243,7 +2425,7 @@
             <key>dungeon_landscape_tile_24.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{253,249},{32,32}}</string>
+                <string>{{109,249},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2256,7 +2438,7 @@
             <key>dungeon_landscape_tile_240.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2269,7 +2451,7 @@
             <key>dungeon_landscape_tile_241.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2282,7 +2464,7 @@
             <key>dungeon_landscape_tile_242.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2295,7 +2477,7 @@
             <key>dungeon_landscape_tile_243.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2308,7 +2490,7 @@
             <key>dungeon_landscape_tile_244.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2321,7 +2503,7 @@
             <key>dungeon_landscape_tile_245.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2334,7 +2516,7 @@
             <key>dungeon_landscape_tile_246.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2347,7 +2529,7 @@
             <key>dungeon_landscape_tile_247.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2360,7 +2542,7 @@
             <key>dungeon_landscape_tile_248.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2373,7 +2555,7 @@
             <key>dungeon_landscape_tile_249.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2386,7 +2568,7 @@
             <key>dungeon_landscape_tile_25.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{217,249},{32,32}}</string>
+                <string>{{37,251},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2399,7 +2581,7 @@
             <key>dungeon_landscape_tile_250.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2412,7 +2594,7 @@
             <key>dungeon_landscape_tile_251.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,363},{32,32}}</string>
+                <string>{{73,453},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2425,7 +2607,7 @@
             <key>dungeon_landscape_tile_252.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{101,371},{32,32}}</string>
+                <string>{{253,417},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2438,7 +2620,7 @@
             <key>dungeon_landscape_tile_253.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,215},{32,32}}</string>
+                <string>{{73,249},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2451,7 +2633,7 @@
             <key>dungeon_landscape_tile_254.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,215},{32,32}}</string>
+                <string>{{469,309},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2464,7 +2646,7 @@
             <key>dungeon_landscape_tile_255.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,181},{32,32}}</string>
+                <string>{{433,289},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2477,7 +2659,7 @@
             <key>dungeon_landscape_tile_26.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,181},{32,32}}</string>
+                <string>{{397,289},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2490,7 +2672,7 @@
             <key>dungeon_landscape_tile_27.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,181},{32,32}}</string>
+                <string>{{361,281},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2503,7 +2685,7 @@
             <key>dungeon_landscape_tile_28.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{469,263},{32,32}}</string>
+                <string>{{325,281},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2516,7 +2698,7 @@
             <key>dungeon_landscape_tile_29.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{433,255},{32,32}}</string>
+                <string>{{289,281},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2529,7 +2711,7 @@
             <key>dungeon_landscape_tile_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{397,255},{32,32}}</string>
+                <string>{{253,247},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2542,7 +2724,7 @@
             <key>dungeon_landscape_tile_30.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,255},{32,32}}</string>
+                <string>{{217,247},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2555,7 +2737,7 @@
             <key>dungeon_landscape_tile_31.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{469,227},{32,32}}</string>
+                <string>{{181,247},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2568,7 +2750,7 @@
             <key>dungeon_landscape_tile_32.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{433,219},{32,32}}</string>
+                <string>{{145,213},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2581,7 +2763,7 @@
             <key>dungeon_landscape_tile_33.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{397,219},{32,32}}</string>
+                <string>{{109,213},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2594,7 +2776,7 @@
             <key>dungeon_landscape_tile_34.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{325,247},{32,32}}</string>
+                <string>{{37,215},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2607,7 +2789,7 @@
             <key>dungeon_landscape_tile_35.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{289,247},{32,32}}</string>
+                <string>{{73,213},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2620,7 +2802,7 @@
             <key>dungeon_landscape_tile_36.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,219},{32,32}}</string>
+                <string>{{469,273},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2633,7 +2815,7 @@
             <key>dungeon_landscape_tile_37.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{469,191},{32,32}}</string>
+                <string>{{433,253},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2646,7 +2828,7 @@
             <key>dungeon_landscape_tile_38.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{433,183},{32,32}}</string>
+                <string>{{397,253},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2659,7 +2841,7 @@
             <key>dungeon_landscape_tile_39.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{397,183},{32,32}}</string>
+                <string>{{361,245},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2672,7 +2854,7 @@
             <key>dungeon_landscape_tile_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{253,213},{32,32}}</string>
+                <string>{{325,245},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2685,7 +2867,7 @@
             <key>dungeon_landscape_tile_40.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{217,213},{32,32}}</string>
+                <string>{{289,245},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2698,7 +2880,7 @@
             <key>dungeon_landscape_tile_41.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{325,211},{32,32}}</string>
+                <string>{{253,211},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2711,7 +2893,7 @@
             <key>dungeon_landscape_tile_42.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{289,211},{32,32}}</string>
+                <string>{{217,211},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2724,7 +2906,7 @@
             <key>dungeon_landscape_tile_43.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,183},{32,32}}</string>
+                <string>{{181,211},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2737,7 +2919,7 @@
             <key>dungeon_landscape_tile_44.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{469,155},{32,32}}</string>
+                <string>{{145,177},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2750,7 +2932,7 @@
             <key>dungeon_landscape_tile_45.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{433,147},{32,32}}</string>
+                <string>{{109,177},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2763,7 +2945,7 @@
             <key>dungeon_landscape_tile_46.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{397,147},{32,32}}</string>
+                <string>{{37,179},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2776,7 +2958,7 @@
             <key>dungeon_landscape_tile_47.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,179},{32,32}}</string>
+                <string>{{73,177},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2789,7 +2971,7 @@
             <key>dungeon_landscape_tile_48.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,179},{32,32}}</string>
+                <string>{{469,237},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2802,7 +2984,7 @@
             <key>dungeon_landscape_tile_49.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{253,177},{32,32}}</string>
+                <string>{{433,217},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2815,7 +2997,7 @@
             <key>dungeon_landscape_tile_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{217,177},{32,32}}</string>
+                <string>{{397,217},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2828,7 +3010,7 @@
             <key>dungeon_landscape_tile_50.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{325,175},{32,32}}</string>
+                <string>{{361,209},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2841,7 +3023,7 @@
             <key>dungeon_landscape_tile_51.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{289,175},{32,32}}</string>
+                <string>{{325,209},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2854,7 +3036,7 @@
             <key>dungeon_landscape_tile_52.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{361,147},{32,32}}</string>
+                <string>{{289,209},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2867,7 +3049,7 @@
             <key>dungeon_landscape_tile_53.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,145},{32,32}}</string>
+                <string>{{253,175},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2880,7 +3062,7 @@
             <key>dungeon_landscape_tile_54.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,179},{32,32}}</string>
+                <string>{{469,237},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2893,7 +3075,7 @@
             <key>dungeon_landscape_tile_55.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,145},{32,32}}</string>
+                <string>{{217,175},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2906,7 +3088,7 @@
             <key>dungeon_landscape_tile_56.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,145},{32,32}}</string>
+                <string>{{181,175},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2919,7 +3101,7 @@
             <key>dungeon_landscape_tile_57.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,143},{32,32}}</string>
+                <string>{{469,201},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2932,7 +3114,7 @@
             <key>dungeon_landscape_tile_58.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,143},{32,32}}</string>
+                <string>{{433,181},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2945,7 +3127,7 @@
             <key>dungeon_landscape_tile_59.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{253,141},{32,32}}</string>
+                <string>{{397,181},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2958,7 +3140,7 @@
             <key>dungeon_landscape_tile_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{217,141},{32,32}}</string>
+                <string>{{361,173},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2971,7 +3153,7 @@
             <key>dungeon_landscape_tile_60.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{325,139},{32,32}}</string>
+                <string>{{325,173},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2984,7 +3166,7 @@
             <key>dungeon_landscape_tile_61.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{289,139},{32,32}}</string>
+                <string>{{289,173},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2997,7 +3179,7 @@
             <key>dungeon_landscape_tile_62.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{475,119},{32,32}}</string>
+                <string>{{145,141},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3010,7 +3192,7 @@
             <key>dungeon_landscape_tile_63.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{439,111},{32,32}}</string>
+                <string>{{109,141},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3023,7 +3205,7 @@
             <key>dungeon_landscape_tile_64.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{403,111},{32,32}}</string>
+                <string>{{37,143},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3036,7 +3218,7 @@
             <key>dungeon_landscape_tile_65.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{367,111},{32,32}}</string>
+                <string>{{73,141},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3049,7 +3231,7 @@
             <key>dungeon_landscape_tile_66.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,109},{32,32}}</string>
+                <string>{{253,139},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3062,7 +3244,7 @@
             <key>dungeon_landscape_tile_67.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,109},{32,32}}</string>
+                <string>{{217,139},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3075,7 +3257,7 @@
             <key>dungeon_landscape_tile_68.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,109},{32,32}}</string>
+                <string>{{181,139},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3088,7 +3270,7 @@
             <key>dungeon_landscape_tile_69.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,107},{32,32}}</string>
+                <string>{{471,165},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3101,7 +3283,7 @@
             <key>dungeon_landscape_tile_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,107},{32,32}}</string>
+                <string>{{435,145},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3114,7 +3296,7 @@
             <key>dungeon_landscape_tile_70.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,179},{32,32}}</string>
+                <string>{{469,237},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3127,7 +3309,7 @@
             <key>dungeon_landscape_tile_71.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,179},{32,32}}</string>
+                <string>{{469,237},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3140,7 +3322,7 @@
             <key>dungeon_landscape_tile_72.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{253,105},{32,32}}</string>
+                <string>{{399,145},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3153,7 +3335,7 @@
             <key>dungeon_landscape_tile_73.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{217,105},{32,32}}</string>
+                <string>{{363,137},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3166,7 +3348,7 @@
             <key>dungeon_landscape_tile_74.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{443,75},{32,32}}</string>
+                <string>{{327,137},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3179,7 +3361,7 @@
             <key>dungeon_landscape_tile_75.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{407,75},{32,32}}</string>
+                <string>{{291,137},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3192,7 +3374,7 @@
             <key>dungeon_landscape_tile_76.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{331,103},{32,32}}</string>
+                <string>{{145,105},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3205,7 +3387,7 @@
             <key>dungeon_landscape_tile_77.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{295,103},{32,32}}</string>
+                <string>{{109,105},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3218,7 +3400,7 @@
             <key>dungeon_landscape_tile_78.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{371,75},{32,32}}</string>
+                <string>{{37,107},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3231,7 +3413,7 @@
             <key>dungeon_landscape_tile_79.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,73},{32,32}}</string>
+                <string>{{73,105},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3244,7 +3426,7 @@
             <key>dungeon_landscape_tile_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,73},{32,32}}</string>
+                <string>{{255,103},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3257,7 +3439,7 @@
             <key>dungeon_landscape_tile_80.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,73},{32,32}}</string>
+                <string>{{219,103},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3270,7 +3452,7 @@
             <key>dungeon_landscape_tile_81.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{447,39},{32,32}}</string>
+                <string>{{183,103},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3283,7 +3465,7 @@
             <key>dungeon_landscape_tile_82.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{411,39},{32,32}}</string>
+                <string>{{147,69},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3296,7 +3478,7 @@
             <key>dungeon_landscape_tile_83.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,71},{32,32}}</string>
+                <string>{{111,69},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3309,7 +3491,7 @@
             <key>dungeon_landscape_tile_84.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{181,107},{32,32}}</string>
+                <string>{{471,165},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3322,7 +3504,7 @@
             <key>dungeon_landscape_tile_85.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{145,71},{32,32}}</string>
+                <string>{{37,71},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3335,7 +3517,7 @@
             <key>dungeon_landscape_tile_86.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{259,69},{32,32}}</string>
+                <string>{{75,69},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3348,7 +3530,7 @@
             <key>dungeon_landscape_tile_87.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{223,69},{32,32}}</string>
+                <string>{{477,129},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3361,7 +3543,7 @@
             <key>dungeon_landscape_tile_88.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{335,67},{32,32}}</string>
+                <string>{{441,109},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3374,7 +3556,7 @@
             <key>dungeon_landscape_tile_89.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{299,67},{32,32}}</string>
+                <string>{{405,109},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3387,7 +3569,7 @@
             <key>dungeon_landscape_tile_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{375,39},{32,32}}</string>
+                <string>{{369,101},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3400,7 +3582,7 @@
             <key>dungeon_landscape_tile_90.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{109,37},{32,32}}</string>
+                <string>{{333,101},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3413,7 +3595,7 @@
             <key>dungeon_landscape_tile_91.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{73,37},{32,32}}</string>
+                <string>{{297,101},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3426,7 +3608,7 @@
             <key>dungeon_landscape_tile_92.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,37},{32,32}}</string>
+                <string>{{261,67},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3439,7 +3621,7 @@
             <key>dungeon_landscape_tile_93.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{451,3},{32,32}}</string>
+                <string>{{225,67},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3452,7 +3634,7 @@
             <key>dungeon_landscape_tile_94.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{415,3},{32,32}}</string>
+                <string>{{189,67},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3465,7 +3647,7 @@
             <key>dungeon_landscape_tile_95.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{187,35},{32,32}}</string>
+                <string>{{447,73},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3478,7 +3660,7 @@
             <key>dungeon_landscape_tile_96.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{151,35},{32,32}}</string>
+                <string>{{411,73},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3491,7 +3673,7 @@
             <key>dungeon_landscape_tile_97.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{263,33},{32,32}}</string>
+                <string>{{375,65},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3504,7 +3686,7 @@
             <key>dungeon_landscape_tile_98.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{227,33},{32,32}}</string>
+                <string>{{339,65},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3517,7 +3699,7 @@
             <key>dungeon_landscape_tile_99.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{339,31},{32,32}}</string>
+                <string>{{303,65},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3530,7 +3712,7 @@
             <key>error.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{85,289},{22,24}}</string>
+                <string>{{69,389},{22,24}}</string>
                 <key>offset</key>
                 <string>{0,-1}</string>
                 <key>rotated</key>
@@ -3595,7 +3777,7 @@
             <key>localPlayer_walk_e_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{341,3},{24,34}}</string>
+                <string>{{341,37},{24,34}}</string>
                 <key>offset</key>
                 <string>{-2,-1}</string>
                 <key>rotated</key>
@@ -3608,7 +3790,7 @@
             <key>localPlayer_walk_e_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{189,3},{28,34}}</string>
+                <string>{{113,37},{28,34}}</string>
                 <key>offset</key>
                 <string>{-1,-1}</string>
                 <key>rotated</key>
@@ -3621,7 +3803,7 @@
             <key>localPlayer_walk_e_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{341,3},{24,34}}</string>
+                <string>{{341,37},{24,34}}</string>
                 <key>offset</key>
                 <string>{0,-1}</string>
                 <key>rotated</key>
@@ -3634,7 +3816,7 @@
             <key>localPlayer_walk_e_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{265,3},{26,34}}</string>
+                <string>{{227,37},{26,34}}</string>
                 <key>offset</key>
                 <string>{0,-1}</string>
                 <key>rotated</key>
@@ -3751,7 +3933,7 @@
             <key>localPlayer_walk_w_0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{303,3},{24,34}}</string>
+                <string>{{303,37},{24,34}}</string>
                 <key>offset</key>
                 <string>{2,-1}</string>
                 <key>rotated</key>
@@ -3764,7 +3946,7 @@
             <key>localPlayer_walk_w_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{151,3},{28,34}}</string>
+                <string>{{75,37},{28,34}}</string>
                 <key>offset</key>
                 <string>{1,-1}</string>
                 <key>rotated</key>
@@ -3777,7 +3959,7 @@
             <key>localPlayer_walk_w_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{303,3},{24,34}}</string>
+                <string>{{303,37},{24,34}}</string>
                 <key>offset</key>
                 <string>{0,-1}</string>
                 <key>rotated</key>
@@ -3790,7 +3972,7 @@
             <key>localPlayer_walk_w_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{227,3},{26,34}}</string>
+                <string>{{189,37},{26,34}}</string>
                 <key>offset</key>
                 <string>{0,-1}</string>
                 <key>rotated</key>
@@ -3816,7 +3998,7 @@
             <key>orange.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{37,289},{22,26}}</string>
+                <string>{{63,355},{22,26}}</string>
                 <key>offset</key>
                 <string>{3,0}</string>
                 <key>rotated</key>
@@ -3842,7 +4024,7 @@
             <key>ruby.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{483,67},{22,26}}</string>
+                <string>{{483,103},{22,26}}</string>
                 <key>offset</key>
                 <string>{3,0}</string>
                 <key>rotated</key>
@@ -3855,7 +4037,7 @@
             <key>stone_stairs_down.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{303,31},{32,32}}</string>
+                <string>{{453,37},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3868,7 +4050,7 @@
             <key>stone_stairs_up.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{379,3},{32,32}}</string>
+                <string>{{417,37},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -3888,7 +4070,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c149e0e67b24ccd515ddb5a1dedacaeb$</string>
+            <string>$TexturePacker:SmartUpdate:1270a31afdba31d1c75c94eb424414a9$</string>
             <key>textureFileName</key>
             <string>sheet.png</string>
         </dict>
