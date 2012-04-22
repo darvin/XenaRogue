@@ -25,6 +25,8 @@
 		57BC0BE8153419760035A280 /* mapnotpit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BC0BE6153419760035A280 /* mapnotpit.txt */; };
 		57D5F57D1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */; };
 		57D5F57E1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */; };
+		57E033D3154469D70023F732 /* Stairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D2154469D70023F732 /* Stairs.m */; };
+		57E033D4154469D70023F732 /* Stairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D2154469D70023F732 /* Stairs.m */; };
 		57E94DB51532327900A86E32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D921532327900A86E32 /* GameViewController.m */; };
 		57E94DB61532327900A86E32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D921532327900A86E32 /* GameViewController.m */; };
 		57E94DB71532327900A86E32 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D961532327900A86E32 /* Creature.m */; };
@@ -118,6 +120,8 @@
 		57A074D615380BE900AA3E17 /* animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = animations.plist; sourceTree = "<group>"; };
 		57BC0BE6153419760035A280 /* mapnotpit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapnotpit.txt; sourceTree = "<group>"; };
 		57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dungeon_tileset_scheme.plist; sourceTree = "<group>"; };
+		57E033D1154469D70023F732 /* Stairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stairs.h; sourceTree = "<group>"; };
+		57E033D2154469D70023F732 /* Stairs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stairs.m; sourceTree = "<group>"; };
 		57E94D911532327900A86E32 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		57E94D921532327900A86E32 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		57E94D941532327900A86E32 /* ConvertableToDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertableToDictionary.h; sourceTree = "<group>"; };
@@ -246,20 +250,9 @@
 			name = MapGeneration;
 			sourceTree = "<group>";
 		};
-		57E94D901532327900A86E32 /* Controller */ = {
+		57E033CF154469AC0023F732 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
-				57E94D911532327900A86E32 /* GameViewController.h */,
-				57E94D921532327900A86E32 /* GameViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		57E94D931532327900A86E32 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5775127D153D019500CAA296 /* MapGeneration */,
-				57E94D941532327900A86E32 /* ConvertableToDictionary.h */,
 				57E94D951532327900A86E32 /* Creature.h */,
 				57E94D961532327900A86E32 /* Creature.m */,
 				57E94D971532327900A86E32 /* CreatureType.h */,
@@ -276,6 +269,29 @@
 				57E94DA21532327900A86E32 /* ItemType.m */,
 				57E94DA31532327900A86E32 /* LocalPlayer.h */,
 				57E94DA41532327900A86E32 /* LocalPlayer.m */,
+				57E94DAC1532327900A86E32 /* Player.h */,
+				57E94DAD1532327900A86E32 /* Player.m */,
+				57E033D1154469D70023F732 /* Stairs.h */,
+				57E033D2154469D70023F732 /* Stairs.m */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		57E94D901532327900A86E32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57E94D911532327900A86E32 /* GameViewController.h */,
+				57E94D921532327900A86E32 /* GameViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57E94D931532327900A86E32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5775127D153D019500CAA296 /* MapGeneration */,
+				57E94D941532327900A86E32 /* ConvertableToDictionary.h */,
+				57E033CF154469AC0023F732 /* GameObjects */,
 				57E94DA51532327900A86E32 /* Map.h */,
 				57E94DA61532327900A86E32 /* Map.m */,
 				57E94DA71532327900A86E32 /* NSValue+Coords.h */,
@@ -283,8 +299,6 @@
 				57E94DA91532327900A86E32 /* NSValue+GameObjectId.h */,
 				57E94DAA1532327900A86E32 /* NSValue+GameObjectId.m */,
 				57E94DAB1532327900A86E32 /* ObjectWithCoords.h */,
-				57E94DAC1532327900A86E32 /* Player.h */,
-				57E94DAD1532327900A86E32 /* Player.m */,
 				5763A3EE1533E5F300A7D38D /* LandscapeMapTile.h */,
 				5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */,
 				5763A3F11533EE5400A7D38D /* MapDirection.h */,
@@ -585,6 +599,7 @@
 				57A074BD15378A8000AA3E17 /* GameModel.m in Sources */,
 				57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */,
 				57751281153D01C100CAA296 /* Map+Generation.m in Sources */,
+				57E033D3154469D70023F732 /* Stairs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +627,7 @@
 				57E94DD41532327900A86E32 /* MapObjectSprite.m in Sources */,
 				57E94DD81532331700A86E32 /* GameLayer.m in Sources */,
 				57751282153D01C100CAA296 /* Map+Generation.m in Sources */,
+				57E033D4154469D70023F732 /* Stairs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

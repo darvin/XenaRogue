@@ -15,11 +15,11 @@
     struct Room* roomB;
 } ;
 
-#define MIN_ROOM_SIZE_X 3
-#define MIN_ROOM_SIZE_Y 3
-#define FROM_DIVISION 0.3
-#define TO_DIVISION 0.7
-#define RANDOMIZE_BORDER_EDGE 8
+#define MIN_ROOM_SIZE_X 2
+#define MIN_ROOM_SIZE_Y 2
+#define FROM_DIVISION 0.4
+#define TO_DIVISION 0.6
+#define RANDOMIZE_BORDER_EDGE 2
 
 
 
@@ -35,18 +35,66 @@
     firstRoom = malloc(sizeof(struct Room));
     firstRoom->size = self.size;
     firstRoom->origin = CoordsMake(0, 0);
-    [self divideRoom:firstRoom];
+    [self divideRoom:firstRoom firstRoom:YES];
     
-    [self drawRoom:firstRoom];
+    [self drawRoom:firstRoom ];
     [self passableCacheFillWalkable];
     [self drawWays:firstRoom];
-    
+    [self drawWalls];
     Coords localPlayerCoords = [self randomCoordsInRoom:*firstRoom filledWith:LandscapeMapTileFloor];
     
     
     return localPlayerCoords;
 }
 
+-(void) drawWalls {
+    for(int x=0;x<self.size.x;x++)
+	{
+		for(int y=0;y<self.size.y;y++)
+		{
+            //border hack
+            if (landscape[x][0]==LandscapeMapTileFloor)
+                landscape[x][0]=LandscapeMapTileWall;
+            if (landscape[x][self.size.y-1]==LandscapeMapTileFloor)
+                landscape[x][self.size.y-1]=LandscapeMapTileWall;
+            if (landscape[0][y]==LandscapeMapTileFloor)
+                landscape[0][y]=LandscapeMapTileWall;
+            if (landscape[self.size.x-1][y]==LandscapeMapTileFloor)
+                landscape[self.size.x-1][y]=LandscapeMapTileWall;
+
+            
+            if (landscape[x][y]!=LandscapeMapTileEmpty)
+                continue;
+            
+            BOOL makeWall = NO;
+            for(int dx=-1;dx<=1;dx++)
+            {
+                for(int dy=-1;dy<=1;dy++)
+                {
+                    if (x==0&&y==0) {
+                        continue;
+                    }
+                    LandscapeMapTile neigbour = [self landscapeMapTileAtCoords:CoordsMake(x+dx, y+dy)];
+                    if (neigbour!=LandscapeMapTileWall&&neigbour!=LandscapeMapTileCeiling&& neigbour!=LandscapeMapTileEmpty) {
+                        makeWall = YES;
+                        break;
+                    }
+                }
+                if (makeWall)
+                    break;
+            }
+            if (makeWall) { //hack for ceilings
+                landscape[x][y] = LandscapeMapTileWall;
+                if (y>1&&landscape[x][y-1]!=LandscapeMapTileFloor) {
+                    landscape[x][y-1] = LandscapeMapTileWall;
+                }
+                if (y<self.size.y&&landscape[x][y+1]!=LandscapeMapTileFloor) {
+                    landscape[x][y+1] = LandscapeMapTileWall;
+                }
+            }
+        }
+    }
+}
 
 -(void) drawWays:(struct Room*) roomP {
     if (!((roomP->roomA==NULL)||(roomP->roomB==NULL))) {
@@ -87,14 +135,20 @@
             }
         }
     }
-    @throw [NSException exceptionWithName:@"MapGenerationError" reason:@"cannon find proper random coords" userInfo:nil];
+    @throw [NSException exceptionWithName:@"MapGenerationError" reason:@"can not find proper random coords" userInfo:nil];
 }
 
--(void) randomizeRoom:(struct Room*) roomP {
+-(void) randomizeRoom:(struct Room*) roomP firstRoom:(BOOL) firstRoom  {
     int l = arc4random()%RANDOMIZE_BORDER_EDGE;
     int r = arc4random()%RANDOMIZE_BORDER_EDGE;
     int u = arc4random()%RANDOMIZE_BORDER_EDGE;
     int d = arc4random()%RANDOMIZE_BORDER_EDGE;
+    if (firstRoom) {
+        l += 1;
+        r += 1;
+        u += 1;
+        d += 1;
+    }
     if (roomP->size.x-l-r>MIN_ROOM_SIZE_X) {
         roomP->size.x = roomP->size.x-l-r;
         roomP->origin.x = roomP->origin.x+l;
@@ -127,7 +181,7 @@
 
 }
 
--(void) divideRoom:(struct Room*) roomP {
+-(void) divideRoom:(struct Room*) roomP firstRoom:(BOOL) firstRoom {
     float random = [self randomFloatBetween:FROM_DIVISION and:TO_DIVISION];
     float rA = random;
     float rB = 1-random;
@@ -136,9 +190,13 @@
         ((roomP->size.y*rMin)<MIN_ROOM_SIZE_Y)) {
         roomP->roomA = NULL;
         roomP->roomB = NULL;
-        [self randomizeRoom:roomP];
+        [self randomizeRoom:roomP firstRoom:firstRoom];
         return;
     }
+    if (firstRoom) {
+        [self randomizeRoom:roomP firstRoom:firstRoom];
+
+    };
     
     Coords originA, originB;
     MapSize sizeA, sizeB;
@@ -165,8 +223,8 @@
     
     roomP->roomA = roomA;
     roomP->roomB = roomB;
-    [self divideRoom:roomA];
-    [self divideRoom:roomB];
+    [self divideRoom:roomA firstRoom:NO];
+    [self divideRoom:roomB firstRoom:NO];
     
     
     
