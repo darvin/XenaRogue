@@ -9,6 +9,7 @@
 #import "Creature.h"
 #import "Item.h"
 #import "GameModel.h"
+#import "GameModelNotifications.h"
 @implementation Creature
 @synthesize direction=_direction, hp=_hp;
 -(id) init {
@@ -86,8 +87,14 @@
 
 -(void) interactedWithObject:(GameObject *)object {
     self.hp -= 1;
+    [self notifyCreatureLostHP];
     [GameModel log:[NSString stringWithFormat: @"%@ attacked %@ on 1hp", object, self]];
 }
+
+- (void) notifyCreatureLostHP {
+    [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameCreatureLostHP object:self];
+}
+
 
 -(void) die {
     Item* corpse = [Item itemWithTypeName:@"corpse"];

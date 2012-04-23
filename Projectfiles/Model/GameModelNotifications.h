@@ -13,6 +13,7 @@
 #define GMNGameObjectChanged @"GMNGameObjectChanged"
 #define GMNGameObjectRemoved @"GMNGameObjectRemoved"
 #define GMNGameObjectCreated @"GMNGameObjectCreated"
+#define GMNGameCreatureLostHP @"GMNGameCreatureLostHP"
 #define GMNGameMapChanged @"GMNGameMapChanged"
 #define GMNGameLogMessage @"LogMessage"
 

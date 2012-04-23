@@ -53,6 +53,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameObjectChanged:) name:GMNGameObjectChanged object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameObjectCreated:) name:GMNGameObjectCreated object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameObjectRemoved:) name:GMNGameObjectRemoved object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameCreatureLostHP:) name:GMNGameCreatureLostHP object:nil];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameMapChanged:) name:GMNGameMapChanged object:nil];
 
 }
@@ -155,6 +157,12 @@
     GameObject* gameObject = notification.object;
     [self updateGameObject:gameObject];
 }
+
+-(void) gameCreatureLostHP:(NSNotification*) notification {
+    Creature* creature = notification.object;
+    [self.mapLayer showOverlayOnTileOnCoords:creature.coords withFrameName:@"animated_weapon" seconds:0.7];
+}
+
 
 -(void) gameMapChanged:(NSNotification*) notification {
     [self updateGameModel];

@@ -25,7 +25,13 @@
     if (self=[super init]) {
         CocosDebugLayer *debugLayer = [CocosDebugLayer node];
         [self addChild:debugLayer z:10000];
-        CGFloat consolePosition = 700;
+        CGFloat consolePosition;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            consolePosition = 700;
+        } else {
+            consolePosition = 275;
+        }
+
         debugLayer.position = CGPointMake(0, consolePosition);
         debugLayer.fixedY = consolePosition;
         vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
