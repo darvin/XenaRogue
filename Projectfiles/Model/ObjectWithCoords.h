@@ -15,5 +15,5 @@
 @property (readonly, weak) Map* map;
 - (void) setCoords:(Coords)coords andMap:(Map*) map;
 - (void) setCoords:(Coords)coords;
-- (void) removeCoordsAndMap;
+- (void) removeFromMap;
 @end

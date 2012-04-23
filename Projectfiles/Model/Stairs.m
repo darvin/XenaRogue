@@ -7,7 +7,8 @@
 //
 
 #import "Stairs.h"
-
+#import "Player.h"
+#import "GameModel.h"
 @implementation Stairs
 @synthesize down;
 -(NSString*) assetName {
@@ -15,6 +16,19 @@
 }
 - (GameMapLayer) mapLayer {
     return GameMapLayerOnFloor;
+}
+-(void) interactWithObject:(GameObject *)object {
+    if (self.down&& [object isKindOfClass:[Player class]]) {
+        [self.map.gameModel playerChangedMap:(Player*)object];
+    }
+}
+
+-(BOOL) isPassable {
+    return YES;
+}
+
+-(BOOL) isRemovable {
+    return NO;
 }
 
 @end

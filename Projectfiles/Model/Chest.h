@@ -9,5 +9,5 @@
 #import "GameObject.h"
 
 @interface Chest : GameObject
-@property BOOL open;
+@property (nonatomic) BOOL open;
 @end

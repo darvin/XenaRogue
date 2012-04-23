@@ -11,4 +11,5 @@
 @interface GameObjectType : NSObject
 -(id) initFromPlist:(NSString*)plistName withId:(NSString*) typeId;
 +(id) gameObjectTypeFromPlist:(NSString*)plistName withId:(NSString*) typeId;
+@property (nonatomic, readonly) NSString* assetName;
 @end

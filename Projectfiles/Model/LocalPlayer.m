@@ -12,10 +12,14 @@
 - (id) initWithXp:(NSUInteger) xpNumber {
     if (self = [super init]) {
         self.xp = xpNumber;
+        self.hp = 10000;
     }
     return self;
 }
 -(NSString*) assetName {
     return @"localPlayer";
+}
+-(void) interactWithObject:(GameObject *)object {
+//fixme implement
 }
 @end

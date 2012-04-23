@@ -37,9 +37,16 @@ static GameObjectId lastGameObjectId = 0;
     
 }
 
+- (void) notifyObjectChanged {
+    [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameObjectChanged object:self];
+}
+
 - (void) setCoords:(Coords)coords andMap:(Map*) map {
+    
     _map = map;
     [self setCoords:coords];
+    [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameObjectCreated object:self];
+
 }
 
 - (void) setCoords:(Coords)coords {
@@ -49,12 +56,16 @@ static GameObjectId lastGameObjectId = 0;
         @throw([NSException exceptionWithName:@"GameObjectException" reason:@"Setting of coords to object without map" userInfo:nil]);
     }
 }
-- (void) removeCoordsAndMap {
+- (void) removeFromMap {
     if (self.map==nil||CoordsIsNull(self.coords)) {
         @throw([NSException exceptionWithName:@"GameObjectException" reason:@"Trying to remove object without map from map" userInfo:nil]);
     } else {
+        [self.map removeObject:self];
         _map = nil;
         _coords = CoordsNull;
+    
+        [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameObjectRemoved object:self];
+
     }
 }
 

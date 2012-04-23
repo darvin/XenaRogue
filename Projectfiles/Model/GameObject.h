@@ -21,6 +21,10 @@
 @property (readonly) GameObjectId objectId;
 @property (readonly) GameMapLayer mapLayer; 
 @property (readonly) NSString* assetName;
+@property (readonly) BOOL isRemovable;
+@property (readonly) BOOL isPassable;
+
 - (BOOL) moveToCoords:(Coords) coord;
-- (BOOL) isPassable;
+-(void)interactWithObject:(GameObject*)object;
+- (void) notifyObjectChanged;
 @end

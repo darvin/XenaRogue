@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "GameObjectType.h"
 @interface ItemType : GameObjectType
-
++(ItemType*) itemTypeWithName:(NSString*) name;
 @end

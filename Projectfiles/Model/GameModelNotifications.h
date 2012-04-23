@@ -10,5 +10,10 @@
 #define XenaRogue_GameModelNotifications_h
 
 #define GMNGameObjectMoved @"GMNGameObjectMoved"
+#define GMNGameObjectChanged @"GMNGameObjectChanged"
+#define GMNGameObjectRemoved @"GMNGameObjectRemoved"
+#define GMNGameObjectCreated @"GMNGameObjectCreated"
+#define GMNGameMapChanged @"GMNGameMapChanged"
+
 
 #endif

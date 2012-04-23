@@ -7,13 +7,14 @@
 //
 
 #import "Creature.h"
-
+#import "Item.h"
 @implementation Creature
-@synthesize direction=_direction;
+@synthesize direction=_direction, hp=_hp;
 -(id) init {
     if (self=[super init]) {
         _direction = MapDirectionS;
         rallyPoint = CoordsNull;
+        _hp = RANDOM(1, 10);
     }
     return self;
 }
@@ -24,20 +25,30 @@
 
 - (BOOL) moveToCoords:(Coords) coords{ 
     self.direction = MapDirectionFromDeltaCoords(self.coords, coords);
+    for (GameObject*objectToBump in [self.map objectsAtCoords:coords]) {
+        [objectToBump interactWithObject:self];
+    }
     if ([self.map isPassableAtCoords:coords]) {
         return [super moveToCoords:coords];
     } else {
+        
         return NO;
     }
 }
 
 - (void) directiveMove:(Coords) coords {
-  rallyPoint = coords;
-//    [self moveToCoords:coords];
-    NSLog(@"%d %d", coords.x, coords.y);
+    if (LandscapeMapTileIsPassable(([self.map landscapeMapTileAtCoords:coords]))) {
+        rallyPoint = coords;
+        //    [self moveToCoords:coords];
+        NSLog(@"%d %d", coords.x, coords.y);
+
+    }
 }
 
-- (BOOL) isPassable {
+-(BOOL) isRemovable {
+    return YES;
+}
+-(BOOL) isPassable {
     return NO;
 }
 
@@ -65,5 +76,28 @@
 
 -(NSString*) assetName {
     return @"blueSkeleton";
+}
+
+
+-(void) interactWithObject:(GameObject *)object {
+    self.hp -= 1;
+}
+
+-(void) die {
+    Item* corpse = [Item itemWithTypeName:@"corpse"];
+
+    [self.map putObject:corpse toCoords:self.coords];
+
+    [self removeFromMap];
+}
+
+-(void) setHp:(int)hp {
+    _hp = hp;
+    if (_hp<=0) {
+        [self die];
+    }
+}
+-(void) pickupItem:(Item*)item {
+    //fixme implement
 }
 @end

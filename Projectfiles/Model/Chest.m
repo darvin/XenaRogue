@@ -9,11 +9,29 @@
 #import "Chest.h"
 
 @implementation Chest
-@synthesize open;
+@synthesize open=_open;
 -(NSString*) assetName {
     return self.open?@"chest2_open":@"chest2_closed";
 }
 - (GameMapLayer) mapLayer {
     return GameMapLayerOnFloor;
 }
+-(void) interactWithObject:(GameObject *)object {
+    self.open = !self.open;
+}
+
+- (void) setOpen:(BOOL)open {
+    if (open!=_open) {
+        _open=open;
+        [self notifyObjectChanged];
+    }
+}
+-(BOOL) isRemovable {
+    return NO;
+}
+-(BOOL) isPassable {
+    return NO;
+}
+
+
 @end

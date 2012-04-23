@@ -24,15 +24,14 @@
 @interface MapLayer : CCLayer {
     NSMutableDictionary* mapNodesById;
     CCSpriteBatchNode *spriteSheet;
-    MapSize size;
 }
 @property (weak) id<MapLayerDelegate> delegate;
-
-- (id) initWithSize:(MapSize) mapSize;
+@property MapSize mapSize;
 - (void) removeMapNodeWithId:(GameObjectId) nodeId;
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords;
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords withAnimation:(NSString*) animationName andFrameNameFinal:(NSString*) frameNameFinal;
 - (void) addMapNodeWithId:(GameObjectId) nodeId withFrameName:(NSString*) frameName toCoords:(Coords) coords andGameMapLayer:(GameMapLayer) gameMapLayer;
 - (void) addMapTile:(LandscapeMapTile) mapTile withNeighbours:(LandscapeMapTile[8]) neighbours toCoords:(Coords) coords;
 - (void) clickedAtPoint:(CGPoint) location;
+-(void)cleanGameMap;
 @end

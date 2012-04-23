@@ -9,5 +9,12 @@
 #import "ItemType.h"
 
 @implementation ItemType
++(ItemType*) itemTypeWithName:(NSString*) name {
+    return [[ItemType alloc] init];
+}
 
+//fixme
+-(NSString*) assetName {
+    return @"corpse";
+}
 @end

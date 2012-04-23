@@ -17,7 +17,7 @@
 
 
 @implementation MapLayer
-@synthesize delegate=_delegate;
+@synthesize delegate=_delegate, mapSize=_mapSize;
 
 +(CCScene *) scene
 {
@@ -35,9 +35,8 @@
 }
 
 
--(id) initWithSize:(MapSize) mapSize {
+-(id) init {
     if (self=[super init]) {
-        size = mapSize;
         [LandscapeAssetChooser sharedChooser];
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
@@ -51,24 +50,31 @@
         [spriteSheet.texture setAliasTexParameters];
         [self addChild:spriteSheet];
         
-        mapNodesById = [[NSMutableDictionary alloc] init];
         self.isTouchEnabled = YES;
-
+        mapNodesById = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
+-(void)cleanGameMap {
+    [spriteSheet removeAllChildrenWithCleanup:YES];
+    mapNodesById = [[NSMutableDictionary alloc] init];
+
+}
+
 -(CGPoint) convertMapCoordsToNodePoint:(Coords) coords {
-    return ccp(coords.x*spriteSize, size.y*spriteSize - coords.y*spriteSize);
+    return ccp(coords.x*spriteSize, self.mapSize.y*spriteSize - coords.y*spriteSize);
 }
 
 
 - (Coords) convertNodePointToMapCoords:(CGPoint) point {
-    return  CoordsMake((point.x-spriteSize/2)/spriteSize+1, size.y- (point.y-spriteSize/2)/spriteSize);
+    return  CoordsMake((point.x-spriteSize/2)/spriteSize+1, self.mapSize.y- (point.y-spriteSize/2)/spriteSize);
 }
 
 - (void) removeMapNodeWithId:(GameObjectId) nodeId {
-    
+    MapObjectSprite * sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
+    [spriteSheet removeChild:sprite cleanup:YES];
+    [mapNodesById removeObjectForKey:[NSValue valueWithGameObjectId:nodeId]];
 }
 
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords {
@@ -128,7 +134,7 @@
 }
 
 - (CGRect) boundingBox {
-    return CGRectMake(0, 0, size.x*spriteSize, size.y*spriteSize);
+    return CGRectMake(0, 0, self.mapSize.x*spriteSize, self.mapSize.y*spriteSize);
 }
 
 

@@ -38,7 +38,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 
 @implementation Map
-@synthesize size=_size;
+@synthesize size=_size, gameModel=_gameModel;
 - (id) initWithSize:(MapSize) size {
     if (size.x>kMapMAX_X||size.y>kMapMAX_Y) {
         @throw [NSException exceptionWithName:@"MapError" reason:@"Map too big" userInfo:nil];
@@ -65,20 +65,58 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     @throw [NSException exceptionWithName:@"MapGenerationError" reason:@"can not find proper random coords" userInfo:nil];
 }
 
+- (Coords) randomPassableCoordsNotInCorridor {
+    for (int i=0; i<100; i++) {
+        for (int x=RANDOM(0, self.size.x); x<self.size.x; x++) {
+            for (int y=RANDOM(0, self.size.y);y<self.size.y; y++) {
+                Coords c = CoordsMake(x,y);
+                //fixme
+                if ([self isPassableAtCoords:c]) {
+                    int passableNeigbours = 0;
+                    for (int dx=-1; dx<=1; dx++) {
+                        for (int dy=-1; dy<=1; dy++) {
+                            if (dy==0&&dx==0) {
+                                continue;
+                            }
+                            Coords dc = CoordsMake(x+dx, y+dy);
+                            if ([self isPassableAtCoords:dc]) {
+                                passableNeigbours ++;
+                            }
+                        }
+                    }
+                    if (passableNeigbours>=4) {
+                        return c;
+                    }
+                }
+            }
+        }
+    }
+    @throw [NSException exceptionWithName:@"MapGenerationError" reason:@"can not find proper random coords" userInfo:nil];
+}
+
 
 - (MapRect) rect {
     return MapRectMake(0, 0, self.size.x, self.size.y);
 }
 
+-(void) putObjectToRandomCoords:(GameObject*)object {
+    if (!object.isPassable&&!object.isRemovable) {
+        [self putObject:object toCoords:[self randomPassableCoordsNotInCorridor]];
+    } else {
+        [self putObject:object toCoords:[self randomPassableCoords]];
+
+    }
+}
+
 -(void) _finishGenerationWithPlayerCoords:(Coords)playerCoords {
     [self _passableCacheUpdate];
-    int randomChestNumber = RANDOM(1, 3);
-    int randomMonsterNumber = RANDOM(2,5);
+    int randomChestNumber = RANDOM(1, 5);
+    int randomMonsterNumber = RANDOM(2,20);
     for (int i=0; i<randomChestNumber; i++) {
-        [self putObject:[[Chest alloc] init] toCoords:[self randomPassableCoords]];
+        [self putObjectToRandomCoords:[[Chest alloc] init]];
     }
     for (int i=0; i<randomMonsterNumber; i++) {
-        [self putObject:[[Creature alloc] init] toCoords:[self randomPassableCoords]];
+        [self putObjectToRandomCoords:[[Creature alloc] init]];
     }
     Stairs * downStairs = [[Stairs alloc] init];
     downStairs.down = YES;
@@ -229,7 +267,6 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 - (void) removeObject:(GameObject*) object {
     [objectsById removeObjectForKey:[NSValue valueWithGameObjectId:object.objectId]];
     [[self mutableObjectsAtCoords:object.coords] removeObject:object];
-    [object removeCoordsAndMap];
 }
 
 - (GameObject *) objectById:(GameObjectId) mapObjectId {
@@ -278,8 +315,8 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     
     
 	// add starting node to open list
-	mapNodes[start.x][start.y].onopen = TRUE;
-
+	mapNodes[start.x][start.y].onopen = YES;
+    mapNodes[end.x][end.y].walkable = YES;
     while (!(current.x==end.x&&current.y==end.y)) {
         int lowestF = 0;
         for(int x=0;x<self.size.x; x++)

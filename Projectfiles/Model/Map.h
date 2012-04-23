@@ -21,7 +21,7 @@
 
 @protocol ObjectWithCoords;
 @protocol ConvertableToDictionary;
-
+@class GameModel;
 @class GameObject;
 @class LocalPlayer;
 typedef  enum  {
@@ -64,6 +64,7 @@ MapRect MapRectMake(int x, int y, int width, int height);
 }
 @property (readonly) Coords size;
 @property (readonly) MapRect rect;
+@property (weak) GameModel* gameModel;
 - (id) initWithSize:(MapSize) size;
 - (id) initAndGenerateWithLocalPlayer:(LocalPlayer*) localPlayer andSize:(MapSize) size;
 - (id) initAndWithLocalPlayer:(LocalPlayer*) localPlayer andURL:(NSURL*)fileURL;

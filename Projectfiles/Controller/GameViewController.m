@@ -21,16 +21,27 @@
 
 -(id) initWithGameModel:(GameModel*) gameModel {
     if (self=[super init]) {
-        self.localPlayer = gameModel.localPlayer;
-        self.map = gameModel.currentMap;
         self.gameModel = gameModel;
-        self.mapLayer = [[MapLayer alloc] initWithSize:self.map.size];
-        self.mapLayer.delegate = self;
-        [self drawMapRect:self.map.rect];
-        
+        self.mapLayer = [[MapLayer alloc] init];
+
+        [self updateGameModel];
         [self subscribeToGameModelNotifications];
+
+
+        
     }
     return self;
+}
+
+-(void)updateGameModel {
+    self.localPlayer = self.gameModel.localPlayer;
+    self.map = self.gameModel.currentMap;
+    [self.mapLayer cleanGameMap];
+    self.mapLayer.mapSize = self.map.size;
+    self.mapLayer.delegate = self;
+    [self drawMapRect:self.map.rect];
+
+
 }
 
 - (void) dealloc { //fixme
@@ -39,10 +50,15 @@
 
 - (void) subscribeToGameModelNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameObjectMoved:) name:GMNGameObjectMoved object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameObjectChanged:) name:GMNGameObjectChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameObjectCreated:) name:GMNGameObjectCreated object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameObjectRemoved:) name:GMNGameObjectRemoved object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameMapChanged:) name:GMNGameMapChanged object:nil];
+
 }
 
 - (void) unsubscribeToGameModelNotifications {
-
+    //fixme: implement unsubsribtion
 }
 
 - (void) drawMapRect:(MapRect) mapRect {
@@ -61,11 +77,16 @@
             
             NSArray* objects = [self.map objectsAtCoords:coords];
             for (GameObject* object in objects) {
+                object.coords = coords;
+                [self updateGameObject:object];
                 
-                [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[self frameNameForGameObject:object action:@"stand"] toCoords:coords andGameMapLayer:object.mapLayer];
             }
         }
     }
+}
+
+-(void) updateGameObject:(GameObject*) object {
+    [self.mapLayer addMapNodeWithId:object.objectId withFrameName:[self frameNameForGameObject:object action:@"stand"] toCoords:object.coords andGameMapLayer:object.mapLayer];
 }
 
 - (CCScene *) scene
@@ -86,8 +107,7 @@
 -(void) localPlayerJoystickPressedWithDirection:(MapDirection) direction {
     Coords moveTo = CoordsSum(CoordsDeltaForDirection(direction), self.localPlayer.coords);
     
-    DirectiveMove * dir = [[DirectiveMove alloc] initWithArgs:[NSArray arrayWithObjects:[NSValue valueWithGameObjectId: self.localPlayer.objectId], [NSValue valueWithCoords:moveTo], nil]];
-    [dir runOnGameModel:self.gameModel];
+    [self.localPlayer directiveMove:moveTo];
 }
 
 -(NSString *) frameNameForGameObject:(GameObject*) gameObject action:(NSString*) action {
@@ -115,6 +135,29 @@
     GameObject* gameObject = notification.object;
     GameObjectId objectId = gameObject.objectId;
     [self.mapLayer moveMapNodeWithId:objectId toCoords:gameObject.coords withAnimation:[self frameNameForGameObject:gameObject action:@"walk"] andFrameNameFinal:[[self frameNameForGameObject:gameObject action:@"stand"] stringByAppendingString:@".png"]];
+}
+
+-(void) gameObjectChanged:(NSNotification*) notification {
+    GameObject* gameObject = notification.object;
+    GameObjectId objectId = gameObject.objectId;
+    [self.mapLayer removeMapNodeWithId:objectId];
+    [self updateGameObject:gameObject];
+}
+
+-(void) gameObjectRemoved:(NSNotification*) notification {
+    GameObject* gameObject = notification.object;
+    GameObjectId objectId = gameObject.objectId;
+    [self.mapLayer removeMapNodeWithId:objectId];
+}
+
+
+-(void) gameObjectCreated:(NSNotification*) notification {
+    GameObject* gameObject = notification.object;
+    [self updateGameObject:gameObject];
+}
+
+-(void) gameMapChanged:(NSNotification*) notification {
+    [self updateGameModel];
 }
 
 - (void) mapLayer:(MapLayer *)mapLayer touchedAtCoords:(Coords)coords {

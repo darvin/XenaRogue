@@ -10,4 +10,5 @@
 @class ItemType;
 @interface Item : GameObject
 @property (weak) ItemType* type;
++(Item*) itemWithTypeName:(NSString*) name;
 @end
