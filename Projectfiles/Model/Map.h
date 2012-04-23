@@ -80,4 +80,6 @@ MapRect MapRectMake(int x, int y, int width, int height);
 - (LandscapeMapTile) landscapeMapTileOnDirection:(MapDirection)direction fromCoords:(Coords)coords;
 
 - (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end allowDiagonal:(BOOL) allowDiagonal;
+
+- (Coords) randomPassableCoordsInRect:(MapRect) rect ;
 @end

@@ -13,7 +13,7 @@
 #import "Map+Generation.h"
 #import "Chest.h"
 #import "Stairs.h"
-#import "Creature.h"
+#import "MonsterCreature.h"
 
 
 
@@ -51,10 +51,10 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     return self;
 }
 
-- (Coords) randomPassableCoords {
+- (Coords) randomPassableCoordsInRect:(MapRect) rect {
     for (int i=0; i<100; i++) {
-        for (int x=RANDOM(0, self.size.x); x<self.size.x; x++) {
-            for (int y=RANDOM(0, self.size.y);y<self.size.y; y++) {
+        for (int x=RANDOM(rect.origin.x, rect.size.x+rect.origin.x); x<rect.size.x+rect.origin.x; x++) {
+            for (int y=RANDOM(rect.origin.y, rect.size.y+rect.origin.y);y<rect.size.y+rect.origin.y; y++) {
                 Coords c = CoordsMake(x,y);
                 if ([self isPassableAtCoords:c]) {
                     return c;
@@ -63,6 +63,10 @@ MapRect MapRectMake(int x, int y, int width, int height) {
         }
     }
     @throw [NSException exceptionWithName:@"MapGenerationError" reason:@"can not find proper random coords" userInfo:nil];
+}
+
+- (Coords) randomPassableCoords {
+    return [self randomPassableCoordsInRect:self.rect];
 }
 
 - (Coords) randomPassableCoordsNotInCorridor {
@@ -111,12 +115,12 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 -(void) _finishGenerationWithPlayerCoords:(Coords)playerCoords {
     [self _passableCacheUpdate];
     int randomChestNumber = RANDOM(1, 5);
-    int randomMonsterNumber = RANDOM(2,20);
+    int randomMonsterNumber = RANDOM(2,4);
     for (int i=0; i<randomChestNumber; i++) {
         [self putObjectToRandomCoords:[[Chest alloc] init]];
     }
     for (int i=0; i<randomMonsterNumber; i++) {
-        [self putObjectToRandomCoords:[[Creature alloc] init]];
+        [self putObjectToRandomCoords:[[MonsterCreature alloc] init]];
     }
     Stairs * downStairs = [[Stairs alloc] init];
     downStairs.down = YES;

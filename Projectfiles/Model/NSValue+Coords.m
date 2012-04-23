@@ -24,6 +24,10 @@ BOOL CoordsIsNull(Coords coords) {
     return coords.x==CoordsNull.x&&coords.y==CoordsNull.y;
 }
 
+BOOL CoordsIsEqual(Coords coords1, Coords coords2){
+    return coords1.x==coords2.x&&coords1.y==coords2.y;
+}
+
 Coords CoordsDeltaForDirection(MapDirection direction) {
     int x,y;
     switch (direction) {

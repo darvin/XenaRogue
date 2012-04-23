@@ -14,6 +14,8 @@
 		5763A3EB1533E4BF00A7D38D /* LandscapeAssetChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EA1533E4BF00A7D38D /* LandscapeAssetChooser.m */; };
 		5763A3F01533E5F300A7D38D /* LandscapeMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */; };
 		5763A3F31533EE5400A7D38D /* MapDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3F21533EE5400A7D38D /* MapDirection.m */; };
+		576C2D0A1544F28E0069A840 /* MonsterCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 576C2D091544F28E0069A840 /* MonsterCreature.m */; };
+		576C2D0B1544F28E0069A840 /* MonsterCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 576C2D091544F28E0069A840 /* MonsterCreature.m */; };
 		57751281153D01C100CAA296 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
 		57751282153D01C100CAA296 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
 		577D44DB1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
@@ -111,6 +113,8 @@
 		5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeMapTile.m; sourceTree = "<group>"; };
 		5763A3F11533EE5400A7D38D /* MapDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDirection.h; sourceTree = "<group>"; };
 		5763A3F21533EE5400A7D38D /* MapDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDirection.m; sourceTree = "<group>"; };
+		576C2D081544F28D0069A840 /* MonsterCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterCreature.h; sourceTree = "<group>"; };
+		576C2D091544F28E0069A840 /* MonsterCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonsterCreature.m; sourceTree = "<group>"; };
 		5775127F153D01C100CAA296 /* Map+Generation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Map+Generation.h"; sourceTree = "<group>"; };
 		57751280153D01C100CAA296 /* Map+Generation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Map+Generation.m"; sourceTree = "<group>"; };
 		577D44DA1534159A00B8119E /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 				57E033D2154469D70023F732 /* Stairs.m */,
 				57E033D51544752D0023F732 /* Chest.h */,
 				57E033D61544752D0023F732 /* Chest.m */,
+				576C2D081544F28D0069A840 /* MonsterCreature.h */,
+				576C2D091544F28E0069A840 /* MonsterCreature.m */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -607,6 +613,7 @@
 				57751281153D01C100CAA296 /* Map+Generation.m in Sources */,
 				57E033D3154469D70023F732 /* Stairs.m in Sources */,
 				57E033D71544752D0023F732 /* Chest.m in Sources */,
+				576C2D0A1544F28E0069A840 /* MonsterCreature.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +643,7 @@
 				57751282153D01C100CAA296 /* Map+Generation.m in Sources */,
 				57E033D4154469D70023F732 /* Stairs.m in Sources */,
 				57E033D81544752D0023F732 /* Chest.m in Sources */,
+				576C2D0B1544F28E0069A840 /* MonsterCreature.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
