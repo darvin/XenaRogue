@@ -57,6 +57,7 @@
 }
 
 -(void)cleanGameMap {
+    
     [spriteSheet removeAllChildrenWithCleanup:YES];
     mapNodesById = [[NSMutableDictionary alloc] init];
 

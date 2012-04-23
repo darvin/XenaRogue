@@ -20,6 +20,8 @@
 		57751282153D01C100CAA296 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
 		577D44DB1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		577D44DC1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
+		5789B83815450E6A0016292F /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
+		5789B83915450E6A0016292F /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
 		57A074BD15378A8000AA3E17 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074BC15378A8000AA3E17 /* GameModel.m */; };
 		57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074D21537F9EB00AA3E17 /* DirectiveMove.m */; };
 		57A074D715380BE900AA3E17 /* animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57A074D615380BE900AA3E17 /* animations.plist */; };
@@ -118,6 +120,8 @@
 		5775127F153D01C100CAA296 /* Map+Generation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Map+Generation.h"; sourceTree = "<group>"; };
 		57751280153D01C100CAA296 /* Map+Generation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Map+Generation.m"; sourceTree = "<group>"; };
 		577D44DA1534159A00B8119E /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		5789B83615450E6A0016292F /* CCLayer+Opaque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCLayer+Opaque.h"; sourceTree = "<group>"; };
+		5789B83715450E6A0016292F /* CCLayer+Opaque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCLayer+Opaque.m"; sourceTree = "<group>"; };
 		57A074BB15378A8000AA3E17 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		57A074BC15378A8000AA3E17 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 		57A074D11537F9EB00AA3E17 /* DirectiveMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectiveMove.h; sourceTree = "<group>"; };
@@ -256,6 +260,15 @@
 				57751280153D01C100CAA296 /* Map+Generation.m */,
 			);
 			name = MapGeneration;
+			sourceTree = "<group>";
+		};
+		5789B83415450E1B0016292F /* Cocos2dExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5789B83615450E6A0016292F /* CCLayer+Opaque.h */,
+				5789B83715450E6A0016292F /* CCLayer+Opaque.m */,
+			);
+			path = Cocos2dExtensions;
 			sourceTree = "<group>";
 		};
 		57E033CF154469AC0023F732 /* GameObjects */ = {
@@ -424,6 +437,7 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
+				5789B83415450E1B0016292F /* Cocos2dExtensions */,
 				57E94D901532327900A86E32 /* Controller */,
 				57E94D931532327900A86E32 /* Model */,
 				57E94DB01532327900A86E32 /* View */,
@@ -614,6 +628,7 @@
 				57E033D3154469D70023F732 /* Stairs.m in Sources */,
 				57E033D71544752D0023F732 /* Chest.m in Sources */,
 				576C2D0A1544F28E0069A840 /* MonsterCreature.m in Sources */,
+				5789B83815450E6A0016292F /* CCLayer+Opaque.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +659,7 @@
 				57E033D4154469D70023F732 /* Stairs.m in Sources */,
 				57E033D81544752D0023F732 /* Chest.m in Sources */,
 				576C2D0B1544F28E0069A840 /* MonsterCreature.m in Sources */,
+				5789B83915450E6A0016292F /* CCLayer+Opaque.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
