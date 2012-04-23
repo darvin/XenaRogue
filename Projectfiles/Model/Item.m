@@ -36,7 +36,7 @@
     return YES;
 }
 
--(void) interactWithObject:(GameObject *)object {
+-(void) interactedWithObject:(GameObject *)object {
     if ([object isKindOfClass:[Creature class]]) {
         [self removeFromMap];
         [((Creature*)object) pickupItem:self];

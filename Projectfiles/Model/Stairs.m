@@ -17,7 +17,7 @@
 - (GameMapLayer) mapLayer {
     return GameMapLayerOnFloor;
 }
--(void) interactWithObject:(GameObject *)object {
+-(void) interactedWithObject:(GameObject *)object {
     if (self.down&& [object isKindOfClass:[Player class]]) {
         [self.map.gameModel playerChangedMap:(Player*)object];
     }

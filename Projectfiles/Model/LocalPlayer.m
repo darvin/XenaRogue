@@ -19,7 +19,7 @@
 -(NSString*) assetName {
     return @"localPlayer";
 }
--(void) interactWithObject:(GameObject *)object {
+-(void) interactedWithObject:(GameObject *)object {
 //fixme implement
 }
 @end

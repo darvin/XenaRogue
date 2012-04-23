@@ -77,7 +77,7 @@ static GameObjectId lastGameObjectId = 0;
     
 }
 
--(void)interactWithObject:(GameObject*)object{
+-(void)interactedWithObject:(GameObject*)object{
     @throw [NSException exceptionWithName:@"NotImplementedError" reason:@"interact not implemented" userInfo:nil];
 }
 

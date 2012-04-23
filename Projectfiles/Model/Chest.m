@@ -16,7 +16,7 @@
 - (GameMapLayer) mapLayer {
     return GameMapLayerOnFloor;
 }
--(void) interactWithObject:(GameObject *)object {
+-(void) interactedWithObject:(GameObject *)object {
     self.open = !self.open;
 }
 

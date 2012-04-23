@@ -307,7 +307,8 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     [self _mapNodesInit];
     int currentCost;
 	Coords current = start;
-	
+	uint maxSteps = self.size.x*self.size.y;
+    uint step = 0;
     for(int x=0;x<self.size.x; x++)
     {
         for(int y=0;y<self.size.y; y++)
@@ -322,6 +323,8 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 	mapNodes[start.x][start.y].onopen = YES;
     mapNodes[end.x][end.y].walkable = YES;
     while (!(current.x==end.x&&current.y==end.y)) {
+        step++; if (step>=maxSteps) {return nil;}; //fixme dirtyhack
+        
         int lowestF = 0;
         for(int x=0;x<self.size.x; x++)
 		{

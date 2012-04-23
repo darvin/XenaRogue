@@ -25,6 +25,6 @@
 @property (readonly) BOOL isPassable;
 
 - (BOOL) moveToCoords:(Coords) coord;
--(void)interactWithObject:(GameObject*)object;
+-(void)interactedWithObject:(GameObject*)object;
 - (void) notifyObjectChanged;
 @end

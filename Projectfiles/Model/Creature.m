@@ -25,15 +25,19 @@
 
 - (BOOL) moveToCoords:(Coords) coords{ 
     self.direction = MapDirectionFromDeltaCoords(self.coords, coords);
-    for (GameObject*objectToBump in [self.map objectsAtCoords:coords]) {
-        [objectToBump interactWithObject:self];
-    }
+    BOOL result;
+    
     if ([self.map isPassableAtCoords:coords]) {
-        return [super moveToCoords:coords];
+        result = [super moveToCoords:coords];
     } else {
-        
-        return NO;
+        result = NO;
     }
+    for (GameObject*objectToBump in [self.map objectsAtCoords:coords]) {
+        if (objectToBump!=self) {
+            [objectToBump interactedWithObject:self];
+        }
+    }
+    return result;
 }
 
 - (void) directiveMove:(Coords) coords {
@@ -79,7 +83,7 @@
 }
 
 
--(void) interactWithObject:(GameObject *)object {
+-(void) interactedWithObject:(GameObject *)object {
     self.hp -= 1;
 }
 
