@@ -24,6 +24,8 @@ Coords CoordsSum(Coords c1, Coords c2);
 Coords CoordsDeltaForDirection(MapDirection direction);
 BOOL CoordsIsEqual(Coords coords1, Coords coords2);
 MapDirection MapDirectionFromDeltaCoords(Coords coords1, Coords coords2);
+Coords CoordsDifference(Coords c1, Coords c2);
+uint CoordsDistance(Coords c1, Coords c2);
 
 @interface NSValue (Coords)
 +(NSValue*) valueWithCoords:(Coords)coords;

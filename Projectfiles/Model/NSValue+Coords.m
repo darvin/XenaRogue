@@ -20,6 +20,16 @@ Coords CoordsSum(Coords c1, Coords c2) {
     return CoordsMake(c1.x+c2.x, c1.y+c2.y);
 }
 
+Coords CoordsDifference(Coords c1, Coords c2) {
+    return CoordsMake(c1.x-c2.x, c1.y-c2.y);
+}
+
+uint CoordsDistance(Coords c1, Coords c2) {
+    Coords d = CoordsDifference(c1, c2);
+    uint max = abs(d.x)>abs(d.y)?d.x:d.y;
+    return max;
+}
+
 BOOL CoordsIsNull(Coords coords) {
     return coords.x==CoordsNull.x&&coords.y==CoordsNull.y;
 }

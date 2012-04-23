@@ -31,4 +31,9 @@
     return NO;
 }
 
+
+
+-(NSString*) description {
+    return @"Stairs";
+}
 @end

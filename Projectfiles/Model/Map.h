@@ -24,6 +24,8 @@
 @class GameModel;
 @class GameObject;
 @class LocalPlayer;
+@class Player;
+@class Creature;
 typedef  enum  {
     GameMapLayerLandscape =0,
     GameMapLayerOnFloor,
@@ -83,4 +85,6 @@ MapRect MapRectMake(int x, int y, int width, int height);
 - (NSArray*) findPathFromCoords:(Coords) start toCoords:(Coords) end allowDiagonal:(BOOL) allowDiagonal;
 
 - (Coords) randomPassableCoordsInRect:(MapRect) rect ;
+
+- (Player*) playerInFOVOfCreature:(Creature*)creature;
 @end

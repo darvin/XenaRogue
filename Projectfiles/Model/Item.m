@@ -42,4 +42,9 @@
         [((Creature*)object) pickupItem:self];
     }
 }
+
+
+-(NSString*) description {
+    return @"Item";
+}
 @end

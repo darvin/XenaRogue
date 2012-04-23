@@ -16,4 +16,10 @@
 -(NSString*) assetName {
     return @"fighter";
 }
+
+
+
+-(NSString*) description {
+    return @"Player";
+}
 @end

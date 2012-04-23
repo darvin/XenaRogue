@@ -8,6 +8,7 @@
 
 #import "Creature.h"
 #import "Item.h"
+#import "GameModel.h"
 @implementation Creature
 @synthesize direction=_direction, hp=_hp;
 -(id) init {
@@ -85,6 +86,7 @@
 
 -(void) interactedWithObject:(GameObject *)object {
     self.hp -= 1;
+    [GameModel log:[NSString stringWithFormat: @"%@ attacked %@ on 1hp", object, self]];
 }
 
 -(void) die {
@@ -103,5 +105,14 @@
 }
 -(void) pickupItem:(Item*)item {
     //fixme implement
+}
+
+-(NSString*) description {
+    return @"Creature";
+}
+
+
+-(uint) fovDistance {
+    return 5;
 }
 @end

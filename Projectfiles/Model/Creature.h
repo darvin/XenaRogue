@@ -16,6 +16,7 @@
 @property (weak) CreatureType* type;
 @property (strong) NSArray * wieldedItems;
 @property int hp;
+@property uint fovDistance;
 @property MapDirection direction;
 - (void) directiveMove:(Coords) coords;
 -(void) pickupItem:(Item*)item;

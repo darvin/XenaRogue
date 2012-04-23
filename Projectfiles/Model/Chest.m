@@ -35,4 +35,7 @@
 }
 
 
+-(NSString*) description {
+    return @"Chest";
+}
 @end

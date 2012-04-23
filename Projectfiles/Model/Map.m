@@ -14,6 +14,9 @@
 #import "Chest.h"
 #import "Stairs.h"
 #import "MonsterCreature.h"
+#import "Player.h"
+#import "Creature.h"
+#import "GameModel.h"
 
 
 
@@ -423,6 +426,16 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 }
 - (id) initWithDictionary:(NSDictionary*) dictionary {
     
+}
+
+
+- (Player*) playerInFOVOfCreature:(Creature*)creature{
+    //fixme multiplayer
+    uint distance = CoordsDistance(creature.coords, self.gameModel.localPlayer.coords);
+    if (distance<=creature.fovDistance)
+        return self.gameModel.localPlayer;
+    else
+        return nil;
 }
 
 @end
