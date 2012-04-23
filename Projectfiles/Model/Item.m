@@ -9,6 +9,7 @@
 #import "Item.h"
 #import "ItemType.h"
 #import "Creature.h"
+#import "GameModel.h"
 @implementation Item
 @synthesize  type=_type;
 - (GameMapLayer) mapLayer {
@@ -26,7 +27,9 @@
 }
 
 -(NSString*) assetName  {
-    return self.type.assetName;
+    //fixme save links to itemtypes
+    return @"corpse";
+//    return self.type.assetName;
 }
 -(BOOL) isPassable{ 
     return YES;
@@ -40,11 +43,12 @@
     if ([object isKindOfClass:[Creature class]]) {
         [self removeFromMap];
         [((Creature*)object) pickupItem:self];
+        [GameModel log:[NSString stringWithFormat:@"%@ picked up %@", object, self]];
     }
 }
 
 
 -(NSString*) description {
-    return @"Item";
+    return @"Corpse"; //fixme save links to itemtypes [self.type description];
 }
 @end

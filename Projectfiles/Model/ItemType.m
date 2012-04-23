@@ -17,4 +17,9 @@
 -(NSString*) assetName {
     return @"corpse";
 }
+
+-(NSString*) description {
+    return @"Corpse";
+}
+
 @end
