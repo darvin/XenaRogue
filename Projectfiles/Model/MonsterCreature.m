@@ -10,8 +10,12 @@
 #define RANDOM_WALKING_RANGE 2
 @implementation MonsterCreature
 -(void) tick {
-    if (CoordsIsNull(rallyPoint)||CoordsIsEqual(rallyPoint, self.coords)) {
+    if (beStupidNumberOfTicks) {
+        beStupidNumberOfTicks--;
+        
+    } else if (CoordsIsNull(rallyPoint)||CoordsIsEqual(rallyPoint, self.coords)) {
         rallyPoint = [self.map randomPassableCoordsInRect:MapRectMake(self.coords.x-RANDOM_WALKING_RANGE, self.coords.y-RANDOM_WALKING_RANGE, RANDOM_WALKING_RANGE*2, RANDOM_WALKING_RANGE*2)];
+        beStupidNumberOfTicks = RANDOM(0, 4);
     }
     [super tick];
 }

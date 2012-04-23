@@ -8,6 +8,8 @@
 
 #import "Creature.h"
 
-@interface MonsterCreature : Creature
+@interface MonsterCreature : Creature {
+    uint beStupidNumberOfTicks;
+}
 
 @end

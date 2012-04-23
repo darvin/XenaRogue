@@ -84,7 +84,6 @@
 
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords withAnimation:(NSString*) animationName andFrameNameFinal:(NSString*) frameNameFinal {
     MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
-
     NSLog(@"%@", animationName);
     CCAnimation *animation = [[CCAnimationCache sharedAnimationCache] animationByName:animationName];
     CCAction *animateAction = nil;
@@ -98,7 +97,7 @@
                        [CCMoveTo actionWithDuration:1 position:[self convertMapCoordsToNodePoint:coords]],
                        [CCCallBlock actionWithBlock:^{
         [sprite stopAction:animateAction];
-        [self setFrameName:frameNameFinal toMapNodeWithId:nodeId];
+//        [self setFrameName:frameNameFinal toMapNodeWithId:nodeId];
         
     }],
                        nil];

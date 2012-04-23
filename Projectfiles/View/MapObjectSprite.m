@@ -11,13 +11,9 @@
 @implementation MapObjectSprite
 -(id) initWithSpriteFrameName:(NSString *)spriteFrameName {
     if (self=[super initWithSpriteFrameName:spriteFrameName]) {
+        self.anchorPoint = CGPointMake(0,0);
     } 
     return self;
 }
 
--(void) setPosition:(CGPoint)position {
-    CGPoint realPosition = CGPointMake(position.x, position.y-spriteSize+self.contentSize.height);
-    
-    [super setPosition:realPosition];
-}
 @end
