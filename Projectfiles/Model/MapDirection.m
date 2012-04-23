@@ -7,6 +7,7 @@
 //
 
 #import "MapDirection.h"
+#import "Map.h"
 MapDirection MapDirectionFromDegrees (float degrees) {
     switch ((int)degrees) {
         case 0:
@@ -43,6 +44,25 @@ MapDirection MapDirectionFromDegrees (float degrees) {
 }
 
 
+MapDirection MapDirectionRandom() {
+    return RANDOM(0,MapDirection_MAX-1);
+}
+
+MapDirection MapDirectionRandomStreight() {
+    int i = RANDOM(0,4);
+    switch (i) {
+        case 0:
+            return MapDirectionN;
+        case 1:
+            return MapDirectionE;
+        case 2:
+            return MapDirectionW;
+        case 3:
+            return MapDirectionS;            
+        default:
+            break;
+    }
+}
 
 @implementation MapDirectionName
 + (NSString*) nameMapDirection:(MapDirection) mapDirection {

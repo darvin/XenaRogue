@@ -19,7 +19,8 @@ typedef enum {
     MapDirection_MAX
 } MapDirection;
 MapDirection MapDirectionFromDegrees (float degrees);
-
+MapDirection MapDirectionRandom();
+MapDirection MapDirectionRandomStreight();
 #define kMapDirectionNames @"nw", @"n", @"ne", @"w", @"e", @"sw", @"s", @"se", nil
 
 @interface MapDirectionName : NSObject

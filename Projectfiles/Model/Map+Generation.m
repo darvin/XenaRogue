@@ -17,9 +17,12 @@
 
 #define MIN_ROOM_SIZE_X 2
 #define MIN_ROOM_SIZE_Y 2
-#define FROM_DIVISION 0.4
-#define TO_DIVISION 0.6
+#define FROM_DIVISION 0.3
+#define TO_DIVISION 0.7
 #define RANDOMIZE_BORDER_EDGE 2
+#define POSSIBILITY_LAVA 40
+#define POSSIBILITY_WATER 70
+#define MIN_ROOM_SIZE_FOR_POOL 8
 
 
 
@@ -41,6 +44,7 @@
     [self passableCacheFillWalkable];
     [self drawWays:firstRoom];
     [self drawWalls];
+    [self drawLavaAndWater:firstRoom];
     Coords localPlayerCoords = [self randomCoordsInRoom:*firstRoom filledWith:LandscapeMapTileFloor];
     
     
@@ -112,6 +116,33 @@
         }
     } 
 
+}
+
+-(void) drawPoolWithLandscapeTile:(LandscapeMapTile)mapTile startingWithCoords:(Coords)coords size:(uint) size {
+    if (size==0||[self landscapeMapTileAtCoords:coords]!=LandscapeMapTileFloor) {
+        return;
+    }
+    landscape[coords.x][coords.y] = mapTile;
+    Coords newCoords = CoordsSum(coords, CoordsDeltaForDirection(MapDirectionRandomStreight()));
+    [self drawPoolWithLandscapeTile:mapTile startingWithCoords:newCoords size:size-1];
+    newCoords = CoordsSum(coords, CoordsDeltaForDirection(MapDirectionRandomStreight()));
+    [self drawPoolWithLandscapeTile:mapTile startingWithCoords:newCoords size:size-1];
+
+}
+-(void) drawLavaAndWater:(struct Room*) roomP {
+    if (!((roomP->roomA==NULL)||(roomP->roomB==NULL))) {
+        [self drawLavaAndWater:roomP->roomA];
+        [self drawLavaAndWater:roomP->roomB];
+    } else if ((roomP->size.x>=MIN_ROOM_SIZE_FOR_POOL)||(roomP->size.y>=MIN_ROOM_SIZE_FOR_POOL)) {
+        Coords startCoords = [self randomCoordsInRoom:*roomP filledWith:LandscapeMapTileFloor];
+        if (arc4random()%100<POSSIBILITY_LAVA) {
+            [self drawPoolWithLandscapeTile:LandscapeMapTileLava startingWithCoords:startCoords size:RANDOM(4, 7)];
+        } else  if (arc4random()%100<POSSIBILITY_WATER) {
+            [self drawPoolWithLandscapeTile:LandscapeMapTileWater startingWithCoords:startCoords size:RANDOM(4, 8)];
+        }
+
+    }
+    
 }
 
 

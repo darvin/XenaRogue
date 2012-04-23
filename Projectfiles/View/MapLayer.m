@@ -69,7 +69,7 @@
 
 
 - (Coords) convertNodePointToMapCoords:(CGPoint) point {
-    return  CoordsMake((point.x-spriteSize/2)/spriteSize+1, self.mapSize.y- (point.y-spriteSize/2)/spriteSize);
+    return  CoordsMake((point.x-spriteSize)/spriteSize+1, self.mapSize.y- (point.y-spriteSize)/spriteSize);
 }
 
 - (void) removeMapNodeWithId:(GameObjectId) nodeId {
@@ -85,7 +85,6 @@
 
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords withAnimation:(NSString*) animationName andFrameNameFinal:(NSString*) frameNameFinal {
     MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
-    NSLog(@"%@", animationName);
     CCAnimation *animation = [[CCAnimationCache sharedAnimationCache] animationByName:animationName];
     CCAction *animateAction = nil;
     if ( animation != nil ) {
@@ -106,7 +105,6 @@
 
 }
 - (void) setFrameName:(NSString*) frameName toMapNodeWithId:(GameObjectId) nodeId {
-    NSLog(@"%@", frameName);
     MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
     [sprite setTextureRect:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: frameName ].rect ];
 
@@ -129,7 +127,6 @@
     NSString *frameName = [[LandscapeAssetChooser sharedChooser] frameNameForMapTile:mapTile withNeighbours:neighbours];
     MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:frameName];
     sprite.position = [self convertMapCoordsToNodePoint:coords];
-//    NSLog(@"%@,  %d,%d    %d",frameName, coords.x, coords.y, mapTile);
     [spriteSheet addChild:sprite z:GameMapLayerLandscape]; 
 }
 
