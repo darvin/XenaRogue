@@ -14,6 +14,8 @@
 #import "ColoredCircleSprite.h"
 #import "CCLayerPanZoom.h"
 #import "GameModel.h"
+#import "CocosDebugLayer.h"
+
 @implementation GameLayer
 
 @synthesize joystick=_joystick;
@@ -21,7 +23,11 @@
 
 -(id) init {
     if (self=[super init]) {
-
+        CocosDebugLayer *debugLayer = [CocosDebugLayer node];
+        [self addChild:debugLayer z:10000];
+        CGFloat consolePosition = 700;
+        debugLayer.position = CGPointMake(0, consolePosition);
+        debugLayer.fixedY = consolePosition;
         vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
         
         CCLayerPanZoom *panZoomLayer = [[CCLayerPanZoom alloc] init];

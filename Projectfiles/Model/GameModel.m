@@ -34,6 +34,11 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameMapChanged object:self.currentMap];
 
 }
+
++ (void) log:(NSString*) message {
+    [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameLogMessage object:message];
+
+}
 -(void) tick {
     [self.currentMap tick];
 }

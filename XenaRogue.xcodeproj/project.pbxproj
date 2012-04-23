@@ -22,6 +22,8 @@
 		577D44DC1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		5789B83815450E6A0016292F /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
 		5789B83915450E6A0016292F /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
+		5789B83F154521F30016292F /* CocosDebugLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83D154521F30016292F /* CocosDebugLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5789B840154521F30016292F /* CocosDebugLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83D154521F30016292F /* CocosDebugLayer.m */; };
 		57A074BD15378A8000AA3E17 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074BC15378A8000AA3E17 /* GameModel.m */; };
 		57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074D21537F9EB00AA3E17 /* DirectiveMove.m */; };
 		57A074D715380BE900AA3E17 /* animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57A074D615380BE900AA3E17 /* animations.plist */; };
@@ -122,6 +124,8 @@
 		577D44DA1534159A00B8119E /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
 		5789B83615450E6A0016292F /* CCLayer+Opaque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCLayer+Opaque.h"; sourceTree = "<group>"; };
 		5789B83715450E6A0016292F /* CCLayer+Opaque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCLayer+Opaque.m"; sourceTree = "<group>"; };
+		5789B83C154521F30016292F /* CocosDebugLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDebugLayer.h; sourceTree = "<group>"; };
+		5789B83D154521F30016292F /* CocosDebugLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDebugLayer.m; sourceTree = "<group>"; };
 		57A074BB15378A8000AA3E17 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		57A074BC15378A8000AA3E17 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 		57A074D11537F9EB00AA3E17 /* DirectiveMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectiveMove.h; sourceTree = "<group>"; };
@@ -271,6 +275,23 @@
 			path = Cocos2dExtensions;
 			sourceTree = "<group>";
 		};
+		5789B83A154521F30016292F /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				5789B83B154521F30016292F /* Cocos2d-Debug-Layer */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		5789B83B154521F30016292F /* Cocos2d-Debug-Layer */ = {
+			isa = PBXGroup;
+			children = (
+				5789B83C154521F30016292F /* CocosDebugLayer.h */,
+				5789B83D154521F30016292F /* CocosDebugLayer.m */,
+			);
+			path = "Cocos2d-Debug-Layer";
+			sourceTree = "<group>";
+		};
 		57E033CF154469AC0023F732 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +382,7 @@
 				DCC1A26413A94EE6005BD75D /* Projectfiles-Mac */,
 				DCFA90ED13B4F6A0009DD35A /* BuildSettings */,
 				DCC1A0E613A94ED5005BD75D /* Frameworks */,
+				5789B83A154521F30016292F /* libs */,
 				DCC1A0E413A94ED5005BD75D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -629,6 +651,7 @@
 				57E033D71544752D0023F732 /* Chest.m in Sources */,
 				576C2D0A1544F28E0069A840 /* MonsterCreature.m in Sources */,
 				5789B83815450E6A0016292F /* CCLayer+Opaque.m in Sources */,
+				5789B83F154521F30016292F /* CocosDebugLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +683,7 @@
 				57E033D81544752D0023F732 /* Chest.m in Sources */,
 				576C2D0B1544F28E0069A840 /* MonsterCreature.m in Sources */,
 				5789B83915450E6A0016292F /* CCLayer+Opaque.m in Sources */,
+				5789B840154521F30016292F /* CocosDebugLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

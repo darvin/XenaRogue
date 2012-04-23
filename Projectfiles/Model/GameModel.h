@@ -20,4 +20,5 @@
 -(id) initWithNewLocalPlayer;
 -(id) initWithSavedLocalPlayer;
 -(void) playerChangedMap:(Player*) player;
++ (void) log:(NSString*) message ;
 @end

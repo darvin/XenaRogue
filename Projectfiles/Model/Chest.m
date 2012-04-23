@@ -7,7 +7,7 @@
 //
 
 #import "Chest.h"
-
+#import "GameModel.h"
 @implementation Chest
 @synthesize open=_open;
 -(NSString*) assetName {
@@ -24,6 +24,7 @@
     if (open!=_open) {
         _open=open;
         [self notifyObjectChanged];
+        [GameModel log:open? @"Chest opened":@"Chest closed"];
     }
 }
 -(BOOL) isRemovable {

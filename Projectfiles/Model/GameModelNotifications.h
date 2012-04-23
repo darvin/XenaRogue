@@ -14,6 +14,7 @@
 #define GMNGameObjectRemoved @"GMNGameObjectRemoved"
 #define GMNGameObjectCreated @"GMNGameObjectCreated"
 #define GMNGameMapChanged @"GMNGameMapChanged"
+#define GMNGameLogMessage @"LogMessage"
 
 
 #endif
