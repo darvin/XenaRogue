@@ -149,5 +149,21 @@
 - (void) clickedAtPoint:(CGPoint) location {
     [self.delegate mapLayer:self touchedAtCoords:[self convertNodePointToMapCoords:location]];
 }
-
+-(void) showOverlayOnTileOnCoords:(Coords)coords withFrameName:(NSString*) frameName seconds:(float) seconds{
+    MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:[frameName stringByAppendingString:@".png"]];
+    sprite.position = [self convertMapCoordsToNodePoint:coords];
+    //    NSLog(@"%@,  %d,%d    %d",frameName, coords.x, coords.y, mapTile);
+    [spriteSheet addChild:sprite z:GameMapLayerOverlay]; 
+    
+    CCAction *disappearAction = [CCSequence actions:   
+                                 [CCDelayTime actionWithDuration:seconds],
+                            [CCFadeOut actionWithDuration:0.2],
+                            [CCCallBlock actionWithBlock:^{
+        [spriteSheet removeChild:sprite cleanup:YES];
+        
+    }],
+                            nil];
+    
+    [sprite runAction:disappearAction];
+}
 @end

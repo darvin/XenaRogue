@@ -29,6 +29,7 @@ typedef  enum  {
     GameMapLayerOnFloor,
     GameMapLayerStandingCreatures,
     GameMapLayerFlyingCreatures,
+    GameMapLayerOverlay = 99,
     GameMapLayerDEFAULT =999
     } GameMapLayer;
 

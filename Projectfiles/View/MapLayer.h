@@ -34,4 +34,5 @@
 - (void) addMapTile:(LandscapeMapTile) mapTile withNeighbours:(LandscapeMapTile[8]) neighbours toCoords:(Coords) coords;
 - (void) clickedAtPoint:(CGPoint) location;
 -(void)cleanGameMap;
+-(void) showOverlayOnTileOnCoords:(Coords)coords withFrameName:(NSString*) frameName seconds:(float) seconds;
 @end
