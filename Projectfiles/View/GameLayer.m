@@ -9,12 +9,15 @@
 #import "GameLayer.h"
 
 #import "GameViewController.h"
+#import "GameModel.h"
+
+#ifdef __CC_PLATFORM_IOS
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
 #import "ColoredCircleSprite.h"
 #import "CCLayerPanZoom.h"
-#import "GameModel.h"
 #import "CocosDebugLayer.h"
+#endif
 
 @implementation GameLayer
 
@@ -23,6 +26,10 @@
 
 -(id) init {
     if (self=[super init]) {
+        vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
+
+#ifdef __CC_PLATFORM_IOS
+
         CocosDebugLayer *debugLayer = [CocosDebugLayer node];
         [self addChild:debugLayer z:10000];
         CGFloat consolePosition;
@@ -34,15 +41,15 @@
 
         debugLayer.position = CGPointMake(0, consolePosition);
         debugLayer.fixedY = consolePosition;
-        vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
-        
+
+
         CCLayerPanZoom *panZoomLayer = [[CCLayerPanZoom alloc] init];
-//        panZoomLayer.maxTouchDistanceToClick = 10;
-//        panZoomLayer.position = vc.mapLayer.boundingBoxCenter;
-//        panZoomLayer.panBoundsRect = vc.mapLayer.boundingBox;
+        //        panZoomLayer.maxTouchDistanceToClick = 10;
+        //        panZoomLayer.position = vc.mapLayer.boundingBoxCenter;
+        //        panZoomLayer.panBoundsRect = vc.mapLayer.boundingBox;
         [panZoomLayer addChild:vc.mapLayer];
         vc.mapLayer.isTouchEnabled = NO;
-//        self.isTouchEnabled = YES;
+        //        self.isTouchEnabled = YES;
         panZoomLayer.delegate = self;
         
         
@@ -52,7 +59,7 @@
         [self addChild:panZoomLayer];
         SneakyJoystickSkinnedBase *leftJoy = [[SneakyJoystickSkinnedBase alloc] init];
 		leftJoy.position = ccp(64,64);
-
+        
 		leftJoy.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(205, 201, 201, 128) radius:64];
 		leftJoy.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(238, 233, 233, 200) radius:32];
 		leftJoy.joystick = [[SneakyJoystick alloc] initWithRect:CGRectMake(0,0,128,128)];
@@ -61,6 +68,10 @@
         leftJoy.joystick.thumbRadius = 0.0f;
         self.joystick = leftJoy.joystick;
 		[self addChild:leftJoy];
+#else
+        [self addChild:vc.mapLayer];
+#endif        
+
         
         //move to proper place
         [self schedule:@selector(tick:)];
@@ -74,10 +85,12 @@
         deltaSinceTick = 0;
         [vc.gameModel tick];
         
+#ifdef __CC_PLATFORM_IOS
         if (self.joystick.degrees) {
             [vc localPlayerJoystickPressedWithDirection:MapDirectionFromDegrees(self.joystick.degrees)];
 
         }
+#endif
 
     }
     

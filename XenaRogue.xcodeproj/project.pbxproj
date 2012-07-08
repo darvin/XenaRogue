@@ -15,58 +15,65 @@
 		5763A3F01533E5F300A7D38D /* LandscapeMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */; };
 		5763A3F31533EE5400A7D38D /* MapDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3F21533EE5400A7D38D /* MapDirection.m */; };
 		576C2D0A1544F28E0069A840 /* MonsterCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 576C2D091544F28E0069A840 /* MonsterCreature.m */; };
-		576C2D0B1544F28E0069A840 /* MonsterCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 576C2D091544F28E0069A840 /* MonsterCreature.m */; };
 		57751281153D01C100CAA296 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
-		57751282153D01C100CAA296 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
 		577D44DB1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		577D44DC1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		5789B83815450E6A0016292F /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
-		5789B83915450E6A0016292F /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
 		5789B83F154521F30016292F /* CocosDebugLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83D154521F30016292F /* CocosDebugLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5789B840154521F30016292F /* CocosDebugLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83D154521F30016292F /* CocosDebugLayer.m */; };
 		57A074BD15378A8000AA3E17 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074BC15378A8000AA3E17 /* GameModel.m */; };
 		57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074D21537F9EB00AA3E17 /* DirectiveMove.m */; };
 		57A074D715380BE900AA3E17 /* animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57A074D615380BE900AA3E17 /* animations.plist */; };
+		57BA9A3315AA4AEA00CA2571 /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
+		57BA9A3515AA4AEA00CA2571 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D921532327900A86E32 /* GameViewController.m */; };
+		57BA9A3715AA4AEA00CA2571 /* Map+Generation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57751280153D01C100CAA296 /* Map+Generation.m */; };
+		57BA9A3A15AA4AEA00CA2571 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D961532327900A86E32 /* Creature.m */; };
+		57BA9A3C15AA4AEA00CA2571 /* CreatureType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D981532327900A86E32 /* CreatureType.m */; };
+		57BA9A3E15AA4AEA00CA2571 /* Directive.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9A1532327900A86E32 /* Directive.m */; };
+		57BA9A4015AA4AEA00CA2571 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9C1532327900A86E32 /* GameObject.m */; };
+		57BA9A4215AA4AEA00CA2571 /* GameObjectType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9E1532327900A86E32 /* GameObjectType.m */; };
+		57BA9A4415AA4AEA00CA2571 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA01532327900A86E32 /* Item.m */; };
+		57BA9A4615AA4AEA00CA2571 /* ItemType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA21532327900A86E32 /* ItemType.m */; };
+		57BA9A4815AA4AEA00CA2571 /* LocalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA41532327900A86E32 /* LocalPlayer.m */; };
+		57BA9A4A15AA4AEA00CA2571 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DAD1532327900A86E32 /* Player.m */; };
+		57BA9A4C15AA4AEA00CA2571 /* Stairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D2154469D70023F732 /* Stairs.m */; };
+		57BA9A4E15AA4AEA00CA2571 /* Chest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D61544752D0023F732 /* Chest.m */; };
+		57BA9A5015AA4AEA00CA2571 /* MonsterCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 576C2D091544F28E0069A840 /* MonsterCreature.m */; };
+		57BA9A5215AA4AEA00CA2571 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA61532327900A86E32 /* Map.m */; };
+		57BA9A5415AA4AEA00CA2571 /* NSValue+Coords.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA81532327900A86E32 /* NSValue+Coords.m */; };
+		57BA9A5615AA4AEA00CA2571 /* NSValue+GameObjectId.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DAA1532327900A86E32 /* NSValue+GameObjectId.m */; };
+		57BA9A5915AA4AEA00CA2571 /* LandscapeMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EF1533E5F300A7D38D /* LandscapeMapTile.m */; };
+		57BA9A5B15AA4AEA00CA2571 /* MapDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3F21533EE5400A7D38D /* MapDirection.m */; };
+		57BA9A5D15AA4AEA00CA2571 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074BC15378A8000AA3E17 /* GameModel.m */; };
+		57BA9A5F15AA4AEA00CA2571 /* DirectiveMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074D21537F9EB00AA3E17 /* DirectiveMove.m */; };
+		57BA9A6315AA4AEA00CA2571 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DD61532331700A86E32 /* GameLayer.m */; };
+		57BA9A6515AA4AEA00CA2571 /* MapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DB21532327900A86E32 /* MapLayer.m */; };
+		57BA9A6715AA4AEA00CA2571 /* MapObjectSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DB41532327900A86E32 /* MapObjectSprite.m */; };
+		57BA9A6915AA4AEA00CA2571 /* LandscapeAssetChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5763A3EA1533E4BF00A7D38D /* LandscapeAssetChooser.m */; };
+		57BA9A6B15AA4AEA00CA2571 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */; };
+		57BA9A6D15AA4AEA00CA2571 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A38E13A94F1A005BD75D /* AppDelegate.m */; };
+		57BA9A6E15AA4AEA00CA2571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39113A94F1A005BD75D /* main.m */; };
 		57BC0BE7153419760035A280 /* mapnotpit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BC0BE6153419760035A280 /* mapnotpit.txt */; };
 		57BC0BE8153419760035A280 /* mapnotpit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BC0BE6153419760035A280 /* mapnotpit.txt */; };
 		57D5F57D1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */; };
 		57D5F57E1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */; };
 		57E033D3154469D70023F732 /* Stairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D2154469D70023F732 /* Stairs.m */; };
-		57E033D4154469D70023F732 /* Stairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D2154469D70023F732 /* Stairs.m */; };
 		57E033D71544752D0023F732 /* Chest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D61544752D0023F732 /* Chest.m */; };
-		57E033D81544752D0023F732 /* Chest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E033D61544752D0023F732 /* Chest.m */; };
 		57E94DB51532327900A86E32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D921532327900A86E32 /* GameViewController.m */; };
-		57E94DB61532327900A86E32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D921532327900A86E32 /* GameViewController.m */; };
 		57E94DB71532327900A86E32 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D961532327900A86E32 /* Creature.m */; };
-		57E94DB81532327900A86E32 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D961532327900A86E32 /* Creature.m */; };
 		57E94DB91532327900A86E32 /* CreatureType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D981532327900A86E32 /* CreatureType.m */; };
-		57E94DBA1532327900A86E32 /* CreatureType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D981532327900A86E32 /* CreatureType.m */; };
 		57E94DBB1532327900A86E32 /* Directive.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9A1532327900A86E32 /* Directive.m */; };
-		57E94DBC1532327900A86E32 /* Directive.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9A1532327900A86E32 /* Directive.m */; };
 		57E94DBD1532327900A86E32 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9C1532327900A86E32 /* GameObject.m */; };
-		57E94DBE1532327900A86E32 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9C1532327900A86E32 /* GameObject.m */; };
 		57E94DBF1532327900A86E32 /* GameObjectType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9E1532327900A86E32 /* GameObjectType.m */; };
-		57E94DC01532327900A86E32 /* GameObjectType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94D9E1532327900A86E32 /* GameObjectType.m */; };
 		57E94DC11532327900A86E32 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA01532327900A86E32 /* Item.m */; };
-		57E94DC21532327900A86E32 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA01532327900A86E32 /* Item.m */; };
 		57E94DC31532327900A86E32 /* ItemType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA21532327900A86E32 /* ItemType.m */; };
-		57E94DC41532327900A86E32 /* ItemType.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA21532327900A86E32 /* ItemType.m */; };
 		57E94DC51532327900A86E32 /* LocalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA41532327900A86E32 /* LocalPlayer.m */; };
-		57E94DC61532327900A86E32 /* LocalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA41532327900A86E32 /* LocalPlayer.m */; };
 		57E94DC71532327900A86E32 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA61532327900A86E32 /* Map.m */; };
-		57E94DC81532327900A86E32 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA61532327900A86E32 /* Map.m */; };
 		57E94DC91532327900A86E32 /* NSValue+Coords.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA81532327900A86E32 /* NSValue+Coords.m */; };
-		57E94DCA1532327900A86E32 /* NSValue+Coords.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DA81532327900A86E32 /* NSValue+Coords.m */; };
 		57E94DCB1532327900A86E32 /* NSValue+GameObjectId.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DAA1532327900A86E32 /* NSValue+GameObjectId.m */; };
-		57E94DCC1532327900A86E32 /* NSValue+GameObjectId.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DAA1532327900A86E32 /* NSValue+GameObjectId.m */; };
 		57E94DCD1532327900A86E32 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DAD1532327900A86E32 /* Player.m */; };
-		57E94DCE1532327900A86E32 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DAD1532327900A86E32 /* Player.m */; };
 		57E94DD11532327900A86E32 /* MapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DB21532327900A86E32 /* MapLayer.m */; };
-		57E94DD21532327900A86E32 /* MapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DB21532327900A86E32 /* MapLayer.m */; };
 		57E94DD31532327900A86E32 /* MapObjectSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DB41532327900A86E32 /* MapObjectSprite.m */; };
-		57E94DD41532327900A86E32 /* MapObjectSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DB41532327900A86E32 /* MapObjectSprite.m */; };
 		57E94DD71532331700A86E32 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DD61532331700A86E32 /* GameLayer.m */; };
-		57E94DD81532331700A86E32 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E94DD61532331700A86E32 /* GameLayer.m */; };
 		DC485B1113AA0E5600F2BC70 /* libchipmunk-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B0D13AA0E5600F2BC70 /* libchipmunk-mac.a */; };
 		DC485B1713AA0EBB00F2BC70 /* libbox2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B1613AA0EBB00F2BC70 /* libbox2d-mac.a */; };
 		DC485B4613AA18A600F2BC70 /* libcocosdenshion-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC485B4513AA18A600F2BC70 /* libcocosdenshion-mac.a */; };
@@ -96,11 +103,8 @@
 		DCC1A26E13A94EE6005BD75D /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A26D13A94EE6005BD75D /* fps_images.png */; };
 		DCC1A27013A94EE6005BD75D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A26F13A94EE6005BD75D /* icon.icns */; };
 		DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A38E13A94F1A005BD75D /* AppDelegate.m */; };
-		DCC1A3AA13A94F1A005BD75D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A38E13A94F1A005BD75D /* AppDelegate.m */; };
 		DCC1A3AB13A94F1A005BD75D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */; };
-		DCC1A3AC13A94F1A005BD75D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */; };
 		DCC1A3AD13A94F1A005BD75D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39113A94F1A005BD75D /* main.m */; };
-		DCC1A3AE13A94F1A005BD75D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39113A94F1A005BD75D /* main.m */; };
 		DCC1A3AF13A94F1A005BD75D /* config.lua in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A39513A94F1A005BD75D /* config.lua */; };
 		DCC1A3B013A94F1A005BD75D /* config.lua in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A39513A94F1A005BD75D /* config.lua */; };
 		DCF95CD213A97EC500AE3B80 /* libcocos2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF95CC913A97EC500AE3B80 /* libcocos2d-mac.a */; };
@@ -659,31 +663,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC1A3AA13A94F1A005BD75D /* AppDelegate.m in Sources */,
-				DCC1A3AC13A94F1A005BD75D /* HelloWorldLayer.m in Sources */,
-				DCC1A3AE13A94F1A005BD75D /* main.m in Sources */,
-				57E94DB61532327900A86E32 /* GameViewController.m in Sources */,
-				57E94DB81532327900A86E32 /* Creature.m in Sources */,
-				57E94DBA1532327900A86E32 /* CreatureType.m in Sources */,
-				57E94DBC1532327900A86E32 /* Directive.m in Sources */,
-				57E94DBE1532327900A86E32 /* GameObject.m in Sources */,
-				57E94DC01532327900A86E32 /* GameObjectType.m in Sources */,
-				57E94DC21532327900A86E32 /* Item.m in Sources */,
-				57E94DC41532327900A86E32 /* ItemType.m in Sources */,
-				57E94DC61532327900A86E32 /* LocalPlayer.m in Sources */,
-				57E94DC81532327900A86E32 /* Map.m in Sources */,
-				57E94DCA1532327900A86E32 /* NSValue+Coords.m in Sources */,
-				57E94DCC1532327900A86E32 /* NSValue+GameObjectId.m in Sources */,
-				57E94DCE1532327900A86E32 /* Player.m in Sources */,
-				57E94DD21532327900A86E32 /* MapLayer.m in Sources */,
-				57E94DD41532327900A86E32 /* MapObjectSprite.m in Sources */,
-				57E94DD81532331700A86E32 /* GameLayer.m in Sources */,
-				57751282153D01C100CAA296 /* Map+Generation.m in Sources */,
-				57E033D4154469D70023F732 /* Stairs.m in Sources */,
-				57E033D81544752D0023F732 /* Chest.m in Sources */,
-				576C2D0B1544F28E0069A840 /* MonsterCreature.m in Sources */,
-				5789B83915450E6A0016292F /* CCLayer+Opaque.m in Sources */,
-				5789B840154521F30016292F /* CocosDebugLayer.m in Sources */,
+				57BA9A3315AA4AEA00CA2571 /* CCLayer+Opaque.m in Sources */,
+				57BA9A3515AA4AEA00CA2571 /* GameViewController.m in Sources */,
+				57BA9A3715AA4AEA00CA2571 /* Map+Generation.m in Sources */,
+				57BA9A3A15AA4AEA00CA2571 /* Creature.m in Sources */,
+				57BA9A3C15AA4AEA00CA2571 /* CreatureType.m in Sources */,
+				57BA9A3E15AA4AEA00CA2571 /* Directive.m in Sources */,
+				57BA9A4015AA4AEA00CA2571 /* GameObject.m in Sources */,
+				57BA9A4215AA4AEA00CA2571 /* GameObjectType.m in Sources */,
+				57BA9A4415AA4AEA00CA2571 /* Item.m in Sources */,
+				57BA9A4615AA4AEA00CA2571 /* ItemType.m in Sources */,
+				57BA9A4815AA4AEA00CA2571 /* LocalPlayer.m in Sources */,
+				57BA9A4A15AA4AEA00CA2571 /* Player.m in Sources */,
+				57BA9A4C15AA4AEA00CA2571 /* Stairs.m in Sources */,
+				57BA9A4E15AA4AEA00CA2571 /* Chest.m in Sources */,
+				57BA9A5015AA4AEA00CA2571 /* MonsterCreature.m in Sources */,
+				57BA9A5215AA4AEA00CA2571 /* Map.m in Sources */,
+				57BA9A5415AA4AEA00CA2571 /* NSValue+Coords.m in Sources */,
+				57BA9A5615AA4AEA00CA2571 /* NSValue+GameObjectId.m in Sources */,
+				57BA9A5915AA4AEA00CA2571 /* LandscapeMapTile.m in Sources */,
+				57BA9A5B15AA4AEA00CA2571 /* MapDirection.m in Sources */,
+				57BA9A5D15AA4AEA00CA2571 /* GameModel.m in Sources */,
+				57BA9A5F15AA4AEA00CA2571 /* DirectiveMove.m in Sources */,
+				57BA9A6315AA4AEA00CA2571 /* GameLayer.m in Sources */,
+				57BA9A6515AA4AEA00CA2571 /* MapLayer.m in Sources */,
+				57BA9A6715AA4AEA00CA2571 /* MapObjectSprite.m in Sources */,
+				57BA9A6915AA4AEA00CA2571 /* LandscapeAssetChooser.m in Sources */,
+				57BA9A6B15AA4AEA00CA2571 /* HelloWorldLayer.m in Sources */,
+				57BA9A6D15AA4AEA00CA2571 /* AppDelegate.m in Sources */,
+				57BA9A6E15AA4AEA00CA2571 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +761,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC9C33E713B5024400931BF2 /* BuildSettings-Debug-Mac.xcconfig */;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 			};
 			name = Debug;
 		};
@@ -760,6 +769,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC9C33E913B5024400931BF2 /* BuildSettings-Release-Mac.xcconfig */;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 			};
 			name = Release;
 		};

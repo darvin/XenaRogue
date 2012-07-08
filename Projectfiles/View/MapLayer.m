@@ -134,7 +134,7 @@
     return CGRectMake(0, 0, self.mapSize.x*spriteSize, self.mapSize.y*spriteSize);
 }
 
-
+#ifdef __CC_PLATFORM_IOS
 
 - (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
     UITouch* touch = [touches anyObject];
@@ -142,7 +142,7 @@
     [self clickedAtPoint: [self convertTouchToNodeSpace:touch]];
     
 }
-
+#endif
 
 - (void) clickedAtPoint:(CGPoint) location {
     [self.delegate mapLayer:self touchedAtCoords:[self convertNodePointToMapCoords:location]];
