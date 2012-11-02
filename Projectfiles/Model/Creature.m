@@ -66,7 +66,7 @@
         } else {
             NSArray * path = [[self map] findPathFromCoords:self.coords toCoords:rallyPoint allowDiagonal:NO];
             NSValue *firstStep = [path lastObject];
-            NSLog(@"step: %d,%d",[firstStep coordsValue].x,[firstStep coordsValue].y);
+//            NSLog(@"step: %d,%d",[firstStep coordsValue].x,[firstStep coordsValue].y);
             [self moveToCoords:[firstStep coordsValue]];
 
         }

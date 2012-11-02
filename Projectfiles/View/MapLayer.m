@@ -97,9 +97,7 @@
     CCAction *moveAction = [CCSequence actions:                          
                        [CCMoveTo actionWithDuration:1 position:[self convertMapCoordsToNodePoint:coords]],
                        [CCCallBlock actionWithBlock:^{
-        NSLog(@"Before stopping");
         [sprite stopAction:animateAction];
-        NSLog(@"After stopping");
 
 //        [self setFrameName:frameNameFinal toMapNodeWithId:nodeId];
         
