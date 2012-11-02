@@ -136,7 +136,10 @@
 -(void) gameObjectMoved:(NSNotification*) notification {
     GameObject* gameObject = notification.object;
     GameObjectId objectId = gameObject.objectId;
-    [self.mapLayer moveMapNodeWithId:objectId toCoords:gameObject.coords withAnimation:[self frameNameForGameObject:gameObject action:@"walk"] andFrameNameFinal:[[self frameNameForGameObject:gameObject action:@"stand"] stringByAppendingString:@".png"]];
+    NSString * animation = [self frameNameForGameObject:gameObject action:@"walk"];
+    NSString* finalFrame = [[self frameNameForGameObject:gameObject action:@"stand"] stringByAppendingString:@".png"];
+    Coords newCoords = gameObject.coords;
+    [self.mapLayer moveMapNodeWithId:objectId toCoords:newCoords withAnimation: animation andFrameNameFinal:finalFrame];
 }
 
 -(void) gameObjectChanged:(NSNotification*) notification {

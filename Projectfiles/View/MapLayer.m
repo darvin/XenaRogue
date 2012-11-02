@@ -88,7 +88,7 @@
     CCAnimation *animation = [[CCAnimationCache sharedAnimationCache] animationByName:animationName];
     CCAction *animateAction = nil;
     if ( animation != nil ) {
-        animateAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
+        animateAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
         [sprite runAction:animateAction];
     }
     
@@ -96,7 +96,10 @@
     CCAction *moveAction = [CCSequence actions:                          
                        [CCMoveTo actionWithDuration:1 position:[self convertMapCoordsToNodePoint:coords]],
                        [CCCallBlock actionWithBlock:^{
+        NSLog(@"Before stopping");
         [sprite stopAction:animateAction];
+        NSLog(@"After stopping");
+
 //        [self setFrameName:frameNameFinal toMapNodeWithId:nodeId];
         
     }],
