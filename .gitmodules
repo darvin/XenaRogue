@@ -1,6 +1,3 @@
 [submodule "Projectfiles/Resources/GameDataSource/DiggrExtracter/diggr"]
 	path = Projectfiles/Resources/GameDataSource/DiggrExtracter/diggr
 	url = git://gitorious.org/diggr/diggr.git
-[submodule "libs/Cocos2d-Debug-Layer"]
-	path = libs/Cocos2d-Debug-Layer
-	url = git://github.com/erikolsson/Cocos2d-Debug-Layer.git

@@ -19,7 +19,6 @@
 		577D44DB1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		577D44DC1534159A00B8119E /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 577D44DA1534159A00B8119E /* map.txt */; };
 		5789B83815450E6A0016292F /* CCLayer+Opaque.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83715450E6A0016292F /* CCLayer+Opaque.m */; };
-		5789B83F154521F30016292F /* CocosDebugLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789B83D154521F30016292F /* CocosDebugLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		57A074BD15378A8000AA3E17 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074BC15378A8000AA3E17 /* GameModel.m */; };
 		57A074D31537F9EB00AA3E17 /* DirectiveMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A074D21537F9EB00AA3E17 /* DirectiveMove.m */; };
 		57A074D715380BE900AA3E17 /* animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57A074D615380BE900AA3E17 /* animations.plist */; };
@@ -655,7 +654,6 @@
 				57E033D71544752D0023F732 /* Chest.m in Sources */,
 				576C2D0A1544F28E0069A840 /* MonsterCreature.m in Sources */,
 				5789B83815450E6A0016292F /* CCLayer+Opaque.m in Sources */,
-				5789B83F154521F30016292F /* CocosDebugLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
