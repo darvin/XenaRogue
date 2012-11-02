@@ -392,15 +392,10 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 
 -(void) tick {
-    for (id key in objectsById)
-    {
-        id<Tickable> object = [objectsById objectForKey:key];
-        NSLog(@"Ticking on %@", object);
-        if ([object class]!=[MonsterCreature class]) {
-            [object tick];
-        }
-    };
-    NSLog(@"Tick Finished");
+    [objectsById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        id<Tickable> object = obj;
+        [object tick];
+    }];
 }
 
 
