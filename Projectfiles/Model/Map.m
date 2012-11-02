@@ -392,7 +392,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 
 -(void) tick {
-    [objectsById enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    [[NSDictionary dictionaryWithDictionary:objectsById] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         id<Tickable> object = obj;
         [object tick];
     }];

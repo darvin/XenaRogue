@@ -11,7 +11,7 @@
 #import "GameViewController.h"
 #import "GameModel.h"
 
-#ifdef __CC_PLATFORM_IOS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
 #import "ColoredCircleSprite.h"
@@ -28,7 +28,7 @@
     if (self=[super init]) {
         vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
 
-#ifdef __CC_PLATFORM_IOS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 
         CocosDebugLayer *debugLayer = [CocosDebugLayer node];
         [self addChild:debugLayer z:10000];
@@ -85,7 +85,7 @@
         deltaSinceTick = 0;
         [vc.gameModel tick];
         
-#ifdef __CC_PLATFORM_IOS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         if (self.joystick.degrees) {
             [vc localPlayerJoystickPressedWithDirection:MapDirectionFromDegrees(self.joystick.degrees)];
 

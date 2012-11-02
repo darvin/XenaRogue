@@ -84,6 +84,7 @@
 }
 
 - (void) moveMapNodeWithId:(GameObjectId) nodeId toCoords:(Coords) coords withAnimation:(NSString*) animationName andFrameNameFinal:(NSString*) frameNameFinal {
+    
     MapObjectSprite *sprite = [mapNodesById objectForKey:[NSValue valueWithGameObjectId:nodeId]];
     CCAnimation *animation = [[CCAnimationCache sharedAnimationCache] animationByName:animationName];
     CCAction *animateAction = nil;
@@ -105,6 +106,7 @@
     }],
                        nil];
     [sprite runAction:moveAction];
+     
 
 }
 - (void) setFrameName:(NSString*) frameName toMapNodeWithId:(GameObjectId) nodeId {
@@ -137,7 +139,7 @@
     return CGRectMake(0, 0, self.mapSize.x*spriteSize, self.mapSize.y*spriteSize);
 }
 
-#ifdef __CC_PLATFORM_IOS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 
 - (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
     UITouch* touch = [touches anyObject];
