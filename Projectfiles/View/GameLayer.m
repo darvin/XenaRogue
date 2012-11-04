@@ -62,12 +62,18 @@
         SneakyJoystickSkinnedBase *leftJoy = [[SneakyJoystickSkinnedBase alloc] init];
         leftJoy.position = ccp(64, 64);
 
-        leftJoy.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(205, 201, 201, 128) radius:64];
-        leftJoy.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(238, 233, 233, 200) radius:32];
+        
+        CCSprite* dpadBackground = [CCSprite spriteWithFile:@"dpad-background.png"];
+        
+        
+        CCSprite *thumb = [CCSprite spriteWithFile:@"dpad-stick.png"];
+        
+        leftJoy.backgroundSprite = dpadBackground;
+        leftJoy.thumbSprite = thumb;
         leftJoy.joystick = [[SneakyJoystick alloc] initWithRect:CGRectMake(0, 0, 128, 128)];
         leftJoy.joystick.isDPad = YES;
         leftJoy.joystick.numberOfDirections = 8;
-        leftJoy.joystick.thumbRadius = 0.0f;
+        leftJoy.joystick.thumbRadius = 30.0f;
         self.joystick = leftJoy.joystick;
         [self addChild:leftJoy];
 #else

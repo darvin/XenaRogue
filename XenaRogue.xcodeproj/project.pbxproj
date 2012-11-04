@@ -52,6 +52,8 @@
 		57BA9A6E15AA4AEA00CA2571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A39113A94F1A005BD75D /* main.m */; };
 		57BC0BE7153419760035A280 /* mapnotpit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BC0BE6153419760035A280 /* mapnotpit.txt */; };
 		57BC0BE8153419760035A280 /* mapnotpit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BC0BE6153419760035A280 /* mapnotpit.txt */; };
+		57C2F5EA164649A8004FDAA2 /* dpad-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C2F5E8164649A8004FDAA2 /* dpad-background.png */; };
+		57C2F5EB164649A8004FDAA2 /* dpad-stick.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C2F5E9164649A8004FDAA2 /* dpad-stick.png */; };
 		57C5ACE116463D3E00D40A51 /* Coords.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C5ACDF16463D3E00D40A51 /* Coords.m */; };
 		57C5ACE216463D3E00D40A51 /* Coords.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C5ACDF16463D3E00D40A51 /* Coords.m */; };
 		57D5F57D1533C53D00046731 /* dungeon_tileset_scheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D5F57C1533C53D00046731 /* dungeon_tileset_scheme.plist */; };
@@ -90,7 +92,6 @@
 		DC979E3E13B35F8800656CB9 /* libcocos2d-extensions-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC979E3D13B35F8800656CB9 /* libcocos2d-extensions-mac.a */; };
 		DC979E5A13B3607E00656CB9 /* libchipmunk-spacemanager-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC979E5913B3607E00656CB9 /* libchipmunk-spacemanager-mac.a */; };
 		DCC1A0FA13A94ED5005BD75D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A0F913A94ED5005BD75D /* Default.png */; };
-		DCC1A0FC13A94ED5005BD75D /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A0FB13A94ED5005BD75D /* fps_images.png */; };
 		DCC1A0FE13A94ED5005BD75D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A0FD13A94ED5005BD75D /* Icon-72.png */; };
 		DCC1A10013A94ED5005BD75D /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A0FF13A94ED5005BD75D /* Icon-Small-50.png */; };
 		DCC1A10213A94ED5005BD75D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC1A10113A94ED5005BD75D /* Icon-Small.png */; };
@@ -135,6 +136,8 @@
 		57A074D51538062C00AA3E17 /* GameModelNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameModelNotifications.h; sourceTree = "<group>"; };
 		57A074D615380BE900AA3E17 /* animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = animations.plist; sourceTree = "<group>"; };
 		57BC0BE6153419760035A280 /* mapnotpit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapnotpit.txt; sourceTree = "<group>"; };
+		57C2F5E8164649A8004FDAA2 /* dpad-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dpad-background.png"; path = "Resources/dpad-background.png"; sourceTree = "<group>"; };
+		57C2F5E9164649A8004FDAA2 /* dpad-stick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dpad-stick.png"; path = "Resources/dpad-stick.png"; sourceTree = "<group>"; };
 		57C5ACDE16463D3E00D40A51 /* Coords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coords.h; sourceTree = "<group>"; };
 		57C5ACDF16463D3E00D40A51 /* Coords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coords.m; sourceTree = "<group>"; };
 		57C5ACE016463D3E00D40A51 /* GameObjectId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjectId.h; sourceTree = "<group>"; };
@@ -196,7 +199,6 @@
 		DC9C33E913B5024400931BF2 /* BuildSettings-Release-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Release-Mac.xcconfig"; sourceTree = "<group>"; };
 		DCC1A0E313A94ED5005BD75D /* XenaRogue-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XenaRogue-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1A0F913A94ED5005BD75D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
-		DCC1A0FB13A94ED5005BD75D /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
 		DCC1A0FD13A94ED5005BD75D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
 		DCC1A0FF13A94ED5005BD75D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
 		DCC1A10113A94ED5005BD75D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
@@ -416,8 +418,9 @@
 		DCC1A0F813A94ED5005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				57C2F5E8164649A8004FDAA2 /* dpad-background.png */,
+				57C2F5E9164649A8004FDAA2 /* dpad-stick.png */,
 				DCC1A0F913A94ED5005BD75D /* Default.png */,
-				DCC1A0FB13A94ED5005BD75D /* fps_images.png */,
 				DCC1A0FD13A94ED5005BD75D /* Icon-72.png */,
 				DCC1A0FF13A94ED5005BD75D /* Icon-Small-50.png */,
 				DCC1A10113A94ED5005BD75D /* Icon-Small.png */,
@@ -580,7 +583,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC1A0FA13A94ED5005BD75D /* Default.png in Resources */,
-				DCC1A0FC13A94ED5005BD75D /* fps_images.png in Resources */,
 				DCC1A0FE13A94ED5005BD75D /* Icon-72.png in Resources */,
 				DCC1A10013A94ED5005BD75D /* Icon-Small-50.png in Resources */,
 				DCC1A10213A94ED5005BD75D /* Icon-Small.png in Resources */,
@@ -595,6 +597,8 @@
 				5734B05D15368F7D00D98D46 /* sheet.plist in Resources */,
 				5734B05F15368F7D00D98D46 /* sheet.png in Resources */,
 				57A074D715380BE900AA3E17 /* animations.plist in Resources */,
+				57C2F5EA164649A8004FDAA2 /* dpad-background.png in Resources */,
+				57C2F5EB164649A8004FDAA2 /* dpad-stick.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
