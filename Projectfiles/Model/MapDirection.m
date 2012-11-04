@@ -8,8 +8,9 @@
 
 #import "MapDirection.h"
 #import "Map.h"
-MapDirection MapDirectionFromDegrees (float degrees) {
-    switch ((int)degrees) {
+
+MapDirection MapDirectionFromDegrees(float degrees) {
+    switch ((int) degrees) {
         case 0:
             return MapDirectionE;
             break;
@@ -45,11 +46,11 @@ MapDirection MapDirectionFromDegrees (float degrees) {
 
 
 MapDirection MapDirectionRandom() {
-    return RANDOM(0,MapDirection_MAX-1);
+    return RANDOM(0, MapDirection_MAX - 1);
 }
 
 MapDirection MapDirectionRandomStreight() {
-    int i = RANDOM(0,4);
+    int i = RANDOM(0, 4);
     switch (i) {
         case 0:
             return MapDirectionN;
@@ -58,28 +59,29 @@ MapDirection MapDirectionRandomStreight() {
         case 2:
             return MapDirectionW;
         case 3:
-            return MapDirectionS;            
+            return MapDirectionS;
         default:
             break;
     }
 }
 
 @implementation MapDirectionName
-+ (NSString*) nameMapDirection:(MapDirection) mapDirection {
++ (NSString *)nameMapDirection:(MapDirection)mapDirection
+{
     return [[NSArray arrayWithObjects:kMapDirectionNames] objectAtIndex:mapDirection];
 }
 @end
 
 
-
 @implementation NSValue (MapDirection)
 
-+(NSValue*) valueWithMapDirection:(MapDirection)mapDirection
++ (NSValue *)valueWithMapDirection:(MapDirection)mapDirection
 {
-    return [NSValue value: &mapDirection withObjCType: @encode(MapDirection)];
+    return [NSValue value:&mapDirection withObjCType:@encode(MapDirection)];
 }
 
--(MapDirection) mapDirectionValue {
+- (MapDirection)mapDirectionValue
+{
     MapDirection result;
     [self getValue:&result];
     return result;

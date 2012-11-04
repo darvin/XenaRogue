@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol Tickable <NSObject>
--(void)tick;
+- (void)tick;
 @end

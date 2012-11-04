@@ -9,22 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "LandscapeMapTile.h"
 
-@interface LandscapeAssetChooserRule : NSObject  {
+@interface LandscapeAssetChooserRule : NSObject {
     LandscapeMapTile equals[8];
     LandscapeMapTile notEquals[8];
 }
-@property (readonly) NSUInteger tileIndex;
-- (id) initWithTileIndex:(NSUInteger) tileIndex;
-- (id) initWithDictionary:(NSDictionary*) dictionary;
-- (BOOL) isAppliesToNeighbours:(LandscapeMapTile[8]) neighbours;
+@property(readonly) NSUInteger tileIndex;
+
+- (id)initWithTileIndex:(NSUInteger)tileIndex;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
+- (BOOL)isAppliesToNeighbours:(LandscapeMapTile[8])neighbours;
 @end
 
 @interface LandscapeAssetChooser : NSObject {
-    NSDictionary * landscapeTilesetScheme;
-    NSString* tileFrameNameFormat;
+    NSDictionary *landscapeTilesetScheme;
+    NSString *tileFrameNameFormat;
 }
-+ (LandscapeAssetChooser*) sharedChooser;
-- (NSString*) frameNameForMapTile:(LandscapeMapTile) mapTile withNeighbours:(LandscapeMapTile[8]) neighbours;
++ (LandscapeAssetChooser *)sharedChooser;
 
-        
+- (NSString *)frameNameForMapTile:(LandscapeMapTile)mapTile withNeighbours:(LandscapeMapTile[8])neighbours;
+
+
 @end

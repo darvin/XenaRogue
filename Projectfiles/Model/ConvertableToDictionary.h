@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol ConvertableToDictionary <NSObject>
-- (NSDictionary*) toDictionary;
-- (id) initWithDictionary:(NSDictionary*) dictionary;
+- (NSDictionary *)toDictionary;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
 @end

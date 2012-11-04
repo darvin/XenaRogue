@@ -8,34 +8,47 @@
 
 #import "Chest.h"
 #import "GameModel.h"
+
 @implementation Chest
-@synthesize open=_open;
--(NSString*) assetName {
-    return self.open?@"chest2_open":@"chest2_closed";
+@synthesize open = _open;
+
+- (NSString *)assetName
+{
+    return self.open ? @"chest2_open" : @"chest2_closed";
 }
-- (GameMapLayer) mapLayer {
+
+- (GameMapLayer)mapLayer
+{
     return GameMapLayerOnFloor;
 }
--(void) interactedWithObject:(GameObject *)object {
+
+- (void)interactedWithObject:(GameObject *)object
+{
     self.open = !self.open;
 }
 
-- (void) setOpen:(BOOL)open {
-    if (open!=_open) {
-        _open=open;
+- (void)setOpen:(BOOL)open
+{
+    if (open != _open) {
+        _open = open;
         [self notifyObjectChanged];
-        [GameModel log:open? @"Chest opened":@"Chest closed"];
+        [GameModel log:open ? @"Chest opened" : @"Chest closed"];
     }
 }
--(BOOL) isRemovable {
+
+- (BOOL)isRemovable
+{
     return NO;
 }
--(BOOL) isPassable {
+
+- (BOOL)isPassable
+{
     return NO;
 }
 
 
--(NSString*) description {
+- (NSString *)description
+{
     return @"Chest";
 }
 @end

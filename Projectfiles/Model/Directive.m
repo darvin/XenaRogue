@@ -7,20 +7,24 @@
 //
 
 #import "Directive.h"
+
 @interface Directive ()
-- (int) randomIntFrom:(int)from to:(int)to;
+- (int)randomIntFrom:(int)from to:(int)to;
 
 @end
+
 @implementation Directive
 
-- (id) initWithArgs:(NSArray*) _args {
-    if (self=[super init]) {
+- (id)initWithArgs:(NSArray *)_args
+{
+    if (self = [super init]) {
         args = _args;
     }
     return self;
 }
 
-- (void) runOnGameModel:(GameModel*) gameModel {
-    
+- (void)runOnGameModel:(GameModel *)gameModel
+{
+
 }
 @end

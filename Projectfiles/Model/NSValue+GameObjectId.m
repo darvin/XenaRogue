@@ -9,11 +9,13 @@
 #import "NSValue+GameObjectId.h"
 
 @implementation NSValue (GameObjectId)
-+(NSValue*) valueWithGameObjectId:(GameObjectId)gameObjectId
++ (NSValue *)valueWithGameObjectId:(GameObjectId)gameObjectId
 {
-    return [NSValue value: &gameObjectId withObjCType: @encode(GameObjectId)];
+    return [NSValue value:&gameObjectId withObjCType:@encode(GameObjectId)];
 }
--(GameObjectId) gameObjectIdValue {
+
+- (GameObjectId)gameObjectIdValue
+{
     GameObjectId result;
     [self getValue:&result];
     return result;

@@ -8,5 +8,6 @@
 
 #import "CCSprite.h"
 #import "GameObject.h"
+
 @interface MapObjectSprite : CCSprite
 @end

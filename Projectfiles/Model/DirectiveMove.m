@@ -13,10 +13,11 @@
 
 @implementation DirectiveMove
 
-- (void) runOnGameModel:(GameModel*) gameModel {
+- (void)runOnGameModel:(GameModel *)gameModel
+{
     [super runOnGameModel:gameModel];
     GameObjectId objectId = [[args objectAtIndex:0] gameObjectIdValue];
-    Coords moveTo = [(NSValue*)[args objectAtIndex:1] coordsValue];
+    Coords moveTo = [(NSValue *) [args objectAtIndex:1] coordsValue];
     GameObject *object = [gameModel.currentMap objectById:objectId];
     [object moveToCoords:moveTo];
 }

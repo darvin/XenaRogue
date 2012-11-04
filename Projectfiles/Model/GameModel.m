@@ -7,12 +7,14 @@
 //
 
 #import "GameModel.h"
-#import "LocalPlayer.h"
 #import "GameModelNotifications.h"
+
 @implementation GameModel
-@synthesize currentMap=_currentMap, localPlayer=_localPlayer;
--(id) initWithNewLocalPlayer {
-    if (self=[super init]){
+@synthesize currentMap = _currentMap, localPlayer = _localPlayer;
+
+- (id)initWithNewLocalPlayer
+{
+    if (self = [super init]) {
         self.localPlayer = [[LocalPlayer alloc] initWithXp:0];
         self.currentMap = [[Map alloc] initAndGenerateWithLocalPlayer:self.localPlayer andSize:MapSizeMake(mapSizeX, mapSizeY)];
         self.currentMap.gameModel = self;
@@ -22,7 +24,9 @@
     }
     return self;
 }
--(void) playerChangedMap:(Player*) player {
+
+- (void)playerChangedMap:(Player *)player
+{
     //fixme for multiplayer
     [player removeFromMap];
     self.currentMap = nil;
@@ -30,16 +34,21 @@
     self.currentMap.gameModel = self;
     [self notifyGameMapChange];
 }
--(void) notifyGameMapChange {
+
+- (void)notifyGameMapChange
+{
     [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameMapChanged object:self.currentMap];
 
 }
 
-+ (void) log:(NSString*) message {
++ (void)log:(NSString *)message
+{
     [[NSNotificationCenter defaultCenter] postNotificationName:GMNGameLogMessage object:message];
 
 }
--(void) tick {
+
+- (void)tick
+{
     [self.currentMap tick];
 }
 @end

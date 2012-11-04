@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 typedef enum {
     MapDirectionNW,
     MapDirectionN,
@@ -18,18 +19,22 @@ typedef enum {
     MapDirectionSE,
     MapDirection_MAX
 } MapDirection;
-MapDirection MapDirectionFromDegrees (float degrees);
+
+MapDirection MapDirectionFromDegrees(float degrees);
+
 MapDirection MapDirectionRandom();
+
 MapDirection MapDirectionRandomStreight();
+
 #define kMapDirectionNames @"nw", @"n", @"ne", @"w", @"e", @"sw", @"s", @"se", nil
 
 @interface MapDirectionName : NSObject
-+ (NSString*) nameMapDirection:(MapDirection) mapDirection;
++ (NSString *)nameMapDirection:(MapDirection)mapDirection;
 @end
 
 
-
 @interface NSValue (MapDirection)
-+(NSValue*) valueWithMapDirection:(MapDirection)mapDirection;
--(MapDirection) mapDirectionValue;
++ (NSValue *)valueWithMapDirection:(MapDirection)mapDirection;
+
+- (MapDirection)mapDirectionValue;
 @end

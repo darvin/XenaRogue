@@ -13,18 +13,21 @@
 #import "NSValue+GameObjectId.h"
 #import "Map.h"
 #import "Tickable.h"
+
 @protocol ObjectWithCoords;
 @protocol ConvertableToDictionary;
 
 
 @interface GameObject : NSObject <ObjectWithCoords, ConvertableToDictionary, Tickable>
-@property (readonly) GameObjectId objectId;
-@property (readonly) GameMapLayer mapLayer; 
-@property (readonly) NSString* assetName;
-@property (readonly) BOOL isRemovable;
-@property (readonly) BOOL isPassable;
+@property(readonly) GameObjectId objectId;
+@property(readonly) GameMapLayer mapLayer;
+@property(readonly) NSString *assetName;
+@property(readonly) BOOL isRemovable;
+@property(readonly) BOOL isPassable;
 
-- (BOOL) moveToCoords:(Coords) coord;
--(void)interactedWithObject:(GameObject*)object;
-- (void) notifyObjectChanged;
+- (BOOL)moveToCoords:(Coords)coord;
+
+- (void)interactedWithObject:(GameObject *)object;
+
+- (void)notifyObjectChanged;
 @end

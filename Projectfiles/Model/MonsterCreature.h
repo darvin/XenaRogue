@@ -11,6 +11,6 @@
 @interface MonsterCreature : Creature {
     uint beStupidNumberOfTicks;
 }
-@property (weak) Creature* enemy;
+@property(weak) Creature *enemy;
 
 @end

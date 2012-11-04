@@ -9,19 +9,23 @@
 #import "LocalPlayer.h"
 
 @implementation LocalPlayer
-- (id) initWithXp:(NSUInteger) xpNumber {
+- (id)initWithXp:(NSUInteger)xpNumber
+{
     if (self = [super init]) {
         self.xp = xpNumber;
         self.hp = 10000;
     }
     return self;
 }
--(NSString*) assetName {
+
+- (NSString *)assetName
+{
     return @"localPlayer";
 }
 
 
--(NSString*) description {
+- (NSString *)description
+{
     return @"You";
 }
 @end

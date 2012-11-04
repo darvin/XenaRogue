@@ -10,15 +10,19 @@
 #import "LocalPlayer.h"
 #import "Map.h"
 #import "Tickable.h"
+
 #define mapSizeX 30
 #define mapSizeY 30
 
 @interface GameModel : NSObject <Tickable>
-@property (strong) Map* currentMap;
-@property (strong) LocalPlayer* localPlayer;
+@property(strong) Map *currentMap;
+@property(strong) LocalPlayer *localPlayer;
 
--(id) initWithNewLocalPlayer;
--(id) initWithSavedLocalPlayer;
--(void) playerChangedMap:(Player*) player;
-+ (void) log:(NSString*) message ;
+- (id)initWithNewLocalPlayer;
+
+- (id)initWithSavedLocalPlayer;
+
+- (void)playerChangedMap:(Player *)player;
+
++ (void)log:(NSString *)message;
 @end

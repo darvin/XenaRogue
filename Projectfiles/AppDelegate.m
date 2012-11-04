@@ -9,23 +9,23 @@
 
 @implementation AppDelegate
 
--(void) initializationComplete
+- (void)initializationComplete
 {
 #ifdef KK_ARC_ENABLED
 	CCLOG(@"ARC is enabled");
 #else
-	CCLOG(@"ARC is either not available or not enabled");
+    CCLOG(@"ARC is either not available or not enabled");
 #endif
 }
 
--(id) alternateRootViewController
+- (id)alternateRootViewController
 {
-	return nil;
+    return nil;
 }
 
--(id) alternateView
+- (id)alternateView
 {
-	return nil;
+    return nil;
 }
 
 @end

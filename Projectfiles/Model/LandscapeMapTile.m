@@ -7,25 +7,30 @@
 //
 
 #import "LandscapeMapTile.h"
+
 BOOL LandscapeMapTileIsPassable(LandscapeMapTile mapTile) {
-    return mapTile==LandscapeMapTileFloor;
+    return mapTile == LandscapeMapTileFloor;
 }
 
 @implementation LandscapeMapTileName
 
 
-+ (NSString*) nameForMapTile:(LandscapeMapTile) mapTile {
-    
-    if (mapTile>[[NSArray arrayWithObjects:kLandscapeMapTileNames] count]) {
-        @throw [NSException exceptionWithName:@"" reason:@"" userInfo:@""];
++ (NSString *)nameForMapTile:(LandscapeMapTile)mapTile
+{
+
+    if (mapTile > [[NSArray arrayWithObjects:kLandscapeMapTileNames] count]) {
+        @throw [NSException exceptionWithName:@"" reason:@"" userInfo:@{
+        }];
     }
     return [[NSArray arrayWithObjects:kLandscapeMapTileNames] objectAtIndex:mapTile];
 }
-+ (LandscapeMapTile) mapTileForName:(NSString*) name {
-    NSArray* names = [NSArray arrayWithObjects:kLandscapeMapTileNames];
-    for (uint i=0; i<[names count];i++) {
-        NSString* aname = [names objectAtIndex:i];
-        if ([aname isEqualToString:name]){
+
++ (LandscapeMapTile)mapTileForName:(NSString *)name
+{
+    NSArray *names = [NSArray arrayWithObjects:kLandscapeMapTileNames];
+    for (uint i = 0; i < [names count]; i++) {
+        NSString *aname = [names objectAtIndex:i];
+        if ([aname isEqualToString:name]) {
             return i;
         }
     }
@@ -34,16 +39,17 @@ BOOL LandscapeMapTileIsPassable(LandscapeMapTile mapTile) {
 }
 
 
-+ (LandscapeMapTile) mapTileForASCIIChar:(NSString*) name {
-    NSArray* names = [NSArray arrayWithObjects:kLandscapeMapTileASCIIChars];
-    for (uint i=0; i<[names count];i++) {
-        NSString* aname = [names objectAtIndex:i];
-        if ([aname isEqualToString:name]){
++ (LandscapeMapTile)mapTileForASCIIChar:(NSString *)name
+{
+    NSArray *names = [NSArray arrayWithObjects:kLandscapeMapTileASCIIChars];
+    for (uint i = 0; i < [names count]; i++) {
+        NSString *aname = [names objectAtIndex:i];
+        if ([aname isEqualToString:name]) {
             return i;
         }
     }
-    
-    @throw [NSException exceptionWithName:@"MapTileError" reason: [NSString stringWithFormat: @"invalid char %@", name] userInfo:[NSDictionary dictionaryWithObject:name forKey:@"char"]];
+
+    @throw [NSException exceptionWithName:@"MapTileError" reason:[NSString stringWithFormat:@"invalid char %@", name] userInfo:[NSDictionary dictionaryWithObject:name forKey:@"char"]];
     return LandscapeMapTile_UNEXIST;
 }
 

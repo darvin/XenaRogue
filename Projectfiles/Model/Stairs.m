@@ -9,31 +9,40 @@
 #import "Stairs.h"
 #import "Player.h"
 #import "GameModel.h"
+
 @implementation Stairs
 @synthesize down;
--(NSString*) assetName {
-    return self.down?@"stone_stairs_down":@"stone_stairs_up";
+
+- (NSString *)assetName
+{
+    return self.down ? @"stone_stairs_down" : @"stone_stairs_up";
 }
-- (GameMapLayer) mapLayer {
+
+- (GameMapLayer)mapLayer
+{
     return GameMapLayerOnFloor;
 }
--(void) interactedWithObject:(GameObject *)object {
-    if (self.down&& [object isKindOfClass:[Player class]]) {
-        [self.map.gameModel playerChangedMap:(Player*)object];
+
+- (void)interactedWithObject:(GameObject *)object
+{
+    if (self.down && [object isKindOfClass:[Player class]]) {
+        [self.map.gameModel playerChangedMap:(Player *) object];
     }
 }
 
--(BOOL) isPassable {
+- (BOOL)isPassable
+{
     return YES;
 }
 
--(BOOL) isRemovable {
+- (BOOL)isRemovable
+{
     return NO;
 }
 
 
-
--(NSString*) description {
+- (NSString *)description
+{
     return @"Stairs";
 }
 @end

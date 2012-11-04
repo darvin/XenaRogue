@@ -9,16 +9,19 @@
 #import "ItemType.h"
 
 @implementation ItemType
-+(ItemType*) itemTypeWithName:(NSString*) name {
++ (ItemType *)itemTypeWithName:(NSString *)name
+{
     return [[ItemType alloc] init];
 }
 
 //fixme
--(NSString*) assetName {
+- (NSString *)assetName
+{
     return @"corpse";
 }
 
--(NSString*) description {
+- (NSString *)description
+{
     return @"Corpse";
 }
 

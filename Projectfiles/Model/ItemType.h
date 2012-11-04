@@ -7,6 +7,7 @@
 //
 
 #import "GameObjectType.h"
+
 @interface ItemType : GameObjectType
-+(ItemType*) itemTypeWithName:(NSString*) name;
++ (ItemType *)itemTypeWithName:(NSString *)name;
 @end

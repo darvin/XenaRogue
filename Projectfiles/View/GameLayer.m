@@ -12,20 +12,22 @@
 #import "GameModel.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+
 #import "SneakyJoystick.h"
 #import "SneakyJoystickSkinnedBase.h"
 #import "ColoredCircleSprite.h"
-#import "CCLayerPanZoom.h"
 #import "CocosDebugLayer.h"
+
 #endif
 
 @implementation GameLayer
 
-@synthesize joystick=_joystick;
+@synthesize joystick = _joystick;
 
 
--(id) init {
-    if (self=[super init]) {
+- (id)init
+{
+    if (self = [super init]) {
         vc = [[GameViewController alloc] initWithGameModel:[[GameModel alloc] initWithNewLocalPlayer]];
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
@@ -51,40 +53,42 @@
         vc.mapLayer.isTouchEnabled = NO;
         //        self.isTouchEnabled = YES;
         panZoomLayer.delegate = self;
-        
-        
+
+
         panZoomLayer.maxScale = MAP_MAX_SCALE;
         panZoomLayer.minScale = MAP_MIN_SCALE;
         panZoomLayer.mode = kCCLayerPanZoomModeSheet;
         [self addChild:panZoomLayer];
         SneakyJoystickSkinnedBase *leftJoy = [[SneakyJoystickSkinnedBase alloc] init];
-		leftJoy.position = ccp(64,64);
-        
-		leftJoy.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(205, 201, 201, 128) radius:64];
-		leftJoy.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(238, 233, 233, 200) radius:32];
-		leftJoy.joystick = [[SneakyJoystick alloc] initWithRect:CGRectMake(0,0,128,128)];
+        leftJoy.position = ccp(64, 64);
+
+        leftJoy.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(205, 201, 201, 128) radius:64];
+        leftJoy.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(238, 233, 233, 200) radius:32];
+        leftJoy.joystick = [[SneakyJoystick alloc] initWithRect:CGRectMake(0, 0, 128, 128)];
         leftJoy.joystick.isDPad = YES;
         leftJoy.joystick.numberOfDirections = 8;
         leftJoy.joystick.thumbRadius = 0.0f;
         self.joystick = leftJoy.joystick;
-		[self addChild:leftJoy];
+        [self addChild:leftJoy];
 #else
         [self addChild:vc.mapLayer];
-#endif        
+#endif
 
-        
+
         //move to proper place
         [self schedule:@selector(tick:)];
-        
+
     }
     return self;
 }
--(void)tick:(float)dt {
+
+- (void)tick:(float)dt
+{
     deltaSinceTick += dt;
-    if (deltaSinceTick>=timeInTick) {
+    if (deltaSinceTick >= timeInTick) {
         deltaSinceTick = 0;
         [vc.gameModel tick];
-        
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         if (self.joystick.degrees) {
             [vc localPlayerJoystickPressedWithDirection:MapDirectionFromDegrees(self.joystick.degrees)];
@@ -93,10 +97,11 @@
 #endif
 
     }
-    
+
 }
 
--(void) layerPanZoom:(CCLayerPanZoom *)sender clickedAtPoint:(CGPoint)aPoint tapCount:(NSUInteger)tapCount {
+- (void)layerPanZoom:(CCLayerPanZoom *)sender clickedAtPoint:(CGPoint)aPoint tapCount:(NSUInteger)tapCount
+{
     [vc.mapLayer clickedAtPoint:aPoint];
 }
 

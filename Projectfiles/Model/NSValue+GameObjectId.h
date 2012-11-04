@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+
 typedef int GameObjectId;
+
 @interface NSValue (GameObjectId)
-+(NSValue*) valueWithGameObjectId:(GameObjectId)gameObjectId;
--(GameObjectId) gameObjectIdValue;
++ (NSValue *)valueWithGameObjectId:(GameObjectId)gameObjectId;
+
+- (GameObjectId)gameObjectIdValue;
 @end

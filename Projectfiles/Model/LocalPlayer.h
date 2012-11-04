@@ -9,5 +9,5 @@
 #import "Player.h"
 
 @interface LocalPlayer : Player
-- (id) initWithXp:(NSUInteger) xpNumber; 
+- (id)initWithXp:(NSUInteger)xpNumber;
 @end

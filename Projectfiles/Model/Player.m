@@ -9,17 +9,21 @@
 #import "Player.h"
 
 @implementation Player
-@synthesize xp=_xp;
-- (GameMapLayer) mapLayer {
+@synthesize xp = _xp;
+
+- (GameMapLayer)mapLayer
+{
     return GameMapLayerStandingCreatures;
 }
--(NSString*) assetName {
+
+- (NSString *)assetName
+{
     return @"fighter";
 }
 
 
-
--(NSString*) description {
+- (NSString *)description
+{
     return @"Player";
 }
 @end

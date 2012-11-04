@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "NSValue+Coords.h"
+
 @class GameObject;
 @class Map;
+
 @protocol ObjectWithCoords <NSObject>
-@property (readonly) Coords coords;
-@property (readonly, weak) Map* map;
-- (void) setCoords:(Coords)coords andMap:(Map*) map;
-- (void) setCoords:(Coords)coords;
-- (void) removeFromMap;
+@property(readonly) Coords coords;
+@property(readonly, weak) Map *map;
+
+- (void)setCoords:(Coords)coords andMap:(Map *)map;
+
+- (void)setCoords:(Coords)coords;
+
+- (void)removeFromMap;
 @end

@@ -7,67 +7,67 @@
 //
 
 #import "NSValue+Coords.h"
-#import "MapDirection.h"
+
 Coords CoordsMake(int x, int y) {
     Coords result = {
-        .x = x,
-        .y = y
+            .x = x,
+            .y = y
     };
     return result;
 }
 
 Coords CoordsSum(Coords c1, Coords c2) {
-    return CoordsMake(c1.x+c2.x, c1.y+c2.y);
+    return CoordsMake(c1.x + c2.x, c1.y + c2.y);
 }
 
 Coords CoordsDifference(Coords c1, Coords c2) {
-    return CoordsMake(c1.x-c2.x, c1.y-c2.y);
+    return CoordsMake(c1.x - c2.x, c1.y - c2.y);
 }
 
 uint CoordsDistance(Coords c1, Coords c2) {
     Coords d = CoordsDifference(c1, c2);
-    uint max = abs(d.x)>abs(d.y)?d.x:d.y;
+    uint max = abs(d.x) > abs(d.y) ? d.x : d.y;
     return max;
 }
 
 BOOL CoordsIsNull(Coords coords) {
-    return coords.x==CoordsNull.x&&coords.y==CoordsNull.y;
+    return coords.x == CoordsNull.x && coords.y == CoordsNull.y;
 }
 
-BOOL CoordsIsEqual(Coords coords1, Coords coords2){
-    return coords1.x==coords2.x&&coords1.y==coords2.y;
+BOOL CoordsIsEqual(Coords coords1, Coords coords2) {
+    return coords1.x == coords2.x && coords1.y == coords2.y;
 }
 
 Coords CoordsDeltaForDirection(MapDirection direction) {
-    int x,y;
+    int x, y;
     switch (direction) {
-        
+
         case MapDirectionNW:
-            x=-1, y=-1;
+            x = -1, y = -1;
             break;
         case MapDirectionN:
-            x=0, y=-1;
+            x = 0, y = -1;
             break;
         case MapDirectionNE:
-            x=1, y=-1;
+            x = 1, y = -1;
             break;
         case MapDirectionSW:
-            x=-1, y=1;
+            x = -1, y = 1;
             break;
         case MapDirectionS:
-            x=0, y=1;
+            x = 0, y = 1;
             break;
         case MapDirectionSE:
-            x=1, y=1;
+            x = 1, y = 1;
             break;
         case MapDirectionW:
-            x=-1, y=0;
+            x = -1, y = 0;
             break;
         case MapDirectionE:
-            x=1, y=0;
-            break;            
+            x = 1, y = 0;
+            break;
         default:
-            x=0, y=0;
+            x = 0, y = 0;
             break;
     }
     return CoordsMake(x, y);
@@ -75,35 +75,36 @@ Coords CoordsDeltaForDirection(MapDirection direction) {
 
 
 MapDirection MapDirectionFromDeltaCoords(Coords coords1, Coords coords2) {
-    if (coords2.x<coords1.x&&coords2.y<coords1.y)
+    if (coords2.x < coords1.x && coords2.y < coords1.y)
         return MapDirectionNW;
-    else if (coords1.x==coords2.x&&coords2.y<coords1.y)
+    else if (coords1.x == coords2.x && coords2.y < coords1.y)
         return MapDirectionN;
-    else if (coords2.x>coords1.x&&coords2.y<coords1.y)
+    else if (coords2.x > coords1.x && coords2.y < coords1.y)
         return MapDirectionNE;
-    else if (coords2.x<coords1.x&&coords2.y>coords1.y)
+    else if (coords2.x < coords1.x && coords2.y > coords1.y)
         return MapDirectionSW;
-    else if (coords1.x==coords2.x&&coords2.y>coords1.y)
+    else if (coords1.x == coords2.x && coords2.y > coords1.y)
         return MapDirectionS;
-    else if (coords2.x>coords1.x&&coords2.y>coords1.y)
+    else if (coords2.x > coords1.x && coords2.y > coords1.y)
         return MapDirectionSE;
-    else if (coords2.x>coords1.x&&coords2.y==coords1.y)
+    else if (coords2.x > coords1.x && coords2.y == coords1.y)
         return MapDirectionE;
-    else if (coords2.x<coords1.x&&coords2.y==coords1.y)
+    else if (coords2.x < coords1.x && coords2.y == coords1.y)
         return MapDirectionW;
-    
-    
+
+
     return MapDirection_MAX;
 }
 
 @implementation NSValue (Coords)
 
-+(NSValue*) valueWithCoords:(Coords)coords
++ (NSValue *)valueWithCoords:(Coords)coords
 {
-    return [NSValue value: &coords withObjCType: @encode(Coords)];
+    return [NSValue value:&coords withObjCType:@encode(Coords)];
 }
 
--(Coords) coordsValue {
+- (Coords)coordsValue
+{
     Coords result;
     [self getValue:&result];
     return result;

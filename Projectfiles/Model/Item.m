@@ -10,45 +10,57 @@
 #import "ItemType.h"
 #import "Creature.h"
 #import "GameModel.h"
+
 @implementation Item
-@synthesize  type=_type;
-- (GameMapLayer) mapLayer {
+@synthesize type = _type;
+
+- (GameMapLayer)mapLayer
+{
     return GameMapLayerOnFloor;
 }
 
--(id) initWithType:(ItemType*) itemType{
-    if (self=[super init]) {
+- (id)initWithType:(ItemType *)itemType
+{
+    if (self = [super init]) {
         _type = itemType;
     }
     return self;
 }
-+(Item*) itemWithTypeName:(NSString*) name {
-    return [[Item alloc] initWithType: [ItemType itemTypeWithName:name]];
+
++ (Item *)itemWithTypeName:(NSString *)name
+{
+    return [[Item alloc] initWithType:[ItemType itemTypeWithName:name]];
 }
 
--(NSString*) assetName  {
+- (NSString *)assetName
+{
     //fixme save links to itemtypes
     return @"corpse";
 //    return self.type.assetName;
 }
--(BOOL) isPassable{ 
+
+- (BOOL)isPassable
+{
     return YES;
 }
 
--(BOOL) isRemovable {
+- (BOOL)isRemovable
+{
     return YES;
 }
 
--(void) interactedWithObject:(GameObject *)object {
+- (void)interactedWithObject:(GameObject *)object
+{
     if ([object isKindOfClass:[Creature class]]) {
         [self removeFromMap];
-        [((Creature*)object) pickupItem:self];
+        [((Creature *) object) pickupItem:self];
         [GameModel log:[NSString stringWithFormat:@"%@ picked up %@", object, self]];
     }
 }
 
 
--(NSString*) description {
+- (NSString *)description
+{
     return @"Corpse"; //fixme save links to itemtypes [self.type description];
 }
 @end
