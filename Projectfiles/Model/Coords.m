@@ -44,7 +44,7 @@
 }
 
 
--(Coords*) coordsByAddingCoords:(Coords*) other {
-    return [Coords coords]
-}
+//-(Coords*) coordsByAddingCoords:(Coords*) other {
+//    return [Coords coords]
+//}
 @end
