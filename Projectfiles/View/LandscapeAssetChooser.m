@@ -26,9 +26,9 @@
 
 - (id)initWithDictionary:(NSDictionary *)dictionary
 {
-    if (self = [self initWithTileIndex:[[dictionary objectForKey:@"tileIndex"] intValue]]) {
+    if (self = [self initWithTileIndex:[dictionary[@"tileIndex"] intValue]]) {
         int i = 0;
-        for (NSString *direction in [NSArray arrayWithObjects:@"nw", @"n", @"ne", @"w", @"e", @"sw", @"s", @"se", nil]) {
+        for (NSString *direction in @[@"nw", @"n", @"ne", @"w", @"e", @"sw", @"s", @"se"]) {
             NSString *ruleForDirection = dictionary[@"map"][direction];
             if (ruleForDirection) {
                 if ([ruleForDirection hasPrefix:@"!"]) {
@@ -87,18 +87,18 @@
     if (self = [super init]) {
         NSMutableDictionary *scheme = [NSMutableDictionary dictionary];
         NSDictionary *plist = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"dungeon_tileset_scheme" withExtension:@"plist"]];
-        tileFrameNameFormat = [plist objectForKey:@"tileFrameNameFormat"];
-        NSDictionary *types = [plist objectForKey:@"type"];
+        tileFrameNameFormat = plist[@"tileFrameNameFormat"];
+        NSDictionary *types = plist[@"type"];
         for (NSString *typeName in types) {
-            NSDictionary *type = [types objectForKey:typeName];
-            LandscapeAssetChooserRule *defaultRule = [[LandscapeAssetChooserRule alloc] initWithTileIndex:[[type objectForKey:@"defaultTileIndex"] intValue]];
+            NSDictionary *type = types[typeName];
+            LandscapeAssetChooserRule *defaultRule = [[LandscapeAssetChooserRule alloc] initWithTileIndex:[type[@"defaultTileIndex"] intValue]];
             NSMutableArray *rules = [NSMutableArray array];
-            for (NSDictionary *rule in [type objectForKey:@"rules"]) {
+            for (NSDictionary *rule in type[@"rules"]) {
                 LandscapeAssetChooserRule *chooserRule = [[LandscapeAssetChooserRule alloc] initWithDictionary:rule];
                 [rules addObject:chooserRule];
             }
             [rules addObject:defaultRule];
-            [scheme setObject:[NSArray arrayWithArray:rules] forKey:typeName];
+            scheme[typeName] = [NSArray arrayWithArray:rules];
         };
         landscapeTilesetScheme = [NSDictionary dictionaryWithDictionary:scheme];
     }
@@ -109,7 +109,7 @@
 - (NSString *)frameNameForMapTile:(LandscapeMapTile)mapTile withNeighbours:(LandscapeMapTile[8])neighbours
 {
     NSString *baseTileName = [LandscapeMapTileName nameForMapTile:mapTile];
-    NSArray *rules = [landscapeTilesetScheme objectForKey:baseTileName];
+    NSArray *rules = landscapeTilesetScheme[baseTileName];
     for (LandscapeAssetChooserRule *rule in rules) {
         if ([rule isAppliesToNeighbours:neighbours]) {
             return [NSString stringWithFormat:tileFrameNameFormat, rule.tileIndex];

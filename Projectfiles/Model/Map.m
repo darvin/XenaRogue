@@ -162,14 +162,14 @@ MapRect MapRectMake(int x, int y, int width, int height) {
                     [NSCharacterSet newlineCharacterSet]];
 
     // then break down even further 
-    NSString *firstLine = [allLinedStrings objectAtIndex:0];
+    NSString *firstLine = allLinedStrings[0];
 
 
     Coords size = CoordsMake([firstLine length], [allLinedStrings count]);
 
     if (self = [self initWithSize:size]) {
         for (uint j = 0; j < [allLinedStrings count]; j++) {
-            NSString *line = [allLinedStrings objectAtIndex:j];
+            NSString *line = allLinedStrings[j];
             for (uint i = 0; i < [line length]; i++) {
                 unichar currentChar = [line characterAtIndex:i];
                 LandscapeMapTile tile = [LandscapeMapTileName mapTileForASCIIChar:[NSString stringWithCharacters:&currentChar length:1]];
@@ -215,7 +215,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 - (NSMutableArray *)mutableObjectsAtCoords:(Coords)coords
 {
-    return [objectsByCoords objectForKey:[NSValue valueWithCoords:coords]];
+    return objectsByCoords[[NSValue valueWithCoords:coords]];
 }
 
 
@@ -248,11 +248,11 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     NSMutableArray *objects = [self mutableObjectsAtCoords:coords];
     if (!objects) {
         objects = [NSMutableArray arrayWithObject:object];
-        [objectsByCoords setObject:objects forKey:[NSValue valueWithCoords:coords]];
+        objectsByCoords[[NSValue valueWithCoords:coords]] = objects;
     } else {
         [objects addObject:object];
     }
-    [objectsById setObject:object forKey:[NSValue valueWithGameObjectId:object.objectId]];
+    objectsById[[NSValue valueWithGameObjectId:object.objectId]] = object;
     [self _passableCacheUpdateOnCoords:coords];
 }
 
@@ -284,7 +284,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 - (GameObject *)objectById:(GameObjectId)mapObjectId
 {
-    return [objectsById objectForKey:[NSValue valueWithGameObjectId:mapObjectId]];
+    return objectsById[[NSValue valueWithGameObjectId:mapObjectId]];
 }
 
 - (NSArray *)objectsAtCoords:(Coords)coords

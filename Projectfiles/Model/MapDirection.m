@@ -68,7 +68,7 @@ MapDirection MapDirectionRandomStreight() {
 @implementation MapDirectionName
 + (NSString *)nameMapDirection:(MapDirection)mapDirection
 {
-    return [[NSArray arrayWithObjects:kMapDirectionNames] objectAtIndex:mapDirection];
+    return [NSArray arrayWithObjects:kMapDirectionNames][mapDirection];
 }
 @end
 
