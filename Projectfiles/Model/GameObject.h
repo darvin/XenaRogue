@@ -10,7 +10,7 @@
 
 #import "ObjectWithCoords.h"
 #import "ConvertableToDictionary.h"
-#import "NSValue+GameObjectId.h"
+#import "GameObjectId.h"
 #import "Map.h"
 #import "Tickable.h"
 
@@ -19,7 +19,7 @@
 
 
 @interface GameObject : NSObject <ObjectWithCoords, ConvertableToDictionary, Tickable>
-@property(readonly) GameObjectId objectId;
+@property(readonly) GameObjectId* objectId;
 @property(readonly) GameMapLayer mapLayer;
 @property(readonly) NSString *assetName;
 @property(readonly) BOOL isRemovable;

@@ -9,7 +9,7 @@
 #import "GameObject.h"
 #import "GameModelNotifications.h"
 
-static GameObjectId lastGameObjectId = 0;
+static int lastGameObjectId = 0;
 
 @interface GameObject ()
 - (BOOL)moveToCoords:(Coords)coords;
@@ -24,7 +24,7 @@ static GameObjectId lastGameObjectId = 0;
 {
     if (self = [super init]) {
         _coords = CoordsNull;
-        _objectId = ++lastGameObjectId;
+        _objectId = @(++lastGameObjectId); //fixme
     }
     return self;
 }
@@ -96,7 +96,7 @@ static GameObjectId lastGameObjectId = 0;
 
 - (NSDictionary *)toDictionary
 {
-    return @{@"objectId": [NSValue valueWithGameObjectId:_objectId],
+    return @{@"objectId": _objectId,
             @"coords": [NSValue valueWithCoords:_coords],
             @"class": NSStringFromClass([self class])};
 }

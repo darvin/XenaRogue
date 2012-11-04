@@ -72,23 +72,23 @@
     return CoordsMake((point.x - spriteSize) / spriteSize + 1, self.mapSize.y - (point.y - spriteSize) / spriteSize);
 }
 
-- (void)removeMapNodeWithId:(GameObjectId)nodeId
+- (void)removeMapNodeWithId:(GameObjectId*)nodeId
 {
-    MapObjectSprite *sprite = mapNodesById[[NSValue valueWithGameObjectId:nodeId]];
+    MapObjectSprite *sprite = mapNodesById[nodeId];
     [spriteSheet removeChild:sprite cleanup:YES];
-    [mapNodesById removeObjectForKey:[NSValue valueWithGameObjectId:nodeId]];
+    [mapNodesById removeObjectForKey:nodeId];
 }
 
-- (void)moveMapNodeWithId:(GameObjectId)nodeId toCoords:(Coords)coords
+- (void)moveMapNodeWithId:(GameObjectId*)nodeId toCoords:(Coords)coords
 {
-    MapObjectSprite *sprite = mapNodesById[[NSValue valueWithGameObjectId:nodeId]];
+    MapObjectSprite *sprite = mapNodesById[nodeId];
     [sprite runAction:[CCMoveTo actionWithDuration:1 position:[self convertMapCoordsToNodePoint:coords]]];
 }
 
-- (void)moveMapNodeWithId:(GameObjectId)nodeId toCoords:(Coords)coords withAnimation:(NSString *)animationName andFrameNameFinal:(NSString *)frameNameFinal
+- (void)moveMapNodeWithId:(GameObjectId*)nodeId toCoords:(Coords)coords withAnimation:(NSString *)animationName andFrameNameFinal:(NSString *)frameNameFinal
 {
 
-    MapObjectSprite *sprite = mapNodesById[[NSValue valueWithGameObjectId:nodeId]];
+    MapObjectSprite *sprite = mapNodesById[nodeId];
     CCAnimation *animation = [[CCAnimationCache sharedAnimationCache] animationByName:animationName];
     CCAction *animateAction = nil;
     if (animation != nil) {
@@ -111,21 +111,21 @@
 
 }
 
-- (void)setFrameName:(NSString *)frameName toMapNodeWithId:(GameObjectId)nodeId
+- (void)setFrameName:(NSString *)frameName toMapNodeWithId:(GameObjectId*)nodeId
 {
-    MapObjectSprite *sprite = mapNodesById[[NSValue valueWithGameObjectId:nodeId]];
+    MapObjectSprite *sprite = mapNodesById[nodeId];
     [sprite setTextureRect:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frameName].rect];
 
 }
 
-- (void)addMapNodeWithId:(GameObjectId)nodeId withFrameName:(NSString *)frameName toCoords:(Coords)coords andGameMapLayer:(GameMapLayer)gameMapLayer
+- (void)addMapNodeWithId:(GameObjectId*)nodeId withFrameName:(NSString *)frameName toCoords:(Coords)coords andGameMapLayer:(GameMapLayer)gameMapLayer
 {
-    if (!mapNodesById[[NSValue valueWithGameObjectId:nodeId]]) {
+    if (!mapNodesById[nodeId]) {
         MapObjectSprite *sprite = [[MapObjectSprite alloc] initWithSpriteFrameName:[frameName stringByAppendingString:@".png"]];
         sprite.position = [self convertMapCoordsToNodePoint:coords];
 
         [spriteSheet addChild:sprite z:gameMapLayer];
-        mapNodesById[[NSValue valueWithGameObjectId:nodeId]] = sprite;
+        mapNodesById[nodeId] = sprite;
     } else {
         //do nothing. object already is map sprite
     }

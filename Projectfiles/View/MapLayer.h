@@ -8,7 +8,7 @@
 
 #import "CCLayer.h"
 #import "Map.h"
-#import "NSValue+GameObjectId.h"
+#import "GameObjectId.h"
 
 #import "cocos2d.h"
 
@@ -29,13 +29,13 @@
 @property(weak) id <MapLayerDelegate> delegate;
 @property MapSize mapSize;
 
-- (void)removeMapNodeWithId:(GameObjectId)nodeId;
+- (void)removeMapNodeWithId:(GameObjectId*)nodeId;
 
-- (void)moveMapNodeWithId:(GameObjectId)nodeId toCoords:(Coords)coords;
+- (void)moveMapNodeWithId:(GameObjectId*)nodeId toCoords:(Coords)coords;
 
-- (void)moveMapNodeWithId:(GameObjectId)nodeId toCoords:(Coords)coords withAnimation:(NSString *)animationName andFrameNameFinal:(NSString *)frameNameFinal;
+- (void)moveMapNodeWithId:(GameObjectId*)nodeId toCoords:(Coords)coords withAnimation:(NSString *)animationName andFrameNameFinal:(NSString *)frameNameFinal;
 
-- (void)addMapNodeWithId:(GameObjectId)nodeId withFrameName:(NSString *)frameName toCoords:(Coords)coords andGameMapLayer:(GameMapLayer)gameMapLayer;
+- (void)addMapNodeWithId:(GameObjectId*)nodeId withFrameName:(NSString *)frameName toCoords:(Coords)coords andGameMapLayer:(GameMapLayer)gameMapLayer;
 
 - (void)addMapTile:(LandscapeMapTile)mapTile withNeighbours:(LandscapeMapTile[8])neighbours toCoords:(Coords)coords;
 

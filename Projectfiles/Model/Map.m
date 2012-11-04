@@ -252,7 +252,7 @@ MapRect MapRectMake(int x, int y, int width, int height) {
     } else {
         [objects addObject:object];
     }
-    objectsById[[NSValue valueWithGameObjectId:object.objectId]] = object;
+    objectsById[object.objectId] = object;
     [self _passableCacheUpdateOnCoords:coords];
 }
 
@@ -278,13 +278,13 @@ MapRect MapRectMake(int x, int y, int width, int height) {
 
 - (void)removeObject:(GameObject *)object
 {
-    [objectsById removeObjectForKey:[NSValue valueWithGameObjectId:object.objectId]];
+    [objectsById removeObjectForKey:object.objectId];
     [[self mutableObjectsAtCoords:object.coords] removeObject:object];
 }
 
-- (GameObject *)objectById:(GameObjectId)mapObjectId
+- (GameObject *)objectById:(GameObjectId*)mapObjectId
 {
-    return objectsById[[NSValue valueWithGameObjectId:mapObjectId]];
+    return objectsById[mapObjectId];
 }
 
 - (NSArray *)objectsAtCoords:(Coords)coords

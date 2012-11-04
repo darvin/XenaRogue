@@ -139,7 +139,7 @@
 - (void)gameObjectMoved:(NSNotification *)notification
 {
     GameObject *gameObject = notification.object;
-    GameObjectId objectId = gameObject.objectId;
+    GameObjectId* objectId = gameObject.objectId;
     NSString *animation = [self frameNameForGameObject:gameObject action:@"walk"];
     NSString *finalFrame = [[self frameNameForGameObject:gameObject action:@"stand"] stringByAppendingString:@".png"];
     Coords newCoords = gameObject.coords;
@@ -149,7 +149,7 @@
 - (void)gameObjectChanged:(NSNotification *)notification
 {
     GameObject *gameObject = notification.object;
-    GameObjectId objectId = gameObject.objectId;
+    GameObjectId* objectId = gameObject.objectId;
     [self.mapLayer removeMapNodeWithId:objectId];
     [self updateGameObject:gameObject];
 }
@@ -157,7 +157,7 @@
 - (void)gameObjectRemoved:(NSNotification *)notification
 {
     GameObject *gameObject = notification.object;
-    GameObjectId objectId = gameObject.objectId;
+    GameObjectId* objectId = gameObject.objectId;
     [self.mapLayer removeMapNodeWithId:objectId];
 }
 
@@ -182,7 +182,7 @@
 
 - (void)mapLayer:(MapLayer *)mapLayer touchedAtCoords:(Coords)coords
 {
-//    DirectiveMove * dir = [[DirectiveMove alloc] initWithArgs:[NSArray arrayWithObjects:[NSValue valueWithGameObjectId: self.localPlayer.objectId], [NSValue valueWithCoords:coords], nil]];
+//    DirectiveMove * dir = [[DirectiveMove alloc] initWithArgs:[NSArray arrayWithObjects:[NSValue valueWithGameObjectId*: self.localPlayer.objectId], [NSValue valueWithCoords:coords], nil]];
 //    [dir runOnGameModel:self.gameModel];
     [self.localPlayer directiveMove:coords];
     [mapLayer showOverlayOnTileOnCoords:coords withFrameName:@"cursor" seconds:1];

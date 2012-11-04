@@ -8,7 +8,7 @@
 
 #import "DirectiveMove.h"
 #import "NSValue+Coords.h"
-#import "NSValue+GameObjectId.h"
+#import "GameObjectId.h"
 #import "GameModel.h"
 
 @implementation DirectiveMove
@@ -16,7 +16,7 @@
 - (void)runOnGameModel:(GameModel *)gameModel
 {
     [super runOnGameModel:gameModel];
-    GameObjectId objectId = [args[0] gameObjectIdValue];
+    GameObjectId* objectId = args[0];
     Coords moveTo = [(NSValue *) args[1] coordsValue];
     GameObject *object = [gameModel.currentMap objectById:objectId];
     [object moveToCoords:moveTo];

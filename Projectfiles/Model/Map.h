@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NSValue+Coords.h"
-#import "NSValue+GameObjectId.h"
+#import "GameObjectId.h"
 #import "ConvertableToDictionary.h"
 #import "LandscapeMapTile.h"
 #import "Tickable.h"
@@ -82,7 +82,7 @@ MapRect MapRectMake(int x, int y, int width, int height);
 
 - (void)removeObject:(GameObject *)object;
 
-- (GameObject *)objectById:(GameObjectId)mapObjectId;
+- (GameObject *)objectById:(GameObjectId*)mapObjectId;
 
 - (NSArray *)objectsAtCoords:(Coords)coords;
 
