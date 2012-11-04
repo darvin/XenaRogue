@@ -10,7 +10,7 @@
 
 @interface Coords : NSObject <NSCopying>
 - (id) initWithX:(int)x Y:(int) y;
-- (Coords*) coordsWithX:(int)x Y:(int)y;
++ (Coords*) coordsWithX:(int)x Y:(int)y;
 @property (readonly) int x;
 @property (readonly) int y;
 @end
